@@ -1,10 +1,10 @@
 /* Increment VERSION whenever the app shell or bundled sound catalog changes. */
-const VERSION = 'meme-deck-v11-github-pages';
+const VERSION = 'meme-deck-v12-braun-2';
 const BASE = new URL('./', self.registration.scope);
 // CacheStorage is shared by every project on a GitHub Pages origin.
 const CACHE_PREFIX = `meme-deck-scope:${encodeURIComponent(BASE.pathname)}:`;
 const CACHE_NAME = CACHE_PREFIX + VERSION;
-const SHELL = ['index.html', 'style.css', 'themes.css', 'themes.js', 'app.js', 'manifest.json', 'icon-192.png', 'icon-512.png', 'icon-180.png'];
+const SHELL = ['index.html', 'style.css', 'app.js', 'manifest.json', 'icon-192.png', 'icon-512.png', 'icon-180.png'];
 const absolute = path => new URL(path, BASE).href;
 const shellURLs = new Set(SHELL.map(absolute));
 let catalogPromise;

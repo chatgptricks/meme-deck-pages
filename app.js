@@ -1,5 +1,3 @@
-import { initThemes } from './themes.js';
-
 const $ = selector => document.querySelector(selector);
 const PAGE_SIZE = 16;
 const SHORTCUTS = '1234qwerasdfzxcv';
@@ -72,7 +70,7 @@ function renderPads() {
     for (let index = 0; index < PAGE_SIZE; index++) {
       const sound = list[page * PAGE_SIZE + index];
       const button = document.createElement('button');
-      button.className = `pad tone-${sound?.id === 'fahhh' ? 1 : (index % 4 === 1 ? 2 : index % 4 === 2 ? 3 : 4)}`;
+      button.className = sound?.id === 'fahhh' ? 'pad accent' : 'pad';
       if (!sound) {
         if (bank === 'fav' && page * PAGE_SIZE + index === list.length) {
           button.className = 'pad favorite-add';
@@ -86,7 +84,7 @@ function renderPads() {
       button.dataset.id = sound.id;
       button.setAttribute('aria-label', `Play ${sound.name}`);
       button.setAttribute('aria-keyshortcuts', SHORTCUTS[index]);
-      const pieces = [['pad-number', String(page * PAGE_SIZE + index + 1).padStart(2, '0')], ['pad-key', SHORTCUTS[index].toUpperCase()], ['pad-icon', sound.icon || '♫'], ['pad-name', sound.name], ['pad-light', '']];
+      const pieces = [['pad-number', String(page * PAGE_SIZE + index + 1).padStart(2, '0')], ['pad-key', SHORTCUTS[index].toUpperCase()], ['pad-name', sound.name], ['pad-light', '']];
       for (const [className, text] of pieces) { const span = document.createElement('span'); span.className = className; span.textContent = text; span.setAttribute('aria-hidden', 'true'); button.append(span); }
       button.addEventListener('click', () => play(sound));
       fragment.append(button);
@@ -176,14 +174,14 @@ function updatePlaybackState() {
   updatePadState();
   const latest = [...playing.values()].at(-1);
   $('#state').textContent = latest ? 'PLAYING' : pending.size ? 'LOADING' : 'READY';
-  $('#now-playing').textContent = latest?.sound.name || [...pending.values()].at(-1)?.name || lastSound?.name || 'Make some noise.';
+  $('#now-playing').textContent = latest?.sound.name || [...pending.values()].at(-1)?.name || lastSound?.name || 'Ready to play.';
   $('#status-dot').style.opacity = latest ? '1' : '.55';
   if (latest) { if (!animation) animate(); }
   else { cancelAnimationFrame(animation); animation = null; $('#time').textContent = '00.0'; drawScope(); }
 }
 const canvas = $('#scope');
 const drawContext = canvas.getContext('2d');
-let wave = new Uint8Array(128), waveColor = '#bace94';
+const wave = new Uint8Array(128), waveColor = '#343a2e';
 function drawScope() {
   const width = Math.round(canvas.clientWidth * devicePixelRatio), height = Math.round(canvas.clientHeight * devicePixelRatio);
   if (canvas.width !== width || canvas.height !== height) { canvas.width = width; canvas.height = height; }
@@ -336,12 +334,6 @@ if ('serviceWorker' in navigator) {
   navigator.serviceWorker.addEventListener('controllerchange', () => { if (hadController && !refreshing) { refreshing = true; stopAll(); location.reload(); } else requestOfflineStatus(); });
   navigator.serviceWorker.register('sw.js', { updateViaCache: 'none' }).then(registration => { registration.update().catch(() => {}); return navigator.serviceWorker.ready; }).then(requestOfflineStatus).catch(() => { $('#offline').textContent = 'ONLINE'; $('#download-status').textContent = 'Offline mode requires HTTPS or localhost.'; });
 }
-window.addEventListener('themechange', event => {
-  waveColor = event.detail?.palette?.['--display-ink'] || '#bace94';
-  drawScope();
-});
-initThemes();
-$('.close-theme-done').onclick = () => $('#theme-dialog').close();
 loadCatalog();
 storage('readonly', store => store.getAll()).then(sounds => { customs = sounds; libraryReady = true; renderPads(); }).catch(() => { $('#storage-note').textContent = 'Local storage unavailable. Built-in clips are still playable.'; });
 drawScope();

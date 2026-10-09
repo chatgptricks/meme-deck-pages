@@ -2,7 +2,7 @@
 
 [Open the soundboard](https://chatgptricks.github.io/meme-deck-pages/)
 
-112 real audio clips, nine tactile era themes, a single color picker, and offline support.
+112 real audio clips in one classic Braun-inspired layout: warm ivory, clear controls, tactile pads, and offline support. The soundboard fills the screen on iPhone and desktop.
 
 On iPhone, open the site in Safari and use Share → Add to Home Screen. Open once online and wait for OFFLINE READY.
 
