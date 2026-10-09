@@ -1,5 +1,5 @@
 /* Increment VERSION whenever the app shell or bundled sound catalog changes. */
-const VERSION = 'meme-deck-v14-inline-categories-5';
+const VERSION = 'meme-deck-v15-video-controls';
 const BASE = new URL('./', self.registration.scope);
 // CacheStorage is shared by every project on a GitHub Pages origin.
 const CACHE_PREFIX = `meme-deck-scope:${encodeURIComponent(BASE.pathname)}:`;

@@ -136,9 +136,9 @@ function renderPads() {
       if (sound.id === activeMusic?.id) {
         activeIndex = index;
         musicPanel.dataset.id = sound.id;
-        musicPanel.setAttribute('role', 'button');
-        musicPanel.tabIndex = 0;
-        musicPanel.setAttribute('aria-label', `Stop ${sound.name}`);
+        musicPanel.setAttribute('role', 'group');
+        musicPanel.tabIndex = -1;
+        musicPanel.setAttribute('aria-label', `Reproductor de ${sound.name}`);
         musicPanel.setAttribute('aria-keyshortcuts', SHORTCUTS[index]);
         musicLabels.get('pad-number').textContent = String(page * PAGE_SIZE + index + 1).padStart(2, '0');
         musicLabels.get('pad-online').textContent = `${sound.duration === 60 ? '1m' : sound.duration + 's'} ↗`;
@@ -242,15 +242,15 @@ function playMusic(sound) {
   activeMusic = lastSound = sound;
   const start = Number.isSafeInteger(sound.start) && sound.start >= 0 ? sound.start : 0;
   const url = new URL(`https://www.youtube-nocookie.com/embed/${sound.videoId}`);
-  url.search = new URLSearchParams({ start: String(start), end: String(start + sound.duration), autoplay: '1', playsinline: '1', controls: '0', fs: '0', disablekb: '1', rel: '0' });
+  url.search = new URLSearchParams({ start: String(start), end: String(start + sound.duration), autoplay: '1', playsinline: '1', controls: '1', fs: '0', disablekb: '0', rel: '0' });
   const frame = document.createElement('iframe');
   frame.title = `${sound.name} · YouTube player`;
-  frame.width = '100%'; frame.height = '100%'; frame.tabIndex = -1;
+  frame.width = '100%'; frame.height = '100%'; frame.tabIndex = 0;
   frame.allow = 'autoplay; encrypted-media';
   frame.referrerPolicy = 'strict-origin-when-cross-origin';
   $('#music-title').textContent = sound.name;
   $('#music-context').textContent = [sound.artist, sound.context].filter(Boolean).join(' · ');
-  $('#music-status').textContent = `YouTube · online · ${musicDurationLabel(sound)}. Tap this pad or Stop All to stop.`;
+  $('#music-status').textContent = `YouTube · online · ${musicDurationLabel(sound)}. Use the video controls to play or pause. Stop All closes the player.`;
   musicPanel.hidden = false;
   $('.machine').classList.add('music-open');
   renderPads();
@@ -388,11 +388,6 @@ document.querySelectorAll('dialog').forEach(dialog => {
   dialog.addEventListener('cancel', stopAll);
 });
 $('#stop').onclick = stopAll;
-musicPanel.onclick = stopAll;
-musicPanel.addEventListener('keydown', event => {
-  if (event.key !== 'Enter' && event.key !== ' ') return;
-  event.preventDefault(); event.stopPropagation(); stopAll();
-});
 $('#volume').value = volume; $('#volume-value').textContent = volume;
 $('#volume').oninput = event => { volume = Number(event.target.value); $('#volume-value').textContent = volume; if (master) master.gain.setTargetAtTime(volume / 100, context.currentTime, 0.01); saveSetting('meme-deck-volume', volume); };
 function updateMix() { $('#mix').setAttribute('aria-pressed', overlap); $('#mix-status').textContent = overlap ? 'OVERLAP ON' : 'ONE SHOT'; }
