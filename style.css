@@ -114,10 +114,10 @@ svg { fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round
 .pad:active, .pad.playing { transform: translateY(2px); box-shadow: inset 0 1px 3px #0003, 0 1px 0 #20231d; }
 .pad.accent:active, .pad.accent.playing { box-shadow: inset 0 1px 3px #0003, 0 1px 0 #9e3717; }
 .pad.loading { opacity: .65; }
-.pad-number { font-size: clamp(19px, 2.8vh, 27px); font-weight: 400; line-height: 1; letter-spacing: -1px; }
+.pad-number { flex-shrink: 0; font-size: clamp(19px, 2.8vh, 27px); font-weight: 400; line-height: 1; letter-spacing: -1px; }
 .pad-key { position: absolute; top: 14px; right: 14px; color: #c1c3b8; font: 9px 'Courier New', monospace; }
 .pad.accent .pad-key { color: #271c10; }
-.pad-name { display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; max-width: 100%; padding-right: 6px; overflow: hidden; overflow-wrap: anywhere; font-size: 12px; font-weight: 600; line-height: 1.15; }
+.pad-name { flex-shrink: 0; display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; max-width: 100%; padding-right: 6px; overflow: hidden; overflow-wrap: anywhere; font-size: 12px; font-weight: 600; line-height: 1.15; }
 .pad-light { position: absolute; width: 4px; height: 4px; right: 8px; bottom: 9px; border-radius: 50%; background: #22251f; }
 .pad.playing .pad-light { background: #f6b67e; box-shadow: 0 0 4px #f6b67e88; }
 .pad.accent.playing .pad-light { background: #fff1c9; }
@@ -221,7 +221,20 @@ dialog::backdrop { background: #25271fa6; backdrop-filter: blur(5px); }
   .transport { padding-top: 1px; }
   .transport button { height: 36px; font-size: 8px; }
 }
-@media (max-height: 500px) and (orientation: landscape) {
+@media (min-width: 651px) and (min-height: 621px) and (max-height: 760px) {
+  .machine { padding: 18px 26px; grid-template-rows: 34px 80px 36px 36px minmax(0, 1fr) 42px; gap: 10px; }
+  .wordmark { font-size: 26px; }
+  .small-button { width: 34px; height: 34px; }
+  .lcd { padding: 7px 11px; }
+  .lcd-top, .lcd-bottom { font-size: 8px; }
+  #now-playing { font-size: 17px; }
+  .control-row { padding-bottom: 4px; }
+  .pad { padding: 9px 13px 11px; }
+  .pad-number { font-size: 20px; }
+  .pad-key { top: 10px; right: 12px; }
+  .pad-name { font-size: 11px; }
+}
+@media (max-height: 620px) and (orientation: landscape) {
   body { padding: max(8px, env(safe-area-inset-top)) max(12px, env(safe-area-inset-right)) max(8px, env(safe-area-inset-bottom)) max(12px, env(safe-area-inset-left)); }
   .machine { padding: 14px 18px 16px; grid-template-columns: 210px minmax(0, 1fr); grid-template-rows: 34px minmax(0, 1fr) 34px 36px; gap: 12px 22px; }
   .masthead { grid-column: 1; grid-row: 1; }
