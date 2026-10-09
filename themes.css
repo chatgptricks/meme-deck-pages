@@ -1,0 +1,285 @@
+/* The palette changes independently of the era's physical materials. */
+:root[data-era] {
+  --ink: var(--case-ink);
+  --paper: var(--panel);
+  --orange: var(--accent);
+  --case-texture: repeating-linear-gradient(0deg,#ffffff04 0 1px,transparent 1px 3px);
+  --deck-radius: 25px;
+  --pad-radius: 9px;
+  --deck-font: Arial, Helvetica, sans-serif;
+  --label-font: Arial, Helvetica, sans-serif;
+  font-family: var(--deck-font);
+  color: var(--case-ink);
+}
+[data-era] body { background: radial-gradient(ellipse at 30% 10%,var(--case-dark),#151719 90%); }
+[data-era] .machine {
+  border-color: var(--case-light);
+  border-radius: var(--deck-radius);
+  background: var(--case-texture),linear-gradient(145deg,var(--case-light),var(--case-dark));
+  box-shadow: inset 0 2px 2px #fff8,inset 0 -6px 3px var(--case-dark),inset 3px 0 5px #fff3,inset -4px 0 4px #0002,0 15px 30px #0008,0 2px 2px #000b;
+}
+[data-era] .wordmark { text-shadow: 0 1px #ffffff18; font-family: var(--label-font); }
+[data-era] .wordmark span,[data-era] .speaker>span,[data-era] .footer-label { color: var(--muted-ink); }
+[data-era] .wordmark span { border-color: var(--line); }
+[data-era] .small-button,[data-era] .close {
+  background: linear-gradient(var(--case-light),var(--case));
+  border-color: var(--line); color: var(--case-ink);
+}
+[data-era] .grille { background: radial-gradient(ellipse at center,#111 1px,var(--case-dark) 1.7px,var(--case-light) 2px) 0 0/6px 6px; }
+[data-era] .lcd {
+  color: var(--display-ink); background: var(--display); border-color: var(--case-dark);
+  box-shadow: 0 2px 1px #fff3,inset 0 4px 9px #0008,0 -1px 2px #0006;
+}
+[data-era] #status-dot { background: var(--display-ink); }
+[data-era] .control-row { border-color: var(--line); box-shadow:0 1px #ffffff18; }
+[data-era] .volume input::-webkit-slider-runnable-track { background: var(--case-dark); }
+[data-era] .volume input::-moz-range-track { background: var(--case-dark); }
+[data-era] .volume input::-webkit-slider-thumb { border-color: var(--line); background: repeating-linear-gradient(90deg,var(--case-light) 0 2px,var(--case) 3px,var(--case-dark) 4px); }
+[data-era] .volume input::-moz-range-thumb { background: var(--case-light); border-color: var(--line); }
+[data-era] .toggle-track { background: var(--case-dark); }
+[data-era] .toggle-track i { background: linear-gradient(var(--case-light),var(--case)); }
+[data-era] .toggle-button[aria-pressed=true] .toggle-track { background: var(--accent); }
+[data-era] .bank-tabs button { color: var(--muted-ink); }
+[data-era] .bank-tabs button.selected { color: var(--accent-ink); background: var(--accent); }
+[data-era] .bank-selector select {
+  background: linear-gradient(var(--case-light),var(--case)); border-color: var(--line); color: var(--case-ink);
+}
+[data-era] .bank-selector select option { background: var(--panel); color: var(--panel-ink); }
+[data-era] .bank-selector>span { color: var(--case-ink); }
+[data-era] .pads { background: var(--case-dark); box-shadow: inset 0 2px 5px #0005,0 1px #fff3; }
+[data-era] .pad { border-radius: var(--pad-radius); text-shadow:none; font-family:var(--label-font); }
+[data-era] .pad:after { border-radius:inherit;background:none;box-shadow:inset 0 1px #ffffff38; }
+[data-era] .pad.tone-1 { --top:var(--accent-light);--bottom:var(--accent-dark);--color:var(--accent-ink);--border:var(--accent-dark);--edge:var(--accent-edge); }
+[data-era] .pad.tone-2 { --top:var(--pad-alt-light);--bottom:var(--pad-alt-dark);--color:var(--pad-alt-ink);--border:var(--pad-alt-dark);--edge:var(--pad-alt-edge); }
+[data-era] .pad.tone-3 { --top:var(--pad-alt2-light);--bottom:var(--pad-alt2-dark);--color:var(--pad-alt2-ink);--border:var(--pad-alt2-dark);--edge:var(--pad-alt2-edge); }
+[data-era] .pad.tone-4 { --top:var(--pad-light);--bottom:var(--pad-dark);--color:var(--pad-ink);--border:var(--pad-dark);--edge:var(--pad-edge); }
+[data-era] .pad { background:linear-gradient(155deg,var(--top),var(--bottom)); }
+[data-era] .pad-number,[data-era] .pad-key { opacity:1; }
+[data-era] .pad-light { background:var(--case-dark); }
+[data-era] .pad.playing .pad-light { background:var(--display-ink);box-shadow:0 0 8px var(--display-ink); }
+[data-era] .pad.empty { background:var(--case);border-color:var(--line); }
+[data-era] .empty-message,[data-era] .pad.favorite-add { color:var(--case-ink); }
+[data-era] .pad.favorite-add { background:var(--case);border-color:var(--line); }
+[data-era] .stop-button { color:var(--accent-ink);background:linear-gradient(var(--accent-light),var(--accent-dark));border-color:var(--line);box-shadow:inset 0 1px #fff6,0 2px 0 var(--case-dark),0 3px 3px #0003; }
+[data-era] .library-button { color:var(--case-ink);background:linear-gradient(var(--case-light),var(--case));border-color:var(--line);box-shadow:inset 0 1px #fff6,0 2px 0 var(--case-dark),0 3px 3px #0003; }
+[data-era] .power-led { background:var(--accent);box-shadow:0 0 6px var(--accent); }
+[data-era] dialog { color:var(--panel-ink);background:var(--panel);border-color:var(--line); }
+[data-era] dialog .overline,[data-era] dialog .dialog-note,[data-era] dialog .dialog-foot,[data-era] .settings-body p,[data-era] .sound-info small,[data-era] .sound-info a,[data-era] #favorite-count { color:var(--panel-ink);opacity:.8; }
+[data-era] dialog .close { background:var(--panel);color:var(--panel-ink); }
+[data-era] .primary-button { background:var(--accent);color:var(--accent-ink); }
+[data-era] .library-tools input,[data-era] .sound-preview,[data-era] .download-status { background:var(--case);color:var(--case-ink);border-color:var(--line); }
+[data-era] .sound-row,[data-era] .dialog-foot,[data-era] #favorite-actions { border-color:var(--line); }
+[data-era] .favorite-mode .sound-row.is-favorite { background:var(--case);color:var(--case-ink);box-shadow:inset 0 0 0 1px var(--line); }
+[data-era] .favorite-mode .sound-row.is-favorite small { color:var(--case-ink); }
+[data-era] .favorite,[data-era] .delete-sound,[data-era] .favorite-mode .favorite { background:var(--panel);color:var(--panel-ink);border-color:var(--line); }
+[data-era] .favorite[aria-pressed=true] { background:var(--accent);color:var(--accent-ink);border-radius:6px; }
+[data-era] #toast { background:var(--panel);color:var(--panel-ink);border:1px solid var(--line); }
+
+/* Legible engraved labels; material, rather than tiny type, identifies the era. */
+[data-era] .pad-name { font-family:Arial,Helvetica,sans-serif;font-weight:750;font-size:clamp(10px,1.5vh,14px);letter-spacing:.2px; }
+[data-era] .lcd-top,[data-era] .lcd-bottom { opacity:.85; }
+[data-era] .pad-number,[data-era] .pad-key { opacity:1; }
+[data-era] .pad-icon { filter:grayscale(1); }
+[data-era] .grille { position:relative;overflow:hidden; }
+[data-era] .lcd:after { opacity:.4; }
+
+/* 60s — a lacquered transistor radio, woven cloth and porcelain keys. */
+:root[data-era="1960"] { --deck-radius:24px;--pad-radius:18px;--label-font:Georgia,'Times New Roman',serif;--case-texture:repeating-linear-gradient(2deg,transparent 0 3px,#0000000a 4px,transparent 5px 9px),repeating-linear-gradient(92deg,transparent 0 65px,#ffffff08 68px,transparent 135px); }
+[data-era="1960"] .machine { border:3px solid var(--metal-dark);box-shadow:inset 0 0 0 2px var(--metal-light),inset 0 -8px 8px #0004,0 18px 30px #0008; }
+[data-era="1960"] .machine:before { content:'';position:absolute;inset:8px;border:1px solid var(--metal);border-radius:17px;pointer-events:none;opacity:.45; }
+[data-era="1960"] .wordmark { font-style:italic;letter-spacing:-1.4px; }
+[data-era="1960"] .grille { border:3px ridge var(--metal);background:repeating-linear-gradient(0deg,#0004 0 1px,transparent 1px 4px),repeating-linear-gradient(90deg,var(--metal-light) 0 2px,var(--metal-dark) 2px 4px);border-radius:13px;mask-image:none;box-shadow:inset 0 2px 6px #0008; }
+[data-era="1960"] .lcd { border:5px ridge var(--metal);border-radius:12px; }
+[data-era="1960"] .lcd:before { content:'';position:absolute;left:12px;right:12px;bottom:4px;height:4px;background:repeating-linear-gradient(90deg,var(--display-ink) 0 1px,transparent 1px 9px);opacity:.35; }
+[data-era="1960"] .pad { border:2px solid var(--border);box-shadow:inset 0 2px 1px var(--top),inset 0 -5px 3px var(--bottom),0 4px 0 var(--edge),0 6px 5px #0006; }
+[data-era="1960"] .pad:after { inset:3px;border:1px solid color-mix(in srgb,var(--top),var(--bottom) 50%);box-shadow:none; }
+[data-era="1960"] .pad-name { font-family:Georgia,'Times New Roman',serif;text-transform:none;letter-spacing:0; }
+[data-era="1960"] .small-button,[data-era="1960"] .library-button { border-width:2px; }
+
+/* 70s — a hi-fi receiver with wood cheeks and a brushed metal faceplate. */
+:root[data-era="1970"] { --deck-radius:10px;--pad-radius:5px;--case-texture:repeating-linear-gradient(0deg,transparent 0 2px,#ffffff06 2px 3px,#00000003 3px 4px); }
+[data-era="1970"] .machine { border-inline:10px solid var(--metal-dark);border-block:2px solid var(--metal);box-shadow:inset 2px 0 var(--metal-light),inset -2px 0 #0005,inset 0 -5px var(--case-dark),0 18px 25px #0008; }
+[data-era="1970"] .wordmark { letter-spacing:-1.8px;font-weight:900; }
+[data-era="1970"] .grille { border:2px solid var(--metal);background:repeating-linear-gradient(0deg,var(--display) 0 3px,var(--metal) 3px 5px);border-radius:3px;mask-image:none; }
+[data-era="1970"] .lcd { border:4px ridge var(--metal);border-radius:3px;box-shadow:inset 0 3px 8px #0008,0 1px var(--metal-light); }
+[data-era="1970"] .lcd:before { content:'';position:absolute;bottom:4px;left:10px;right:10px;height:4px;background:repeating-linear-gradient(90deg,var(--display-ink) 0 2px,transparent 2px 6px);opacity:.4; }
+[data-era="1970"] .pad { border-radius:5px 5px 8px 8px;border-bottom:4px solid var(--edge);box-shadow:inset 0 2px 0 var(--top),0 4px 0 var(--edge),0 6px 3px #0005; }
+[data-era="1970"] .volume input::-webkit-slider-thumb { border-radius:50%;width:26px;height:26px;margin-top:-11px;background:radial-gradient(circle at 35% 30%,var(--metal-light),var(--metal) 60%,var(--metal-dark)); }
+
+/* 80s — black cassette hardware, machined edges and bright function keys. */
+:root[data-era="1980"] { --deck-radius:7px;--pad-radius:3px;--case-texture:repeating-linear-gradient(0deg,#ffffff03 0 1px,transparent 1px 5px); }
+[data-era="1980"] .machine { border:2px solid var(--metal-dark);box-shadow:inset 0 3px 0 var(--metal),inset 0 -6px 0 #0005,0 15px 30px #0009; }
+[data-era="1980"] .wordmark { font-family:Arial,Helvetica,sans-serif;font-style:italic;text-transform:uppercase;font-weight:900;letter-spacing:-1.5px; }
+[data-era="1980"] .grille { border:2px solid var(--metal-dark);border-radius:3px;background:radial-gradient(circle at 27% 50%,var(--metal-dark) 0 3px,var(--metal-light) 3px 5px,var(--case-dark) 5px 11px,var(--metal) 11px 13px,transparent 14px),radial-gradient(circle at 73% 50%,var(--metal-dark) 0 3px,var(--metal-light) 3px 5px,var(--case-dark) 5px 11px,var(--metal) 11px 13px,transparent 14px),linear-gradient(var(--display),var(--case-dark));mask-image:none; }
+[data-era="1980"] .grille:after { content:'';position:absolute;left:25%;right:25%;height:2px;top:calc(50% + 10px);background:var(--metal);opacity:.8; }
+[data-era="1980"] .lcd { border:3px solid var(--metal-dark);border-radius:2px;box-shadow:inset 0 3px 9px #000b,0 1px var(--metal); }
+[data-era="1980"] .pads { border-radius:3px;border:2px solid var(--metal-dark); }
+[data-era="1980"] .pad { border:1px solid var(--border);border-bottom:4px solid var(--edge);box-shadow:inset 0 2px 0 var(--top),0 3px 0 var(--edge),0 5px 3px #0008; }
+[data-era="1980"] .pad:before { content:'';position:absolute;bottom:5px;left:8px;right:8px;height:2px;background:var(--color);opacity:.16; }
+
+/* 90s — warm console plastic, smoked screen surround and rubber buttons. */
+:root[data-era="1990"] { --deck-radius:16px;--pad-radius:11px;--case-texture:repeating-linear-gradient(135deg,#ffffff03 0 1px,#00000003 1px 3px); }
+[data-era="1990"] .machine { border-radius:16px 16px 38px 16px;border:2px solid var(--case-light);box-shadow:inset 0 3px var(--case-light),inset 0 -8px var(--case-dark),0 15px 24px #0006; }
+[data-era="1990"] .wordmark { font-style:italic;font-weight:900;letter-spacing:-1.2px; }
+[data-era="1990"] .wordmark svg { transform:rotate(-8deg); }
+[data-era="1990"] .grille { background:repeating-linear-gradient(130deg,transparent 0 6px,var(--metal-dark) 6px 9px);border-radius:4px 4px 18px 4px;mask-image:none; }
+[data-era="1990"] .lcd { border:6px solid var(--metal-dark);border-radius:6px 6px 22px 6px;box-shadow:inset 0 3px 6px #0004,0 2px var(--case-light); }
+[data-era="1990"] .pad { box-shadow:inset 0 2px 2px var(--top),inset 0 -3px 2px var(--bottom),0 5px 0 var(--edge),0 7px 4px #0005; }
+[data-era="1990"] .screw { background:var(--metal);box-shadow:inset 0 1px 2px #0006; }
+
+/* 00s — clear aqua plastic, silver hardware and sculpted gel keys. */
+:root[data-era="2000"] { --deck-radius:30px;--pad-radius:19px;--case-texture:repeating-linear-gradient(0deg,#ffffff08 0 1px,transparent 1px 4px); }
+[data-era="2000"] .machine { border:2px solid var(--metal-light);box-shadow:inset 0 3px var(--metal-light),inset 3px 0 0 var(--case-light),inset -3px 0 0 var(--case-light),inset 0 -8px 10px var(--case-dark),0 16px 30px #0006; }
+[data-era="2000"] .machine:before { content:'';position:absolute;inset:6px;border:1px solid var(--metal-light);border-radius:24px;pointer-events:none;opacity:.8; }
+[data-era="2000"] .wordmark { font-style:italic;letter-spacing:-1.8px;font-weight:600; }
+[data-era="2000"] .grille { border:1px solid var(--metal);background:radial-gradient(ellipse at center,var(--metal-dark) 0 1px,var(--metal) 1px 2px,var(--case-light) 2px) 0 0/5px 5px;border-radius:16px;mask-image:none; }
+[data-era="2000"] .lcd { border:5px ridge var(--metal);border-radius:19px;box-shadow:inset 0 2px 5px #0003,0 1px var(--metal-light); }
+[data-era="2000"] .pads { border:1px solid var(--metal);border-radius:17px;background:repeating-linear-gradient(90deg,transparent 0 14px,#ffffff0a 14px 15px),var(--case-dark); }
+[data-era="2000"] .pad { background:linear-gradient(180deg,var(--top),var(--bottom) 52%,var(--top) 100%);border:1px solid var(--top);box-shadow:inset 0 2px 0 var(--top),inset 0 -3px 2px var(--bottom),0 4px 0 var(--edge),0 6px 5px #0004; }
+[data-era="2000"] .pad:before { content:'';position:absolute;top:4px;left:25%;right:25%;height:12%;border-radius:50%;background:linear-gradient(#ffffff6b,transparent);pointer-events:none; }
+[data-era="2000"] .pad-icon { filter:none; }
+
+/* 10s — a powder-coated performance sampler with silicone drum pads. */
+:root[data-era="2010"] { --deck-radius:9px;--pad-radius:5px;--case-texture:repeating-linear-gradient(90deg,#ffffff02 0 1px,transparent 1px 3px); }
+[data-era="2010"] .machine { border:2px solid var(--case-dark);box-shadow:inset 0 2px var(--metal),inset 0 -4px #0005,0 18px 35px #0009; }
+[data-era="2010"] .wordmark { font-weight:400;letter-spacing:-1px; }
+[data-era="2010"] .lcd { border-radius:3px;border:3px solid var(--metal-dark); }
+[data-era="2010"] .pads { border-radius:5px;background:var(--display);box-shadow:inset 0 2px 3px #0008; }
+[data-era="2010"] .pad { background:linear-gradient(var(--top),var(--bottom));border:1px solid var(--edge);border-top:3px solid var(--top);box-shadow:inset 0 1px 3px var(--top),0 3px 0 var(--edge),0 5px 5px #0008; }
+[data-era="2010"] .pad:after { box-shadow:none; }
+[data-era="2010"] .pad-light { width:12px;height:3px;border-radius:1px; }
+[data-era="2010"] .screw { border-radius:2px;background:var(--metal-dark); }
+
+/* 20s — porcelain-like curves, quiet surfaces and pillowy keycaps. */
+:root[data-era="2020"] { --deck-radius:32px;--pad-radius:21px;--case-texture:none; }
+[data-era="2020"] .machine { border:1px solid var(--case-light);box-shadow:inset 0 2px 3px var(--case-light),inset 0 -4px 8px var(--case-dark),0 18px 30px #0004; }
+[data-era="2020"] .screw { opacity:.18; }
+[data-era="2020"] .grille { background:radial-gradient(circle,var(--metal-dark) 0 1px,transparent 1.4px) 0 0/6px 6px;box-shadow:none; }
+[data-era="2020"] .lcd { border-radius:19px;border:3px solid var(--case-dark);box-shadow:inset 0 1px 5px #0002,0 1px var(--case-light); }
+[data-era="2020"] .pads { background:transparent;box-shadow:none; }
+[data-era="2020"] .pad { border:1px solid var(--top);box-shadow:inset 0 2px 3px var(--top),3px 5px 7px #0002,-2px -2px 5px var(--case-light),0 3px 0 var(--edge); }
+[data-era="2020"] .pad-name { text-transform:none;letter-spacing:0; }
+[data-era="2020"] .wordmark { font-weight:700;letter-spacing:-1.3px; }
+[data-era="2020"] .bank-selector select,[data-era="2020"] .small-button { border-radius:10px; }
+
+/* 2090 — a sealed flight instrument with optical glass and lit seams. */
+:root[data-era="2090"] { --deck-radius:10px;--pad-radius:3px;--case-texture:repeating-linear-gradient(90deg,#ffffff02 0 1px,transparent 1px 38px); }
+[data-era="2090"] .machine { border:1px solid var(--accent);box-shadow:inset 0 0 0 4px var(--case-dark),inset 0 0 0 5px var(--metal-dark),0 0 18px color-mix(in srgb,var(--accent),transparent 90%),0 16px 30px #000a; }
+[data-era="2090"] .wordmark { font-family:Arial,Helvetica,sans-serif;font-size:23px;font-weight:500;letter-spacing:2px;text-transform:uppercase; }
+[data-era="2090"] .screw { width:5px;height:5px;border-radius:1px;background:var(--accent);box-shadow:0 0 5px var(--accent); }
+[data-era="2090"] .screw:after { display:none; }
+[data-era="2090"] .grille { background:repeating-linear-gradient(0deg,transparent 0 8px,var(--accent) 8px 9px);opacity:.6;mask-image:linear-gradient(90deg,transparent,#000 15%,#000 85%,transparent);box-shadow:none; }
+[data-era="2090"] .lcd { border:1px solid var(--metal);border-radius:3px;box-shadow:inset 0 0 16px #0006,0 0 10px color-mix(in srgb,var(--display-glow),transparent 86%); }
+[data-era="2090"] .lcd:before { content:'';position:absolute;inset:3px;border-block:1px solid var(--display-glow);opacity:.22;pointer-events:none; }
+[data-era="2090"] #now-playing { text-shadow:0 0 9px color-mix(in srgb,var(--display-glow),transparent 70%); }
+[data-era="2090"] .pads { border:1px solid var(--metal-dark);border-radius:3px;background:var(--display); }
+[data-era="2090"] .pad { background:linear-gradient(145deg,var(--top),var(--bottom));border:1px solid var(--metal);box-shadow:inset 0 0 0 2px var(--bottom),0 3px 0 var(--edge),0 5px 4px #0006; }
+[data-era="2090"] .pad:before { content:'';position:absolute;inset:4px;border-left:2px solid var(--color);border-right:2px solid var(--color);opacity:.13;pointer-events:none; }
+[data-era="2090"] .pad-light { background:var(--accent);box-shadow:0 0 4px var(--accent); }
+
+/* Press depth is shared; the futuristic frame also illuminates. */
+[data-era] .pad:active,[data-era] .pad.playing { transform:translateY(3px);box-shadow:inset 0 1px 4px #0002,0 1px 0 var(--edge),0 2px 2px #0003; }
+[data-era="2090"] .pad.playing { border-color:var(--accent);box-shadow:inset 0 0 0 2px var(--bottom),0 0 9px color-mix(in srgb,var(--accent),transparent 40%); }
+.header-actions { display:flex;align-items:center;gap:8px; }
+.theme-trigger { width:auto;padding:0 10px;display:flex;gap:7px;font:700 9px monospace;letter-spacing:.5px; }
+.theme-trigger svg { width:19px;height:19px; }
+
+/* One color control, with an always-visible generated palette. */
+#theme-dialog { width:min(590px,calc(100% - 24px));background:#f0eee7;color:#29332e;border:1px solid #fff;gap:16px; }
+#theme-dialog .overline,#theme-dialog .dialog-note,#theme-dialog .dialog-foot { color:#58645d;opacity:1; }
+#theme-dialog .close { background:linear-gradient(#fffdf7,#e0e1d8);color:#303a32;border-color:#c3c8bd; }
+#theme-dialog .dialog-head h2 { font:750 27px Arial,Helvetica,sans-serif;letter-spacing:-1px; }
+#theme-dialog .dialog-head,#theme-dialog .theme-color-panel,#theme-dialog .theme-foot { flex-shrink:0; }
+.theme-color-panel { border:1px solid #cbd0c5;background:#e6e8de;border-radius:12px;padding:14px; }
+.theme-custom-heading { display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:13px; }
+.theme-custom-heading h3 { margin:0;font-size:13px; }
+#theme-description { margin:4px 0 0;font:11px/1.35 Arial,Helvetica,sans-serif;color:#5e695f;max-width:340px; }
+#theme-reset { flex-shrink:0;min-height:32px;padding:4px 9px;border:1px solid #bcc5b7;border-radius:6px;background:#f2f4e9;color:#334638;font-size:11px;font-weight:700; }
+.theme-color-row { display:flex;align-items:center;justify-content:space-between;gap:20px; }
+.theme-color { display:flex;align-items:center;gap:10px;min-width:0;cursor:pointer; }
+.theme-color>span { font:700 12px Arial,Helvetica,sans-serif;white-space:nowrap; }
+.theme-color output { display:block;font:10px monospace;color:#59685e;margin-top:4px;text-transform:uppercase; }
+.theme-color input[type=color] { flex-shrink:0;appearance:none;-webkit-appearance:none;width:46px;height:46px;border:1px solid #abb8a7;border-radius:50%;background:#fff;padding:4px;cursor:pointer;box-shadow:0 2px 3px #0001; }
+.theme-color input::-webkit-color-swatch-wrapper { padding:0; }
+.theme-color input::-webkit-color-swatch { border:0;border-radius:50%; }
+.theme-color input::-moz-color-swatch { border:0;border-radius:50%; }
+.palette-result { min-width:0;width:175px; }
+#generated-palette { display:flex;height:23px;border-radius:6px;overflow:hidden;box-shadow:0 1px 2px #0002; }
+#generated-palette>* { flex:1;min-width:0; }
+.palette-result>span { display:block;color:#59685e;font-size:10px;margin-top:6px; }
+.theme-body { overflow:auto;overscroll-behavior:contain;min-height:0;padding:3px 4px 5px; }
+.theme-options { display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px; }
+.theme-card { position:relative;min-width:0;padding:7px 7px 10px;text-align:left;border:1px solid #c9cec2;border-radius:11px;background:#e4e7dd;color:#28392e;box-shadow:0 1px 2px #0001; }
+.theme-card[aria-pressed=true] { border-color:#3a5545;outline:2px solid #3a5545;outline-offset:1px;background:#fffef8; }
+.theme-card[aria-pressed=true]:after { content:'✓';position:absolute;top:10px;right:10px;width:17px;height:17px;display:grid;place-items:center;background:#fffdf3;color:#263f30;border-radius:50%;font:bold 11px Arial;box-shadow:0 1px 3px #0005; }
+.theme-preview { display:grid;grid-template-columns:20% 1fr;grid-template-rows:15px 1fr;gap:5px;height:76px;border-radius:7px;padding:7px;background:linear-gradient(145deg,var(--case-light),var(--case-dark));border:1px solid var(--metal);box-shadow:inset 0 1px var(--case-light),inset 0 -2px var(--case-dark),0 2px 2px #0002; }
+.preview-grille { background:repeating-linear-gradient(0deg,var(--metal-dark) 0 1px,transparent 1px 3px);border-radius:2px; }
+.preview-display { display:block;background:var(--display);border-radius:2px;box-shadow:inset 0 1px 2px #0004; }
+.preview-pads { grid-column:1/-1;display:grid;grid-template-columns:repeat(4,1fr);grid-template-rows:repeat(2,1fr);gap:4px; }
+.preview-pads i { background:linear-gradient(var(--pad-light),var(--pad-dark));border-radius:3px;box-shadow:inset 0 1px var(--pad-light),0 2px var(--pad-edge); }
+.preview-pads i:first-child { background:linear-gradient(var(--accent-light),var(--accent-dark));box-shadow:0 2px var(--accent-edge); }
+.preview-pads i:nth-child(4n+2) { background:linear-gradient(var(--pad-alt-light),var(--pad-alt-dark));box-shadow:0 2px var(--pad-alt-edge); }
+.preview-pads i:nth-child(4n+3) { background:linear-gradient(var(--pad-alt2-light),var(--pad-alt2-dark));box-shadow:0 2px var(--pad-alt2-edge); }
+.theme-era { display:block;margin:9px 2px 2px;font:800 14px Arial,Helvetica,sans-serif; }
+.theme-title { display:block;margin:0 2px;font:11px Arial,Helvetica,sans-serif;color:#526057; }
+.theme-card[data-era="1960"] .theme-preview { background:repeating-linear-gradient(2deg,transparent 0 2px,#0000000c 3px,transparent 4px 6px),linear-gradient(var(--case-light),var(--case-dark));border:2px ridge var(--metal); }
+.theme-card[data-era="1960"] .preview-pads i { border-radius:6px; }
+.theme-card[data-era="1970"] .theme-preview { border-inline:4px solid var(--metal-dark);border-radius:3px; }
+.theme-card[data-era="1980"] .theme-preview { border:2px solid var(--metal-dark);border-radius:2px; }
+.theme-card[data-era="1980"] .preview-pads i { border-radius:1px; }
+.theme-card[data-era="1990"] .theme-preview { border-radius:5px 5px 15px 5px; }
+.theme-card[data-era="1990"] .preview-display { border:2px solid var(--metal-dark); }
+.theme-card[data-era="2000"] .theme-preview { border:2px ridge var(--metal-light);border-radius:12px; }
+.theme-card[data-era="2000"] .preview-pads i { border-radius:7px; }
+.theme-card[data-era="2010"] .theme-preview { border-radius:3px;border-color:var(--metal-dark); }
+.theme-card[data-era="2020"] .theme-preview { border-radius:13px; }
+.theme-card[data-era="2020"] .preview-pads i { border-radius:6px; }
+.theme-card[data-era="2090"] .theme-preview { border:1px solid var(--accent);border-radius:2px; }
+.theme-card[data-era="2090"] .preview-display { border:1px solid var(--metal); }
+.theme-card[data-era="2090"] .preview-pads i { border:1px solid var(--metal);border-radius:1px; }
+.theme-foot { display:flex;justify-content:space-between;align-items:center;gap:12px;border-color:#c7cec1!important;line-height:1.4; }
+#theme-dialog .primary-button { background:#354c3f;color:#fff;min-width:75px; }
+.theme-card:focus-visible,#theme-reset:focus-visible { outline:3px solid #39796b;outline-offset:3px; }
+@media(max-width:650px) {
+  [data-era] .machine { border-radius:min(var(--deck-radius),24px); }
+  [data-era="1990"] .machine { border-bottom-right-radius:32px; }
+  [data-era] .pad-name { font-size:clamp(8.5px,2.5vw,11px);letter-spacing:0; }
+  [data-era="2090"] .wordmark { font-size:18px;letter-spacing:.2px; }
+  [data-era="1960"] .pad { border-width:1px; }
+}
+@media(max-width:420px) {
+  .wordmark span { display:none; }.theme-trigger { padding:0 8px; }
+  #theme-dialog { padding:16px 12px 12px;gap:12px; }
+  #theme-dialog .dialog-head h2 { font-size:25px; }
+  .theme-color-panel { padding:11px; }
+  .theme-color-row { gap:12px; }
+  .palette-result { width:120px; }
+  .palette-result>span { font-size:9px; }
+  .theme-custom-heading { gap:8px;margin-bottom:10px; }
+  #theme-description { font-size:10px; }
+  .theme-options { gap:8px; }.theme-card { padding:5px 5px 8px; }
+  .theme-preview { height:64px;padding:5px;gap:4px;grid-template-rows:12px 1fr; }
+  .preview-pads { gap:3px; }.theme-title { font-size:10px; }
+}
+@media(max-width:360px) {
+  .theme-trigger span { display:none; }.header-actions { gap:6px; }.theme-trigger { width:36px;justify-content:center; }
+  .theme-color>span { font-size:11px; }.theme-color { gap:7px; }
+  .theme-color input[type=color] { width:40px;height:40px; }.palette-result { width:95px; }
+  .theme-title { font-size:9px; }.theme-era { font-size:13px; }
+}
+@media(max-height:700px) and (orientation:portrait) {
+  [data-era] .pad { padding-top:10px;padding-bottom:5px; }
+  [data-era] .pad-icon { margin-bottom:3px; }
+  [data-era] .pad-name { font-size:8px; }
+}
+@media(max-height:500px) and (orientation:landscape) {
+  .theme-trigger span { display:none; }.theme-trigger { width:32px;padding:0;justify-content:center; }
+  .header-actions { gap:5px; }.header-actions .small-button { width:32px;height:28px; }
+  [data-era="2090"] .wordmark { font-size:16px;letter-spacing:-.8px; }
+  [data-era] .control-row { border:0;box-shadow:none; }
+  [data-era] .pad-name { font-size:8px; }
+  #theme-dialog { max-height:calc(100dvh - 18px);padding:12px 16px;gap:10px; }
+  .theme-color-panel { padding:8px 11px; }.theme-custom-heading { margin-bottom:8px; }
+  #theme-description { display:none; }.theme-color input[type=color] { height:34px;width:34px; }
+  .theme-options { grid-template-columns:repeat(3,minmax(0,1fr)); }
+}
