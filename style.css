@@ -144,6 +144,7 @@ dialog::backdrop { background: #25271fa6; backdrop-filter: blur(5px); }
 .sound-info { flex: 1; min-width: 0; }
 .sound-info strong { display: block; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: 13px; }
 .sound-info a, .sound-info small { display: block; margin-top: 5px; color: #5e6456; font-size: 11px; }
+.sound-info .sound-context { line-height: 1.4; }
 .favorite, .delete-sound { flex-shrink: 0; width: 44px; height: 44px; background: transparent; color: #666d5b; font-size: 25px; }
 .favorite[aria-pressed=true] { color: #ad421c; }
 .delete-sound { width: 30px; font-size: 20px; }
@@ -282,27 +283,17 @@ dialog::backdrop { background: #25271fa6; backdrop-filter: blur(5px); }
 .category-count { color: #5b6053; font: 10px 'Courier New', monospace; }
 .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; border: 0; }
 
-/* Video is the background of the active pad; the grid never changes. */
-.pad-online { position: absolute; top: 14px; right: 12px; font: 9px 'Courier New', monospace; color: #deded3; }
-#music-panel { cursor: default; isolation: isolate; transform: none; }
-#music-player { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: auto; z-index: 0; }
-#music-player iframe { display: block; width: 100%; height: 100%; border: 0; pointer-events: auto; }
-#music-panel > .pad-number, #music-panel > .pad-online, #music-panel > .pad-name { pointer-events: none; color: #fff; text-shadow: 0 1px 3px #000, 0 0 6px #000; }
-#music-panel > .pad-light { pointer-events: none; }
 @media (max-width: 650px) {
-  .pad-online { top: 12px; right: 7px; font-size: 8px; }
   #category-dialog { padding: 18px; }
   .category-card { padding: 9px; }
   .category-name { font-size: 12px; }
 }
 @media (max-height: 700px) and (orientation: portrait) {
-  .pad-online { top: 7px; right: 6px; font-size: 8px; }
   .category-card { min-height: 47px; padding: 7px 9px; }
   .category-group + .category-group { margin-top: 10px; }
   .category-group h3 { margin-bottom: 6px; }
 }
 @media (max-height: 620px) and (orientation: landscape) {
-  .pad-online { top: 8px; right: 7px; font-size: 8px; }
   #bank-name { font-size: 14px; }
   #bank-size { font-size: 9px; }
 }

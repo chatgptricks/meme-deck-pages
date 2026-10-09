@@ -1,10 +1,10 @@
 /* Increment VERSION whenever the app shell or bundled sound catalog changes. */
-const VERSION = 'meme-deck-v15-video-controls';
+const VERSION = 'meme-deck-v16-betty-audio';
 const BASE = new URL('./', self.registration.scope);
 // CacheStorage is shared by every project on a GitHub Pages origin.
 const CACHE_PREFIX = `meme-deck-scope:${encodeURIComponent(BASE.pathname)}:`;
 const CACHE_NAME = CACHE_PREFIX + VERSION;
-const SHELL = ['index.html', 'style.css', 'app.js', 'manifest.json', 'betty.json', 'icon-192.png', 'icon-512.png', 'icon-180.png'];
+const SHELL = ['index.html', 'style.css', 'app.js', 'manifest.json', 'icon-192.png', 'icon-512.png', 'icon-180.png'];
 const absolute = path => new URL(path, BASE).href;
 const shellURLs = new Set(SHELL.map(absolute));
 let catalogPromise;
@@ -32,10 +32,6 @@ async function fetchAsset(path, sound) {
     if (!type.includes('text/html') || !/src=["'](?:\.\/)?app\.js["']/.test(html) || !/rel=["']manifest["']/.test(html)) throw new Error('App sign-in required');
   } else {
     if (type.includes('text/html')) throw new Error('Unexpected sign-in response');
-    if (path === 'betty.json') {
-      // Cache only the online bank's metadata. The embedded media stays remote.
-      if (!type.includes('application/json') || !Array.isArray(await response.clone().json())) throw new Error('Invalid online sound catalog');
-    }
     if (sound) {
       const bytes = await response.clone().arrayBuffer();
       const hash = [...new Uint8Array(await crypto.subtle.digest('SHA-256', bytes))].map(byte => byte.toString(16).padStart(2, '0')).join('');
