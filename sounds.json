@@ -1,6 +1,7 @@
 [
   {
     "id": "fahhh",
+    "bank": "reactions",
     "name": "FAHHH",
     "category": "Reactions",
     "icon": "😱",
@@ -14,6 +15,7 @@
   },
   {
     "id": "vine-boom",
+    "bank": "stings",
     "name": "Vine Boom",
     "category": "Classics",
     "icon": "💥",
@@ -27,6 +29,7 @@
   },
   {
     "id": "bruh",
+    "bank": "reactions",
     "name": "Bruh",
     "category": "Reactions",
     "icon": "🗿",
@@ -40,6 +43,7 @@
   },
   {
     "id": "emotional-damage",
+    "bank": "taunts",
     "name": "Emotional Damage",
     "category": "Reactions",
     "icon": "💔",
@@ -53,6 +57,7 @@
   },
   {
     "id": "metal-pipe",
+    "bank": "stings",
     "name": "Metal Pipe",
     "category": "Effects",
     "icon": "🔧",
@@ -66,6 +71,7 @@
   },
   {
     "id": "air-horn",
+    "bank": "stings",
     "name": "Air Horn",
     "category": "Classics",
     "icon": "📣",
@@ -79,6 +85,7 @@
   },
   {
     "id": "xp-error",
+    "bank": "gaming",
     "name": "Windows Error",
     "category": "Gaming",
     "icon": "⚠",
@@ -92,6 +99,7 @@
   },
   {
     "id": "discord",
+    "bank": "gaming",
     "name": "Discord Ping",
     "category": "Gaming",
     "icon": "🔔",
@@ -105,6 +113,7 @@
   },
   {
     "id": "among-us",
+    "bank": "gaming",
     "name": "Among Us",
     "category": "Gaming",
     "icon": "👾",
@@ -118,6 +127,7 @@
   },
   {
     "id": "king-laugh",
+    "bank": "gaming",
     "name": "HE HE HE HA",
     "category": "Gaming",
     "icon": "👑",
@@ -131,6 +141,7 @@
   },
   {
     "id": "sad-violin",
+    "bank": "drama",
     "name": "Sad Violin",
     "category": "Classics",
     "icon": "🎻",
@@ -147,6 +158,7 @@
   },
   {
     "id": "wow",
+    "bank": "reactions",
     "name": "Anime Wow",
     "category": "Reactions",
     "icon": "✨",
@@ -160,6 +172,7 @@
   },
   {
     "id": "taco-bell",
+    "bank": "stings",
     "name": "Taco Bell",
     "category": "Classics",
     "icon": "🌮",
@@ -173,6 +186,7 @@
   },
   {
     "id": "oof",
+    "bank": "gaming",
     "name": "Roblox Oof",
     "category": "Gaming",
     "icon": "🤕",
@@ -186,6 +200,7 @@
   },
   {
     "id": "huh",
+    "bank": "reactions",
     "name": "Huh?",
     "category": "Reactions",
     "icon": "❔",
@@ -199,6 +214,7 @@
   },
   {
     "id": "sad-trombone",
+    "bank": "drama",
     "name": "Womp Womp",
     "category": "Classics",
     "icon": "🎺",
@@ -212,6 +228,7 @@
   },
   {
     "id": "get-out",
+    "bank": "reactions",
     "name": "GET OUT",
     "category": "Reactions",
     "icon": "🚪",
@@ -225,6 +242,7 @@
   },
   {
     "id": "fbi",
+    "bank": "quotes",
     "name": "FBI Open Up",
     "category": "Reactions",
     "icon": "🚨",
@@ -238,6 +256,7 @@
   },
   {
     "id": "rizz",
+    "bank": "taunts",
     "name": "Rizz",
     "category": "Reactions",
     "icon": "😏",
@@ -254,6 +273,7 @@
   },
   {
     "id": "bonk",
+    "bank": "stings",
     "name": "Bonk",
     "category": "Effects",
     "icon": "🔨",
@@ -267,6 +287,7 @@
   },
   {
     "id": "oh-my-god",
+    "bank": "reactions",
     "name": "Oh My God",
     "category": "Reactions",
     "icon": "😲",
@@ -280,6 +301,7 @@
   },
   {
     "id": "yeet",
+    "bank": "reactions",
     "name": "YEET",
     "category": "Reactions",
     "icon": "🚀",
@@ -293,6 +315,7 @@
   },
   {
     "id": "goofy-laugh",
+    "bank": "taunts",
     "name": "Goofy Laugh",
     "category": "Reactions",
     "icon": "😂",
@@ -306,6 +329,7 @@
   },
   {
     "id": "sad-meow",
+    "bank": "drama",
     "name": "Sad Meow",
     "category": "Classics",
     "icon": "😿",
@@ -322,6 +346,7 @@
   },
   {
     "id": "spongebob-fail",
+    "bank": "drama",
     "name": "SpongeBob Fail",
     "category": "Classics",
     "icon": "🧽",
@@ -335,6 +360,7 @@
   },
   {
     "id": "record-scratch",
+    "bank": "stings",
     "name": "Record Scratch",
     "category": "Effects",
     "icon": "💿",
@@ -348,6 +374,7 @@
   },
   {
     "id": "ba-dum-tss",
+    "bank": "taunts",
     "name": "Ba Dum Tss",
     "category": "Effects",
     "icon": "🥁",
@@ -361,6 +388,7 @@
   },
   {
     "id": "crickets",
+    "bank": "drama",
     "name": "Crickets",
     "category": "Effects",
     "icon": "🦗",
@@ -374,6 +402,7 @@
   },
   {
     "id": "nope",
+    "bank": "reactions",
     "name": "Nope",
     "category": "Reactions",
     "icon": "🙅",
@@ -387,6 +416,7 @@
   },
   {
     "id": "side-eye",
+    "bank": "taunts",
     "name": "Side Eye",
     "category": "Reactions",
     "icon": "👀",
@@ -400,6 +430,7 @@
   },
   {
     "id": "stop-cap",
+    "bank": "taunts",
     "name": "Stop the Cap",
     "category": "Reactions",
     "icon": "🧢",
@@ -413,6 +444,7 @@
   },
   {
     "id": "dog-doin",
+    "bank": "quotes",
     "name": "What Da Dog",
     "category": "Reactions",
     "icon": "🐕",
@@ -426,6 +458,7 @@
   },
   {
     "id": "2000-years",
+    "bank": "quotes",
     "name": "2000 Years Later",
     "category": "Classics",
     "icon": "⌛",
@@ -439,6 +472,7 @@
   },
   {
     "id": "deez-nuts",
+    "bank": "taunts",
     "name": "Deez Nuts",
     "category": "Reactions",
     "icon": "🥜",
@@ -452,6 +486,7 @@
   },
   {
     "id": "cut-g",
+    "bank": "quotes",
     "name": "I Like Ya Cut G",
     "category": "Reactions",
     "icon": "✋",
@@ -465,6 +500,7 @@
   },
   {
     "id": "what-he-say",
+    "bank": "quotes",
     "name": "What Did He Say",
     "category": "Reactions",
     "icon": "👂",
@@ -478,6 +514,7 @@
   },
   {
     "id": "why-bully",
+    "bank": "gaming",
     "name": "Why You Bully",
     "category": "Gaming",
     "icon": "🥺",
@@ -491,6 +528,7 @@
   },
   {
     "id": "john-cena",
+    "bank": "stings",
     "name": "John Cena",
     "category": "Classics",
     "icon": "🏆",
@@ -507,6 +545,7 @@
   },
   {
     "id": "fortnite-death",
+    "bank": "gaming",
     "name": "Fortnite Death",
     "category": "Gaming",
     "icon": "🎮",
@@ -520,6 +559,7 @@
   },
   {
     "id": "minecraft-eat",
+    "bank": "gaming",
     "name": "Minecraft Eat",
     "category": "Gaming",
     "icon": "🍖",
@@ -533,6 +573,7 @@
   },
   {
     "id": "old-spice",
+    "bank": "stings",
     "name": "Old Spice",
     "category": "Classics",
     "icon": "🎵",
@@ -546,6 +587,7 @@
   },
   {
     "id": "twenty-one",
+    "bank": "quotes",
     "name": "Twenty One",
     "category": "Classics",
     "icon": "🔢",
@@ -559,6 +601,7 @@
   },
   {
     "id": "daddy-chill",
+    "bank": "reactions",
     "name": "Daddy Chill",
     "category": "Reactions",
     "icon": "🧊",
@@ -572,6 +615,7 @@
   },
   {
     "id": "dont-care",
+    "bank": "taunts",
     "name": "We Do Not Care",
     "category": "Reactions",
     "icon": "🤷",
@@ -585,6 +629,7 @@
   },
   {
     "id": "he-knew",
+    "bank": "taunts",
     "name": "He Knew",
     "category": "Reactions",
     "icon": "💀",
@@ -598,6 +643,7 @@
   },
   {
     "id": "rehehehe",
+    "bank": "taunts",
     "name": "Rehehehe",
     "category": "Reactions",
     "icon": "😈",
@@ -611,6 +657,7 @@
   },
   {
     "id": "wrong-answer",
+    "bank": "stings",
     "name": "Wrong Answer",
     "category": "Effects",
     "icon": "❌",
@@ -624,6 +671,7 @@
   },
   {
     "id": "continued",
+    "bank": "drama",
     "name": "To Be Continued",
     "category": "Classics",
     "icon": "➡",
@@ -914,6 +962,7 @@
   },
   {
     "id": "meme-run-meme",
+    "bank": "drama",
     "name": "Run!",
     "category": "Reactions",
     "pack": "memes",
@@ -932,6 +981,7 @@
   },
   {
     "id": "meme-dun-dun-dunnnn",
+    "bank": "drama",
     "name": "Dun Dun Duuun",
     "category": "Classics",
     "pack": "memes",
@@ -950,6 +1000,7 @@
   },
   {
     "id": "meme-open-the-noor",
+    "bank": "quotes",
     "name": "Open the Noor",
     "category": "Reactions",
     "pack": "memes",
@@ -968,6 +1019,7 @@
   },
   {
     "id": "meme-hell-nah",
+    "bank": "reactions",
     "name": "Hell Nah",
     "category": "Reactions",
     "pack": "memes",
@@ -986,6 +1038,7 @@
   },
   {
     "id": "meme-are-you-serious-right-now-bro",
+    "bank": "reactions",
     "name": "Are You Serious?",
     "category": "Reactions",
     "pack": "memes",
@@ -1004,6 +1057,7 @@
   },
   {
     "id": "meme-i-like-turtles",
+    "bank": "quotes",
     "name": "I Like Turtles",
     "category": "Classics",
     "pack": "memes",
@@ -1022,6 +1076,7 @@
   },
   {
     "id": "meme-bing-chilling",
+    "bank": "quotes",
     "name": "Bing Chilling",
     "category": "Reactions",
     "pack": "memes",
@@ -1040,6 +1095,7 @@
   },
   {
     "id": "meme-please-speed-i-need-this",
+    "bank": "gaming",
     "name": "Please Speed",
     "category": "Gaming",
     "pack": "memes",
@@ -1058,6 +1114,7 @@
   },
   {
     "id": "meme-hog-raida",
+    "bank": "gaming",
     "name": "Hog Rider",
     "category": "Gaming",
     "pack": "memes",
@@ -1076,6 +1133,7 @@
   },
   {
     "id": "meme-you-need-to-leave",
+    "bank": "quotes",
     "name": "You Need to Leave",
     "category": "Reactions",
     "pack": "memes",
@@ -1094,6 +1152,7 @@
   },
   {
     "id": "meme-price-is-right-losing-horn",
+    "bank": "drama",
     "name": "Price Is Right Fail",
     "category": "Classics",
     "pack": "memes",
@@ -1112,6 +1171,7 @@
   },
   {
     "id": "meme-yippee-tbh",
+    "bank": "reactions",
     "name": "Yippee!",
     "category": "Reactions",
     "pack": "memes",
@@ -1130,6 +1190,7 @@
   },
   {
     "id": "meme-r2d2-scream",
+    "bank": "drama",
     "name": "R2-D2 Scream",
     "category": "Classics",
     "pack": "memes",
@@ -1148,6 +1209,7 @@
   },
   {
     "id": "meme-boo-you-stink",
+    "bank": "taunts",
     "name": "Boo! You Stink",
     "category": "Reactions",
     "pack": "memes",
@@ -1166,6 +1228,7 @@
   },
   {
     "id": "meme-they-ask-you-how-you-feeling",
+    "bank": "drama",
     "name": "Say That You’re Fine",
     "category": "Reactions",
     "pack": "memes",
@@ -1184,6 +1247,7 @@
   },
   {
     "id": "meme-giggity",
+    "bank": "quotes",
     "name": "Giggity",
     "category": "Classics",
     "pack": "memes",

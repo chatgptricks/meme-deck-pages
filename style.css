@@ -88,16 +88,6 @@ svg { fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round
 .toggle-button[aria-pressed=true] .toggle-track { background: #d7a288; }
 .toggle-button[aria-pressed=true] i { transform: translateX(18px); background: #a93d18; }
 .bank-bar { display: flex; align-items: center; justify-content: space-between; gap: 12px; min-width: 0; }
-.bank-tabs { display: flex; gap: 3px; }
-.bank-tabs button { position: relative; min-height: 40px; padding: 0 12px; background: transparent; font-size: 9px; font-weight: 600; letter-spacing: .6px; color: var(--muted); }
-.bank-tabs button:first-child { padding-left: 0; }
-.bank-tabs button.selected { color: var(--ink); }
-.bank-tabs button.selected::after { content: ''; position: absolute; bottom: 1px; left: 12px; right: 12px; height: 3px; background: var(--orange); }
-.bank-tabs button:first-child.selected::after { left: 0; }
-.bank-selector { display: none; position: relative; width: 220px; max-width: calc(100% - 114px); min-width: 0; }
-.bank-selector select { appearance: none; -webkit-appearance: none; width: 100%; height: 40px; padding: 0 28px 0 0; font-size: 16px; font-weight: 600; border: 0; border-bottom: 2px solid var(--orange); border-radius: 0; color: #292b27; background: transparent; color-scheme: light; cursor: pointer; }
-.bank-selector select option { font: 16px Arial, sans-serif; color: #292b27; background: #e6e3da; }
-.bank-selector > span { position: absolute; right: 6px; top: 50%; transform: translateY(-50%); pointer-events: none; font-size: 15px; }
 .pagination { display: flex; align-items: center; gap: 4px; font: 10px 'Courier New', monospace; white-space: nowrap; }
 .pagination button { width: 33px; height: 40px; background: transparent; font-size: 24px; font-weight: 400; }
 .pads { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); grid-template-rows: repeat(4, minmax(0, 1fr)); gap: 12px; min-height: 0; padding-bottom: 3px; }
@@ -170,10 +160,6 @@ dialog::backdrop { background: #25271fa6; backdrop-filter: blur(5px); }
 .favorite-mode .favorite[aria-pressed=true] { background: #e9cbb1; border-color: #cba681; color: #9d3f1a; }
 #toast { display: none; position: fixed; z-index: 20; left: 50%; bottom: max(20px, env(safe-area-inset-bottom)); transform: translateX(-50%); max-width: calc(100% - 32px); padding: 12px 18px; border-radius: 5px; background: #33392c; color: #f4f2e7; box-shadow: 0 4px 20px #0004; font-size: 12px; }
 #toast.visible { display: block; }
-@media (max-width: 1050px) {
-  .bank-tabs { display: none; }
-  .bank-selector { display: block; }
-}
 @media (max-width: 650px) {
   body { padding: max(8px, env(safe-area-inset-top)) max(8px, env(safe-area-inset-right)) max(8px, env(safe-area-inset-bottom)) max(8px, env(safe-area-inset-left)); background: var(--case); }
   .machine { padding: 18px 17px 18px; border-radius: 12px; grid-template-rows: 40px 91px 43px 40px minmax(0, 1fr) 45px; gap: 12px; }
@@ -213,7 +199,6 @@ dialog::backdrop { background: #25271fa6; backdrop-filter: blur(5px); }
   #now-playing { font-size: 14px; }
   .volume input { height: 30px; }
   .toggle-button { min-height: 32px; }
-  .bank-selector select, .pagination button { height: 35px; }
   .pads { gap: 8px; }
   .pad { padding: 7px 8px 9px; }
   .pad-number { font-size: 18px; }
@@ -254,9 +239,6 @@ dialog::backdrop { background: #25271fa6; backdrop-filter: blur(5px); }
   .volume output { font-size: 9px; }
   .toggle-button { gap: 5px; font-size: 7px; min-height: 34px; letter-spacing: 0; }
   .bank-bar { grid-column: 2; grid-row: 1; }
-  .bank-tabs { display: none; }
-  .bank-selector { display: block; }
-  .bank-selector select, .pagination button { height: 34px; }
   .pads { grid-column: 2; grid-row: 2 / 5; gap: 9px; }
   .pad { padding: 8px 10px 10px; }
   .pad-number { font-size: 19px; }
@@ -277,37 +259,50 @@ dialog::backdrop { background: #25271fa6; backdrop-filter: blur(5px); }
   .pad { padding: 5px 6px 7px; }
   .pad-number { font-size: 15px; }
   .pad-name { font-size: 8px; }
-  .bank-selector { max-width: calc(100% - 95px); }
-  .bank-selector select { font-size: 16px; }
   .pagination { font-size: 9px; gap: 0; }
   .pagination button { width: 27px; }
   .transport button { font-size: 6px; padding: 0 4px; gap: 3px; }
 }
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { transition: none !important; animation: none !important; } }
 
-/* Online soundtrack players keep the video and its own controls visible. */
+/* One clear category control, with sound counts in the chooser. */
+.category-trigger { display: flex; align-items: center; gap: 12px; width: 100%; min-width: 0; height: 100%; padding: 0 0 4px; text-align: left; border-bottom: 2px solid var(--orange); background: transparent; }
+.category-current { min-width: 0; flex: 1; }
+#bank-group { display: block; color: var(--muted); font-size: 8px; letter-spacing: 1px; text-transform: uppercase; }
+#bank-name { display: block; font-size: 17px; line-height: 1.15; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+#bank-size { color: var(--muted); font: 10px 'Courier New', monospace; white-space: nowrap; }
+#category-dialog { width: min(600px, calc(100% - 24px)); }
+#category-list { min-height: 0; overflow: auto; overscroll-behavior: contain; }
+.category-group + .category-group { margin-top: 16px; }
+.category-group h3 { margin: 0 0 8px; color: var(--muted); font-size: 10px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; }
+.category-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 7px; }
+.category-card { display: flex; flex-direction: column; justify-content: center; gap: 4px; min-height: 54px; min-width: 0; padding: 10px 12px; text-align: left; border: 1px solid #c0c1b6; border-radius: 5px; background: #d8d9ce; box-shadow: inset 0 1px #ffffff80, 0 2px 0 #b9baae; }
+.category-card.selected { border-color: #ab451e; background: #e8c5ac; box-shadow: inset 3px 0 #cd5425; }
+.category-name { font-size: 13px; font-weight: 600; }
+.category-count { color: #5b6053; font: 10px 'Courier New', monospace; }
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; border: 0; }
+
+/* Video is the background of the active pad; the grid never changes. */
 .pad-online { position: absolute; top: 14px; right: 12px; font: 9px 'Courier New', monospace; color: #deded3; }
-#music-dialog { width: min(600px, calc(100% - 24px)); }
-#music-dialog .dialog-head h2 { font-size: 23px; }
-.music-body { display: flex; flex-direction: column; gap: 12px; min-height: 0; overflow: auto; overscroll-behavior: contain; }
-#music-player { width: 100%; min-height: 200px; flex-shrink: 0; background: #252822; border-radius: 4px; overflow: hidden; }
-#music-player iframe { display: block; width: 100%; height: max(200px, 31vw); max-height: 310px; border: 0; }
-.music-actions { display: flex; align-items: center; flex-wrap: wrap; gap: 10px; flex-shrink: 0; }
-.music-actions .stop-button, .music-actions .primary-button { height: 40px; min-width: 70px; }
-.music-actions a { margin-left: auto; color: #484e3e; font-size: 11px; }
-@media (max-width: 650px) { .pad-online { top: 12px; right: 7px; font-size: 8px; } #music-dialog { padding: 18px; } #music-dialog .dialog-head h2 { font-size: 21px; } .music-actions a { margin: 0; } }
-@media (max-height: 700px) { .pad-online { top: 8px; right: 7px; font-size: 8px; } }
-@media (max-height: 500px) and (orientation: landscape) {
-  #music-dialog { width: min(820px, calc(100% - 16px)); max-height: calc(100dvh - 16px); padding: 10px; gap: 8px; }
-  #music-dialog .overline { display: none; }
-  #music-dialog .dialog-head h2 { font-size: 18px; margin: 0; }
-  #music-dialog .close { width: 30px; height: 30px; }
-  .music-body { display: grid; grid-template-columns: minmax(130px, .85fr) minmax(200px, 1.7fr); grid-template-rows: 1fr 1fr; gap: 8px 16px; min-height: 200px; }
-  #music-context { grid-column: 1; grid-row: 1; }
-  #music-status { grid-column: 1; grid-row: 2; }
-  #music-player { grid-column: 2; grid-row: 1 / 3; }
-  #music-player iframe { height: 200px; }
-  #music-dialog .dialog-note { font-size: 10px; line-height: 1.4; }
-  .music-actions .stop-button, .music-actions .primary-button { height: 30px; }
-  .music-actions a { margin-left: auto; }
+#music-panel { cursor: pointer; isolation: isolate; transform: none; }
+#music-player { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; z-index: -1; }
+#music-player iframe { display: block; width: 100%; height: 100%; border: 0; pointer-events: none; }
+#music-panel > .pad-number, #music-panel > .pad-online, #music-panel > .pad-name { pointer-events: none; color: #fff; text-shadow: 0 1px 3px #000, 0 0 6px #000; }
+#music-panel > .pad-light { pointer-events: none; }
+@media (max-width: 650px) {
+  .pad-online { top: 12px; right: 7px; font-size: 8px; }
+  #category-dialog { padding: 18px; }
+  .category-card { padding: 9px; }
+  .category-name { font-size: 12px; }
+}
+@media (max-height: 700px) and (orientation: portrait) {
+  .pad-online { top: 7px; right: 6px; font-size: 8px; }
+  .category-card { min-height: 47px; padding: 7px 9px; }
+  .category-group + .category-group { margin-top: 10px; }
+  .category-group h3 { margin-bottom: 6px; }
+}
+@media (max-height: 620px) and (orientation: landscape) {
+  .pad-online { top: 8px; right: 7px; font-size: 8px; }
+  #bank-name { font-size: 14px; }
+  #bank-size { font-size: 9px; }
 }

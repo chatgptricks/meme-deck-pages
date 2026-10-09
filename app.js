@@ -1,16 +1,36 @@
 const $ = selector => document.querySelector(selector);
+const musicPanel = $('#music-panel'), musicParking = $('#music-parking');
+const musicLabels = new Map(['pad-number', 'pad-online', 'pad-name', 'pad-light'].map(className => {
+  const label = document.createElement('span'); label.className = className; label.setAttribute('aria-hidden', 'true'); musicPanel.append(label);
+  return [className, label];
+}));
 const PAGE_SIZE = 16;
 const SHORTCUTS = '1234qwerasdfzxcv';
 const readSetting = (key, fallback) => { try { return JSON.parse(localStorage.getItem(key)) ?? fallback; } catch { return fallback; } };
 const saveSetting = (key, value) => { try { localStorage.setItem(key, JSON.stringify(value)); } catch { /* The board still works without localStorage. */ } };
-let catalog = [], musicCatalog = [], customs = [], bank = 'all', page = 0;
+const BANKS = [
+  { id: 'reactions', name: 'Reacciones', group: 'Memes' },
+  { id: 'quotes', name: 'Frases', group: 'Memes' },
+  { id: 'taunts', name: 'Risas y burlas', group: 'Memes' },
+  { id: 'drama', name: 'Drama y fails', group: 'Memes' },
+  { id: 'gaming', name: 'Gaming', group: 'Memes' },
+  { id: 'stings', name: 'Efectos meme', group: 'Memes' },
+  { id: 'sfx', name: 'Efectos de sonido', group: 'Colecciones' },
+  { id: 'animals', name: 'Animales', group: 'Colecciones' },
+  { id: 'mj', name: 'Michael Jackson', group: 'Colecciones' },
+  { id: 'betty', name: 'Betty la fea', group: 'Colecciones' },
+  { id: 'fav', name: 'Favoritos', group: 'Tu colección' },
+  { id: 'custom', name: 'Mis sonidos', group: 'Tu colección' }
+];
+const savedBank = readSetting('meme-deck-bank', 'reactions');
+let catalog = [], musicCatalog = [], customs = [], bank = BANKS.some(item => item.id === savedBank) ? savedBank : 'reactions', page = 0;
 let favorites = new Set(readSetting('meme-deck-favorites', readSetting('favorites', [])));
 let overlap = readSetting('meme-deck-overlap', false);
 let volume = Math.max(0, Math.min(100, Number(readSetting('meme-deck-volume', 75)) || 0));
 let context, master, analyser, animation, toastTimer, generation = 0, lastSound;
 const buffers = new Map(), downloads = new Map(), pending = new Map(), playing = new Map();
 let libraryReady = false, catalogFailed = false, musicCatalogFailed = false, favoritePicker = false;
-let activeMusic = null, selectedMusic = null;
+let activeMusic = null;
 const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
 const dbReady = new Promise((resolve, reject) => {
   const request = indexedDB.open('meme-deck', 1);
@@ -38,17 +58,39 @@ function toast(message) {
 }
 function allSounds() { return [...catalog, ...musicCatalog, ...customs]; }
 function musicDurationLabel(sound) { return sound.duration === 60 ? '~1 min' : `${sound.duration}s`; }
-function bankSounds() {
+function bankSounds(selectedBank = bank) {
   return allSounds().filter(sound => {
-    if (bank === 'fav') return favorites.has(sound.id);
-    if (bank === 'custom') return !!sound.blob;
-    if (['sfx', 'animals', 'mj', 'betty'].includes(bank)) return sound.pack === bank;
-    return !sound.blob && (!sound.pack || sound.pack === 'memes');
+    if (selectedBank === 'fav') return favorites.has(sound.id);
+    if (selectedBank === 'custom') return !!sound.blob;
+    if (['sfx', 'animals', 'mj', 'betty'].includes(selectedBank)) return sound.pack === selectedBank;
+    return !sound.blob && (!sound.pack || sound.pack === 'memes') && (sound.bank || 'reactions') === selectedBank;
   });
+}
+function renderCategories() {
+  const fragment = document.createDocumentFragment();
+  for (const group of [...new Set(BANKS.map(item => item.group))]) {
+    const section = document.createElement('section'); section.className = 'category-group';
+    const heading = document.createElement('h3'); heading.textContent = group;
+    const grid = document.createElement('div'); grid.className = 'category-grid';
+    for (const item of BANKS.filter(item => item.group === group)) {
+      const button = document.createElement('button'); button.className = 'category-card'; button.dataset.bank = item.id;
+      button.classList.toggle('selected', item.id === bank); button.setAttribute('aria-pressed', item.id === bank);
+      const name = document.createElement('span'); name.className = 'category-name'; name.textContent = item.name;
+      const count = document.createElement('span'); count.className = 'category-count'; count.textContent = `${bankSounds(item.id).length} sonidos${item.id === 'betty' ? ' · online' : ''}`;
+      button.append(name, count);
+      button.onclick = () => { selectBank(item.id); $('#category-dialog').close(); };
+      grid.append(button);
+    }
+    section.append(heading, grid); fragment.append(section);
+  }
+  $('#category-list').replaceChildren(fragment);
 }
 function visibleSounds() { return bankSounds().slice(page * PAGE_SIZE, (page + 1) * PAGE_SIZE); }
 function renderPads() {
   const list = bankSounds();
+  const pads = $('#pads');
+  const preservePlayer = !!activeMusic && musicPanel.parentNode === pads;
+  let activeIndex = -1;
   $('#library-icon').textContent = bank === 'fav' ? '★' : '＋';
   $('#library-label').textContent = bank === 'fav' ? 'ADD FAVORITES' : 'SOUND LIBRARY';
   const pages = Math.max(1, Math.ceil(list.length / PAGE_SIZE));
@@ -56,6 +98,13 @@ function renderPads() {
   $('#page').textContent = `${String(page + 1).padStart(2, '0')} / ${String(pages).padStart(2, '0')}`;
   $('#previous').disabled = page === 0;
   $('#next').disabled = page >= pages - 1;
+  $('#pagination').hidden = pages <= 1;
+  const selectedBank = BANKS.find(item => item.id === bank);
+  $('#bank-group').textContent = selectedBank.group;
+  $('#bank-name').textContent = selectedBank.name;
+  $('#bank-size').textContent = `${list.length} sonidos`;
+  $('#bank-picker').setAttribute('aria-label', `Cambiar categoría: ${selectedBank.name}, ${list.length} sonidos`);
+  if ($('#category-dialog').open) renderCategories();
   $('#sound-count').textContent = `${list.length} ${bank === 'custom' ? 'CUSTOM SOUNDS' : bank === 'fav' ? 'FAVORITES' : bank === 'sfx' ? 'SOUND EFFECTS' : bank === 'animals' ? 'ANIMAL SOUNDS' : bank === 'mj' ? 'MJ VOCAL CLIPS' : bank === 'betty' ? 'BETTY · ONLINE' : 'REAL MEME CLIPS'}`;
   const fragment = document.createDocumentFragment();
   if (!list.length) {
@@ -66,8 +115,8 @@ function renderPads() {
     const text = document.createElement('p');
     text.textContent = bank === 'custom' ? 'Import a clip from Files to get started.' : bank === 'fav' ? 'Pick your go-to memes and sound effects with a tap.' : failed ? 'Check your connection and retry.' : 'One tiny pack. Plenty of chaos.';
     const action = document.createElement('button'); action.className = 'primary-button';
-    action.textContent = ['all', 'sfx', 'animals', 'mj', 'betty'].includes(bank) ? 'Retry' : bank === 'fav' ? '★ Choose favorites' : 'Open library';
-    action.onclick = ['all', 'sfx', 'animals', 'mj', 'betty'].includes(bank) ? loadCatalog : () => openLibrary(bank === 'fav');
+    action.textContent = !['fav', 'custom'].includes(bank) ? 'Retry' : bank === 'fav' ? '★ Choose favorites' : 'Open library';
+    action.onclick = !['fav', 'custom'].includes(bank) ? loadCatalog : () => openLibrary(bank === 'fav');
     empty.append(title, text, action); fragment.append(empty);
   } else {
     for (let index = 0; index < PAGE_SIZE; index++) {
@@ -84,6 +133,20 @@ function renderPads() {
         } else { button.className = 'pad empty'; button.disabled = true; button.setAttribute('aria-hidden', 'true'); }
         fragment.append(button); continue;
       }
+      if (sound.id === activeMusic?.id) {
+        activeIndex = index;
+        musicPanel.dataset.id = sound.id;
+        musicPanel.setAttribute('role', 'button');
+        musicPanel.tabIndex = 0;
+        musicPanel.setAttribute('aria-label', `Stop ${sound.name}`);
+        musicPanel.setAttribute('aria-keyshortcuts', SHORTCUTS[index]);
+        musicLabels.get('pad-number').textContent = String(page * PAGE_SIZE + index + 1).padStart(2, '0');
+        musicLabels.get('pad-online').textContent = `${sound.duration === 60 ? '1m' : sound.duration + 's'} ↗`;
+        musicLabels.get('pad-name').textContent = sound.label || sound.name;
+        musicPanel.classList.add('playing');
+        if (!preservePlayer) fragment.append(musicPanel);
+        continue;
+      }
       button.dataset.id = sound.id;
       button.setAttribute('aria-label', `Play ${sound.name}`);
       button.setAttribute('aria-keyshortcuts', SHORTCUTS[index]);
@@ -94,12 +157,20 @@ function renderPads() {
       fragment.append(button);
     }
   }
-  $('#pads').replaceChildren(fragment);
+  if (preservePlayer) {
+    // Keep the live iframe connected: moving it during a count/catalog refresh
+    // would restart YouTube playback in Safari.
+    for (const child of [...pads.children]) if (child !== musicPanel) child.remove();
+    [...fragment.children].forEach((child, index) => {
+      if (index < activeIndex) pads.insertBefore(child, musicPanel);
+      else pads.append(child);
+    });
+  } else pads.replaceChildren(fragment);
   updatePadState();
 }
 function updatePadState() {
   document.querySelectorAll('.pad[data-id]').forEach(button => {
-    const live = [...playing.values()].some(item => item.sound.id === button.dataset.id);
+    const live = activeMusic?.id === button.dataset.id || [...playing.values()].some(item => item.sound.id === button.dataset.id);
     button.classList.toggle('playing', live);
     button.classList.toggle('loading', [...pending.values()].some(sound => sound.id === button.dataset.id));
   });
@@ -142,12 +213,17 @@ function stopLocalAudio() {
   for (const [source] of playing) { try { source.stop(); } catch {} }
   playing.clear();
 }
-function stopMusic(closeDialog = true) {
+function stopMusic(restorePads = true) {
+  const hadMusic = !!activeMusic || !musicPanel.hidden;
   activeMusic = null;
   $('#music-player').replaceChildren();
-  $('#music-status').textContent = 'Stopped. Replay to open the YouTube player again.';
-  $('#music-stop').disabled = true;
-  if (closeDialog && $('#music-dialog').open) $('#music-dialog').close();
+  $('#music-status').textContent = 'Stopped.';
+  musicPanel.hidden = true;
+  musicPanel.classList.remove('playing');
+  delete musicPanel.dataset.id;
+  $('.machine').classList.remove('music-open');
+  if (musicPanel.parentNode !== musicParking) musicParking.append(musicPanel);
+  if (restorePads && hadMusic) renderPads();
 }
 function stopAll() {
   stopLocalAudio();
@@ -160,25 +236,26 @@ function playMusic(sound) {
   stopLocalAudio();
   stopMusic(false);
   if ($('#library-dialog').open) $('#library-dialog').close();
-  selectedMusic = activeMusic = lastSound = sound;
+  if (!visibleSounds().some(item => item.id === sound.id)) {
+    bank = 'betty'; page = 0; saveSetting('meme-deck-bank', bank);
+  }
+  activeMusic = lastSound = sound;
   const start = Number.isSafeInteger(sound.start) && sound.start >= 0 ? sound.start : 0;
   const url = new URL(`https://www.youtube-nocookie.com/embed/${sound.videoId}`);
-  url.search = new URLSearchParams({ start: String(start), end: String(start + sound.duration), autoplay: '1', playsinline: '1', controls: '1', rel: '0' });
+  url.search = new URLSearchParams({ start: String(start), end: String(start + sound.duration), autoplay: '1', playsinline: '1', controls: '0', fs: '0', disablekb: '1', rel: '0' });
   const frame = document.createElement('iframe');
-  frame.src = url.href;
   frame.title = `${sound.name} · YouTube player`;
-  frame.width = '560'; frame.height = '315';
-  frame.allow = 'autoplay; encrypted-media; picture-in-picture; fullscreen';
-  frame.allowFullscreen = true;
+  frame.width = '100%'; frame.height = '100%'; frame.tabIndex = -1;
+  frame.allow = 'autoplay; encrypted-media';
   frame.referrerPolicy = 'strict-origin-when-cross-origin';
   $('#music-title').textContent = sound.name;
   $('#music-context').textContent = [sound.artist, sound.context].filter(Boolean).join(' · ');
-  $('#music-source').href = `https://www.youtube.com/watch?v=${sound.videoId}&t=${start}s`;
-  $('#music-status').textContent = `YouTube · online · ${musicDurationLabel(sound)}. Use the player controls for playback and volume. If unavailable, open it on YouTube.`;
-  $('#music-stop').disabled = false;
-  $('#music-replay').disabled = false;
+  $('#music-status').textContent = `YouTube · online · ${musicDurationLabel(sound)}. Tap this pad or Stop All to stop.`;
+  musicPanel.hidden = false;
+  $('.machine').classList.add('music-open');
+  renderPads();
   $('#music-player').replaceChildren(frame);
-  if (!$('#music-dialog').open) $('#music-dialog').showModal();
+  frame.src = url.href;
   updatePlaybackState();
 }
 async function play(sound) {
@@ -246,7 +323,7 @@ function animate() {
 }
 function renderLibrary() {
   const fragment = document.createDocumentFragment(), search = $('#search').value.trim().toLowerCase();
-  const sounds = allSounds().filter(sound => `${sound.name} ${sound.category || sound.cat || ''} ${sound.pack || 'memes'} ${sound.context || ''} ${sound.artist || ''}`.toLowerCase().includes(search));
+  const sounds = allSounds().filter(sound => `${sound.name} ${sound.category || sound.cat || ''} ${BANKS.find(item => item.id === sound.bank)?.name || ''} ${sound.pack || 'memes'} ${sound.context || ''} ${sound.artist || ''}`.toLowerCase().includes(search));
   sounds.forEach(sound => {
     const row = document.createElement('div'); row.className = 'sound-row';
     const preview = document.createElement('button'); preview.className = 'sound-preview'; preview.textContent = '▶'; preview.setAttribute('aria-label', `Preview ${sound.name}`); preview.onclick = () => play(sound);
@@ -296,7 +373,13 @@ function openLibrary(pickFavorites = false) {
   openDialog('library-dialog');
 }
 $('#favorites-done').onclick = () => $('#library-dialog').close();
-function openDialog(id) { if (id === 'library-dialog') renderLibrary(); $('#' + id).showModal(); }
+function openDialog(id) {
+  // A modal must never cover a YouTube player that is still playing.
+  if (!$('#music-panel').hidden) { stopMusic(); updatePlaybackState(); }
+  if (id === 'library-dialog') renderLibrary();
+  if (id === 'category-dialog') renderCategories();
+  $('#' + id).showModal();
+}
 $('#settings-button').onclick = () => { openDialog('settings-dialog'); requestOfflineStatus(); };
 $('#library-button').onclick = () => openLibrary(bank === 'fav');
 document.querySelectorAll('dialog .close').forEach(button => button.onclick = () => button.closest('dialog').close());
@@ -304,28 +387,27 @@ document.querySelectorAll('dialog').forEach(dialog => {
   dialog.addEventListener('click', event => { if (event.target !== dialog) return; const r = dialog.getBoundingClientRect(); if (event.clientX < r.left || event.clientX > r.right || event.clientY < r.top || event.clientY > r.bottom) dialog.close(); });
   dialog.addEventListener('cancel', stopAll);
 });
-$('#music-dialog').addEventListener('close', () => { stopMusic(false); updatePlaybackState(); });
-$('#music-stop').onclick = () => { stopMusic(false); updatePlaybackState(); };
-$('#music-replay').onclick = () => { if (selectedMusic) playMusic(selectedMusic); };
 $('#stop').onclick = stopAll;
+musicPanel.onclick = stopAll;
+musicPanel.addEventListener('keydown', event => {
+  if (event.key !== 'Enter' && event.key !== ' ') return;
+  event.preventDefault(); event.stopPropagation(); stopAll();
+});
 $('#volume').value = volume; $('#volume-value').textContent = volume;
 $('#volume').oninput = event => { volume = Number(event.target.value); $('#volume-value').textContent = volume; if (master) master.gain.setTargetAtTime(volume / 100, context.currentTime, 0.01); saveSetting('meme-deck-volume', volume); };
 function updateMix() { $('#mix').setAttribute('aria-pressed', overlap); $('#mix-status').textContent = overlap ? 'OVERLAP ON' : 'ONE SHOT'; }
 $('#mix').onclick = () => { overlap = !overlap; if (!overlap) stopAll(); saveSetting('meme-deck-overlap', overlap); updateMix(); };
 updateMix();
 function selectBank(value) {
+  if (!BANKS.some(item => item.id === value)) return;
+  stopAll();
   bank = value; page = 0;
-  document.querySelectorAll('[data-bank]').forEach(item => {
-    const selected = item.dataset.bank === bank;
-    item.classList.toggle('selected', selected); item.setAttribute('aria-pressed', selected);
-  });
-  $('#bank-select').value = bank;
+  saveSetting('meme-deck-bank', bank);
   renderPads();
 }
-document.querySelectorAll('[data-bank]').forEach(button => button.onclick = () => selectBank(button.dataset.bank));
-$('#bank-select').onchange = event => selectBank(event.target.value);
-$('#previous').onclick = () => { page = Math.max(0, page - 1); renderPads(); };
-$('#next').onclick = () => { page++; renderPads(); };
+$('#bank-picker').onclick = () => openDialog('category-dialog');
+$('#previous').onclick = () => { stopMusic(); updatePlaybackState(); page = Math.max(0, page - 1); renderPads(); };
+$('#next').onclick = () => { stopMusic(); updatePlaybackState(); page++; renderPads(); };
 $('#search').oninput = renderLibrary;
 $('#import').onclick = () => { if (!libraryReady) { toast('Local storage is unavailable. Built-in sounds still work.'); return; } try { initializeAudio().catch(() => {}); } catch { toast('Audio import requires Safari or Chrome.'); return; } $('#files').click(); };
 $('#files').onchange = async event => {
