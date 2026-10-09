@@ -3,13 +3,14 @@ const PAGE_SIZE = 16;
 const SHORTCUTS = '1234qwerasdfzxcv';
 const readSetting = (key, fallback) => { try { return JSON.parse(localStorage.getItem(key)) ?? fallback; } catch { return fallback; } };
 const saveSetting = (key, value) => { try { localStorage.setItem(key, JSON.stringify(value)); } catch { /* The board still works without localStorage. */ } };
-let catalog = [], customs = [], bank = 'all', page = 0;
+let catalog = [], musicCatalog = [], customs = [], bank = 'all', page = 0;
 let favorites = new Set(readSetting('meme-deck-favorites', readSetting('favorites', [])));
 let overlap = readSetting('meme-deck-overlap', false);
 let volume = Math.max(0, Math.min(100, Number(readSetting('meme-deck-volume', 75)) || 0));
 let context, master, analyser, animation, toastTimer, generation = 0, lastSound;
 const buffers = new Map(), downloads = new Map(), pending = new Map(), playing = new Map();
-let libraryReady = false, catalogFailed = false, favoritePicker = false;
+let libraryReady = false, catalogFailed = false, musicCatalogFailed = false, favoritePicker = false;
+let activeMusic = null, selectedMusic = null;
 const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
 const dbReady = new Promise((resolve, reject) => {
   const request = indexedDB.open('meme-deck', 1);
@@ -35,12 +36,13 @@ function toast(message) {
   clearTimeout(toastTimer);
   toastTimer = setTimeout(() => $('#toast').classList.remove('visible'), 4200);
 }
-function allSounds() { return [...catalog, ...customs]; }
+function allSounds() { return [...catalog, ...musicCatalog, ...customs]; }
+function musicDurationLabel(sound) { return sound.duration === 60 ? '~1 min' : `${sound.duration}s`; }
 function bankSounds() {
   return allSounds().filter(sound => {
     if (bank === 'fav') return favorites.has(sound.id);
     if (bank === 'custom') return !!sound.blob;
-    if (['sfx', 'animals', 'mj'].includes(bank)) return sound.pack === bank;
+    if (['sfx', 'animals', 'mj', 'betty'].includes(bank)) return sound.pack === bank;
     return !sound.blob && (!sound.pack || sound.pack === 'memes');
   });
 }
@@ -54,17 +56,18 @@ function renderPads() {
   $('#page').textContent = `${String(page + 1).padStart(2, '0')} / ${String(pages).padStart(2, '0')}`;
   $('#previous').disabled = page === 0;
   $('#next').disabled = page >= pages - 1;
-  $('#sound-count').textContent = `${list.length} ${bank === 'custom' ? 'CUSTOM SOUNDS' : bank === 'fav' ? 'FAVORITES' : bank === 'sfx' ? 'SOUND EFFECTS' : bank === 'animals' ? 'ANIMAL SOUNDS' : bank === 'mj' ? 'MJ VOCAL CLIPS' : 'REAL MEME CLIPS'}`;
+  $('#sound-count').textContent = `${list.length} ${bank === 'custom' ? 'CUSTOM SOUNDS' : bank === 'fav' ? 'FAVORITES' : bank === 'sfx' ? 'SOUND EFFECTS' : bank === 'animals' ? 'ANIMAL SOUNDS' : bank === 'mj' ? 'MJ VOCAL CLIPS' : bank === 'betty' ? 'BETTY · ONLINE' : 'REAL MEME CLIPS'}`;
   const fragment = document.createDocumentFragment();
   if (!list.length) {
     const empty = document.createElement('div'); empty.className = 'empty-message';
     const title = document.createElement('strong');
-    title.textContent = bank === 'custom' ? 'Your sounds. Your board.' : bank === 'fav' ? 'Keep your favorites close.' : catalogFailed ? 'Sound pack couldn’t load.' : 'Loading the good stuff…';
+    const failed = bank === 'betty' ? musicCatalogFailed : catalogFailed;
+    title.textContent = bank === 'custom' ? 'Your sounds. Your board.' : bank === 'fav' ? 'Keep your favorites close.' : failed ? 'Sound pack couldn’t load.' : 'Loading the good stuff…';
     const text = document.createElement('p');
-    text.textContent = bank === 'custom' ? 'Import a clip from Files to get started.' : bank === 'fav' ? 'Pick your go-to memes and sound effects with a tap.' : catalogFailed ? 'Check your connection and retry.' : 'One tiny pack. Plenty of chaos.';
+    text.textContent = bank === 'custom' ? 'Import a clip from Files to get started.' : bank === 'fav' ? 'Pick your go-to memes and sound effects with a tap.' : failed ? 'Check your connection and retry.' : 'One tiny pack. Plenty of chaos.';
     const action = document.createElement('button'); action.className = 'primary-button';
-    action.textContent = ['all', 'sfx', 'animals', 'mj'].includes(bank) ? 'Retry' : bank === 'fav' ? '★ Choose favorites' : 'Open library';
-    action.onclick = ['all', 'sfx', 'animals', 'mj'].includes(bank) ? loadCatalog : () => openLibrary(bank === 'fav');
+    action.textContent = ['all', 'sfx', 'animals', 'mj', 'betty'].includes(bank) ? 'Retry' : bank === 'fav' ? '★ Choose favorites' : 'Open library';
+    action.onclick = ['all', 'sfx', 'animals', 'mj', 'betty'].includes(bank) ? loadCatalog : () => openLibrary(bank === 'fav');
     empty.append(title, text, action); fragment.append(empty);
   } else {
     for (let index = 0; index < PAGE_SIZE; index++) {
@@ -84,7 +87,8 @@ function renderPads() {
       button.dataset.id = sound.id;
       button.setAttribute('aria-label', `Play ${sound.name}`);
       button.setAttribute('aria-keyshortcuts', SHORTCUTS[index]);
-      const pieces = [['pad-number', String(page * PAGE_SIZE + index + 1).padStart(2, '0')], ['pad-key', SHORTCUTS[index].toUpperCase()], ['pad-name', sound.name], ['pad-light', '']];
+      if (sound.videoId) button.title = `YouTube · online · ${musicDurationLabel(sound)}`;
+      const pieces = [['pad-number', String(page * PAGE_SIZE + index + 1).padStart(2, '0')], [sound.videoId ? 'pad-online' : 'pad-key', sound.videoId ? `${sound.duration === 60 ? '1m' : sound.duration + 's'} ↗` : SHORTCUTS[index].toUpperCase()], ['pad-name', sound.label || sound.name], ['pad-light', '']];
       for (const [className, text] of pieces) { const span = document.createElement('span'); span.className = className; span.textContent = text; span.setAttribute('aria-hidden', 'true'); button.append(span); }
       button.addEventListener('click', () => play(sound));
       fragment.append(button);
@@ -132,17 +136,57 @@ async function getBuffer(sound) {
   }
   return buffers.get(sound.id);
 }
-function stopAll() {
+function stopLocalAudio() {
   generation++;
   pending.clear();
   for (const [source] of playing) { try { source.stop(); } catch {} }
   playing.clear();
+}
+function stopMusic(closeDialog = true) {
+  activeMusic = null;
+  $('#music-player').replaceChildren();
+  $('#music-status').textContent = 'Stopped. Replay to open the YouTube player again.';
+  $('#music-stop').disabled = true;
+  if (closeDialog && $('#music-dialog').open) $('#music-dialog').close();
+}
+function stopAll() {
+  stopLocalAudio();
+  stopMusic();
+  updatePlaybackState();
+}
+function playMusic(sound) {
+  if (!/^[\w-]{11}$/.test(sound.videoId) || !Number.isFinite(sound.duration) || sound.duration <= 0 || sound.duration > 60) { toast('This YouTube track is unavailable.'); return; }
+  if (!navigator.onLine) { toast('Betty music needs an internet connection. The downloaded soundboard still works offline.'); return; }
+  stopLocalAudio();
+  stopMusic(false);
+  if ($('#library-dialog').open) $('#library-dialog').close();
+  selectedMusic = activeMusic = lastSound = sound;
+  const start = Number.isSafeInteger(sound.start) && sound.start >= 0 ? sound.start : 0;
+  const url = new URL(`https://www.youtube-nocookie.com/embed/${sound.videoId}`);
+  url.search = new URLSearchParams({ start: String(start), end: String(start + sound.duration), autoplay: '1', playsinline: '1', controls: '1', rel: '0' });
+  const frame = document.createElement('iframe');
+  frame.src = url.href;
+  frame.title = `${sound.name} · YouTube player`;
+  frame.width = '560'; frame.height = '315';
+  frame.allow = 'autoplay; encrypted-media; picture-in-picture; fullscreen';
+  frame.allowFullscreen = true;
+  frame.referrerPolicy = 'strict-origin-when-cross-origin';
+  $('#music-title').textContent = sound.name;
+  $('#music-context').textContent = [sound.artist, sound.context].filter(Boolean).join(' · ');
+  $('#music-source').href = `https://www.youtube.com/watch?v=${sound.videoId}&t=${start}s`;
+  $('#music-status').textContent = `YouTube · online · ${musicDurationLabel(sound)}. Use the player controls for playback and volume. If unavailable, open it on YouTube.`;
+  $('#music-stop').disabled = false;
+  $('#music-replay').disabled = false;
+  $('#music-player').replaceChildren(frame);
+  if (!$('#music-dialog').open) $('#music-dialog').showModal();
   updatePlaybackState();
 }
 async function play(sound) {
   if (!sound) return;
+  if (sound.videoId) { playMusic(sound); return; }
+  stopMusic();
   let resume;
-  try { resume = initializeAudio(); } catch { toast('This browser cannot play audio. Try Safari or Chrome.'); return; }
+  try { resume = initializeAudio(); } catch { updatePlaybackState(); toast('This browser cannot play audio. Try Safari or Chrome.'); return; }
   if (!overlap) stopAll();
   const currentGeneration = generation, request = Symbol();
   pending.set(request, sound); updatePadState();
@@ -173,8 +217,8 @@ async function play(sound) {
 function updatePlaybackState() {
   updatePadState();
   const latest = [...playing.values()].at(-1);
-  $('#state').textContent = latest ? 'PLAYING' : pending.size ? 'LOADING' : 'READY';
-  $('#now-playing').textContent = latest?.sound.name || [...pending.values()].at(-1)?.name || lastSound?.name || 'Ready to play.';
+  $('#state').textContent = activeMusic ? 'ONLINE' : latest ? 'PLAYING' : pending.size ? 'LOADING' : 'READY';
+  $('#now-playing').textContent = activeMusic?.name || latest?.sound.name || [...pending.values()].at(-1)?.name || lastSound?.name || 'Ready to play.';
   $('#status-dot').style.opacity = latest ? '1' : '.55';
   if (latest) { if (!animation) animate(); }
   else { cancelAnimationFrame(animation); animation = null; $('#time').textContent = '00.0'; drawScope(); }
@@ -202,14 +246,14 @@ function animate() {
 }
 function renderLibrary() {
   const fragment = document.createDocumentFragment(), search = $('#search').value.trim().toLowerCase();
-  const sounds = allSounds().filter(sound => `${sound.name} ${sound.category || sound.cat || ''} ${sound.pack || 'memes'}`.toLowerCase().includes(search));
+  const sounds = allSounds().filter(sound => `${sound.name} ${sound.category || sound.cat || ''} ${sound.pack || 'memes'} ${sound.context || ''} ${sound.artist || ''}`.toLowerCase().includes(search));
   sounds.forEach(sound => {
     const row = document.createElement('div'); row.className = 'sound-row';
     const preview = document.createElement('button'); preview.className = 'sound-preview'; preview.textContent = '▶'; preview.setAttribute('aria-label', `Preview ${sound.name}`); preview.onclick = () => play(sound);
     const info = document.createElement('div'); info.className = 'sound-info';
     const name = document.createElement('strong'); name.textContent = sound.name; info.append(name);
-    if (favoritePicker) { const detail = document.createElement('small'); detail.textContent = `${sound.blob ? 'Your audio' : sound.pack === 'sfx' ? 'Sound effect' : sound.pack === 'animals' ? 'Animal' : sound.pack === 'mj' ? 'Michael Jackson' : 'Meme'}${sound.duration ? ' · ' + sound.duration.toFixed(1) + 's' : ''}`; info.append(detail); }
-    else if (sound.source) { const source = document.createElement('a'); source.textContent = `${sound.duration.toFixed(1)}s · View source ↗`; source.href = sound.source; source.target = '_blank'; source.rel = 'noopener noreferrer'; info.append(source); }
+    if (favoritePicker) { const detail = document.createElement('small'); detail.textContent = sound.videoId ? `Betty la fea · YouTube · online · ${musicDurationLabel(sound)}` : `${sound.blob ? 'Your audio' : sound.pack === 'sfx' ? 'Sound effect' : sound.pack === 'animals' ? 'Animal' : sound.pack === 'mj' ? 'Michael Jackson' : 'Meme'}${sound.duration ? ' · ' + sound.duration.toFixed(1) + 's' : ''}`; info.append(detail); }
+    else if (sound.source) { const source = document.createElement('a'); source.textContent = sound.videoId ? `YouTube · online · ${musicDurationLabel(sound)} ↗` : `${sound.duration.toFixed(1)}s · View source ↗`; source.href = sound.source; source.target = '_blank'; source.rel = 'noopener noreferrer'; info.append(source); }
     else { const detail = document.createElement('small'); detail.textContent = `${sound.duration ? sound.duration.toFixed(1) + 's · ' : ''}On this device`; info.append(detail); }
     const favorite = document.createElement('button'); favorite.className = 'favorite'; favorite.textContent = favorites.has(sound.id) ? '★' : '☆'; favorite.setAttribute('aria-label', `Favorite ${sound.name}`); favorite.setAttribute('aria-pressed', favorites.has(sound.id));
     row.classList.toggle('is-favorite', favorites.has(sound.id));
@@ -260,6 +304,9 @@ document.querySelectorAll('dialog').forEach(dialog => {
   dialog.addEventListener('click', event => { if (event.target !== dialog) return; const r = dialog.getBoundingClientRect(); if (event.clientX < r.left || event.clientX > r.right || event.clientY < r.top || event.clientY > r.bottom) dialog.close(); });
   dialog.addEventListener('cancel', stopAll);
 });
+$('#music-dialog').addEventListener('close', () => { stopMusic(false); updatePlaybackState(); });
+$('#music-stop').onclick = () => { stopMusic(false); updatePlaybackState(); };
+$('#music-replay').onclick = () => { if (selectedMusic) playMusic(selectedMusic); };
 $('#stop').onclick = stopAll;
 $('#volume').value = volume; $('#volume-value').textContent = volume;
 $('#volume').oninput = event => { volume = Number(event.target.value); $('#volume-value').textContent = volume; if (master) master.gain.setTargetAtTime(volume / 100, context.currentTime, 0.01); saveSetting('meme-deck-volume', volume); };
@@ -311,15 +358,40 @@ document.addEventListener('visibilitychange', () => { if (document.hidden) stopA
 window.addEventListener('pagehide', stopAll);
 window.addEventListener('resize', drawScope);
 async function loadCatalog() {
-  try {
-    const response = await fetch('sounds.json'); if (!response.ok) throw Error('Catalog unavailable');
-    catalog = await response.json(); catalogFailed = false;
-    for (const sound of catalog) {
-      const promise = fetch(sound.file).then(response => { if (!response.ok) throw Error('Audio unavailable'); return response.arrayBuffer(); });
-      downloads.set(sound.id, promise); promise.catch(() => downloads.delete(sound.id));
-    }
-  } catch { catalogFailed = true; }
-  renderPads();
+  // Each catalog renders independently: an unavailable online collection must not
+  // delay or replace the locally downloaded sound pack.
+  await Promise.allSettled([
+    (async () => {
+      try {
+        const response = await fetch('sounds.json'); if (!response.ok) throw Error('Catalog unavailable');
+        const sounds = await response.json();
+        if (!Array.isArray(sounds)) throw Error('Invalid catalog');
+        catalog = sounds; catalogFailed = false;
+        for (const sound of catalog) {
+          if (!sound.file || sound.videoId || downloads.has(sound.id)) continue;
+          const promise = fetch(sound.file).then(response => { if (!response.ok) throw Error('Audio unavailable'); return response.arrayBuffer(); });
+          downloads.set(sound.id, promise); promise.catch(() => downloads.delete(sound.id));
+        }
+      } catch { catalogFailed = true; }
+      renderPads();
+      if ($('#library-dialog').open) renderLibrary();
+    })(),
+    (async () => {
+      try {
+        const response = await fetch('betty.json'); if (!response.ok) throw Error('Music catalog unavailable');
+        const sounds = await response.json();
+        if (!Array.isArray(sounds) || sounds.length !== 16 || new Set(sounds.map(sound => sound.id)).size !== 16 || sounds.some(sound =>
+          typeof sound.id !== 'string' || !sound.id.startsWith('betty-') || typeof sound.name !== 'string' ||
+          sound.pack !== 'betty' || typeof sound.videoId !== 'string' || !/^[\w-]{11}$/.test(sound.videoId) ||
+          !Number.isSafeInteger(sound.start) || sound.start < 0 || !Number.isFinite(sound.duration) || sound.duration <= 0 || sound.duration > 60
+        )) throw Error('Invalid music catalog');
+        musicCatalog = sounds.map(sound => ({ ...sound, source: `https://www.youtube.com/watch?v=${sound.videoId}` }));
+        musicCatalogFailed = false;
+      } catch { musicCatalogFailed = true; }
+      renderPads();
+      if ($('#library-dialog').open) renderLibrary();
+    })()
+  ]);
 }
 function showOfflineStatus(data) {
   if (data.type !== 'OFFLINE_STATUS') return;

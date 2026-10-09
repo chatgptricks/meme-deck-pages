@@ -170,7 +170,7 @@ dialog::backdrop { background: #25271fa6; backdrop-filter: blur(5px); }
 .favorite-mode .favorite[aria-pressed=true] { background: #e9cbb1; border-color: #cba681; color: #9d3f1a; }
 #toast { display: none; position: fixed; z-index: 20; left: 50%; bottom: max(20px, env(safe-area-inset-bottom)); transform: translateX(-50%); max-width: calc(100% - 32px); padding: 12px 18px; border-radius: 5px; background: #33392c; color: #f4f2e7; box-shadow: 0 4px 20px #0004; font-size: 12px; }
 #toast.visible { display: block; }
-@media (max-width: 900px) {
+@media (max-width: 1050px) {
   .bank-tabs { display: none; }
   .bank-selector { display: block; }
 }
@@ -284,3 +284,30 @@ dialog::backdrop { background: #25271fa6; backdrop-filter: blur(5px); }
   .transport button { font-size: 6px; padding: 0 4px; gap: 3px; }
 }
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { transition: none !important; animation: none !important; } }
+
+/* Online soundtrack players keep the video and its own controls visible. */
+.pad-online { position: absolute; top: 14px; right: 12px; font: 9px 'Courier New', monospace; color: #deded3; }
+#music-dialog { width: min(600px, calc(100% - 24px)); }
+#music-dialog .dialog-head h2 { font-size: 23px; }
+.music-body { display: flex; flex-direction: column; gap: 12px; min-height: 0; overflow: auto; overscroll-behavior: contain; }
+#music-player { width: 100%; min-height: 200px; flex-shrink: 0; background: #252822; border-radius: 4px; overflow: hidden; }
+#music-player iframe { display: block; width: 100%; height: max(200px, 31vw); max-height: 310px; border: 0; }
+.music-actions { display: flex; align-items: center; flex-wrap: wrap; gap: 10px; flex-shrink: 0; }
+.music-actions .stop-button, .music-actions .primary-button { height: 40px; min-width: 70px; }
+.music-actions a { margin-left: auto; color: #484e3e; font-size: 11px; }
+@media (max-width: 650px) { .pad-online { top: 12px; right: 7px; font-size: 8px; } #music-dialog { padding: 18px; } #music-dialog .dialog-head h2 { font-size: 21px; } .music-actions a { margin: 0; } }
+@media (max-height: 700px) { .pad-online { top: 8px; right: 7px; font-size: 8px; } }
+@media (max-height: 500px) and (orientation: landscape) {
+  #music-dialog { width: min(820px, calc(100% - 16px)); max-height: calc(100dvh - 16px); padding: 10px; gap: 8px; }
+  #music-dialog .overline { display: none; }
+  #music-dialog .dialog-head h2 { font-size: 18px; margin: 0; }
+  #music-dialog .close { width: 30px; height: 30px; }
+  .music-body { display: grid; grid-template-columns: minmax(130px, .85fr) minmax(200px, 1.7fr); grid-template-rows: 1fr 1fr; gap: 8px 16px; min-height: 200px; }
+  #music-context { grid-column: 1; grid-row: 1; }
+  #music-status { grid-column: 1; grid-row: 2; }
+  #music-player { grid-column: 2; grid-row: 1 / 3; }
+  #music-player iframe { height: 200px; }
+  #music-dialog .dialog-note { font-size: 10px; line-height: 1.4; }
+  .music-actions .stop-button, .music-actions .primary-button { height: 30px; }
+  .music-actions a { margin-left: auto; }
+}
