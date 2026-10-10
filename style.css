@@ -297,3 +297,38 @@ dialog::backdrop { background: #25271fa6; backdrop-filter: blur(5px); }
   #bank-name { font-size: 14px; }
   #bank-size { font-size: 9px; }
 }
+
+/* Microphone clips share the same fixed board and local collection. */
+.pads { touch-action: pan-y; user-select: none; -webkit-user-select: none; }
+.record-add { flex: 0 0 38px; height: 38px; padding: 0; border: 1px solid #bd4922; border-radius: 4px; color: #271c10; background: #dd602a; box-shadow: inset 0 1px #ffffff2e, 0 2px #a53a17; font-size: 27px; line-height: 1; }
+#recorder-dialog { width: min(440px, calc(100% - 24px)); }
+.recorder-body { min-height: 0; overflow: auto; overscroll-behavior: contain; }
+.record-name-label { display: block; font-size: 12px; margin-bottom: 7px; }
+#record-name { width: 100%; padding: 11px 12px; border: 1px solid #b7b9ad; border-radius: 4px; background: #f0eee6; color: var(--ink); font-size: 16px; }
+.record-display { display: flex; align-items: baseline; flex-wrap: wrap; gap: 8px; margin: 18px 0 12px; padding: 18px; border: 2px solid #494c43; border-radius: 4px; background: #bac0a8; color: #343a2e; font: 13px 'Courier New', monospace; }
+.record-led { align-self: center; width: 8px; height: 8px; margin-right: 4px; border-radius: 50%; background: #768064; }
+[data-state=recording] .record-led { background: #b53b17; box-shadow: 0 0 0 3px #b53b1722; }
+#record-time { font-size: 38px; font-variant-numeric: tabular-nums; }
+#record-progress { appearance: none; width: 100%; height: 4px; border: 0; background: #969e86; color: #3d4931; }
+#record-progress::-webkit-progress-bar { background: #969e86; }
+#record-progress::-webkit-progress-value { background: #3d4931; }
+#record-progress::-moz-progress-bar { background: #3d4931; }
+#record-status { min-height: 36px; }
+.record-actions { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
+.record-actions button { flex: 1; min-height: 44px; padding: 11px 12px; }
+#record-toggle { background: #bb471f; }
+.secondary-button { background: #d4d7c9; border: 1px solid #b7bbad; border-radius: 4px; color: var(--ink); font-size: 12px; font-weight: 600; }
+.record-privacy { margin: 16px 0 0; color: #656760; font-size: 11px; line-height: 1.5; }
+@media (max-width: 380px) {
+  .bank-bar { gap: 7px; }
+  .bank-bar:has(#record-add:not([hidden])) #bank-size { display: none; }
+  .record-add { flex-basis: 34px; height: 34px; }
+  #recorder-dialog { padding: 18px; }
+}
+@media (max-height: 620px) and (orientation: landscape) {
+  #recorder-dialog { padding: 16px 20px; gap: 10px; }
+  .record-display { margin: 10px 0; padding: 10px; }
+  #record-time { font-size: 25px; }
+  #record-status { min-height: 0; }
+  .record-actions, .record-privacy { margin-top: 10px; }
+}

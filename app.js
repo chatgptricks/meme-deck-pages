@@ -1,3 +1,6 @@
+import { createClipRecorder, MAX_RECORDING_SECONDS } from './recorder.js';
+import { attachSwipePages } from './swipe.js';
+
 const $ = selector => document.querySelector(selector);
 const PAGE_SIZE = 16;
 const SHORTCUTS = '1234qwerasdfzxcv';
@@ -85,6 +88,7 @@ function renderPads() {
   const pads = $('#pads');
   $('#library-icon').textContent = bank === 'fav' ? '★' : '＋';
   $('#library-label').textContent = bank === 'fav' ? 'ADD FAVORITES' : 'SOUND LIBRARY';
+  $('#record-add').hidden = bank !== 'custom';
   const pages = Math.max(1, Math.ceil(list.length / PAGE_SIZE));
   page = Math.min(page, pages - 1);
   $('#page').textContent = `${String(page + 1).padStart(2, '0')} / ${String(pages).padStart(2, '0')}`;
@@ -105,10 +109,10 @@ function renderPads() {
     const failed = catalogFailed;
     title.textContent = bank === 'custom' ? 'Your sounds. Your board.' : bank === 'fav' ? 'Keep your favorites close.' : failed ? 'Sound pack couldn’t load.' : 'Loading the good stuff…';
     const text = document.createElement('p');
-    text.textContent = bank === 'custom' ? 'Import a clip from Files to get started.' : bank === 'fav' ? 'Pick your go-to memes and sound effects with a tap.' : failed ? 'Check your connection and retry.' : 'One tiny pack. Plenty of chaos.';
+    text.textContent = bank === 'custom' ? 'Graba hasta 6 segundos o importa un audio desde la biblioteca.' : bank === 'fav' ? 'Pick your go-to memes and sound effects with a tap.' : failed ? 'Check your connection and retry.' : 'One tiny pack. Plenty of chaos.';
     const action = document.createElement('button'); action.className = 'primary-button';
-    action.textContent = !['fav', 'custom'].includes(bank) ? 'Retry' : bank === 'fav' ? '★ Choose favorites' : 'Open library';
-    action.onclick = !['fav', 'custom'].includes(bank) ? loadCatalog : () => openLibrary(bank === 'fav');
+    action.textContent = !['fav', 'custom'].includes(bank) ? 'Retry' : bank === 'fav' ? '★ Choose favorites' : '＋ Grabar clip';
+    action.onclick = bank === 'custom' ? openRecorder : bank === 'fav' ? () => openLibrary(true) : loadCatalog;
     empty.append(title, text, action); fragment.append(empty);
   } else {
     for (let index = 0; index < PAGE_SIZE; index++) {
@@ -116,12 +120,12 @@ function renderPads() {
       const button = document.createElement('button');
       button.className = sound?.id === 'fahhh' ? 'pad accent' : 'pad';
       if (!sound) {
-        if (bank === 'fav' && page * PAGE_SIZE + index === list.length) {
+        if (['fav', 'custom'].includes(bank) && page * PAGE_SIZE + index === list.length) {
           button.className = 'pad favorite-add';
-          button.setAttribute('aria-label', 'Add a favorite');
+          button.setAttribute('aria-label', bank === 'custom' ? 'Grabar un clip' : 'Add a favorite');
           const plus = document.createElement('span'); plus.className = 'pad-icon'; plus.textContent = '＋';
-          const label = document.createElement('span'); label.className = 'pad-name'; label.textContent = 'Add favorite';
-          button.append(plus, label); button.onclick = () => openLibrary(true);
+          const label = document.createElement('span'); label.className = 'pad-name'; label.textContent = bank === 'custom' ? 'Grabar clip' : 'Add favorite';
+          button.append(plus, label); button.onclick = bank === 'custom' ? openRecorder : () => openLibrary(true);
         } else { button.className = 'pad empty'; button.disabled = true; button.setAttribute('aria-hidden', 'true'); }
         fragment.append(button); continue;
       }
@@ -327,11 +331,98 @@ function openDialog(id) {
   if (id === 'category-dialog') renderCategories();
   $('#' + id).showModal();
 }
+let recordingState = 'idle', recordingDraft = null, recordingSession = 0, reloadAfterRecording = false;
+function setRecordingState(state, message) {
+  recordingState = state;
+  $('#recorder-dialog').dataset.state = state;
+  $('#record-status').textContent = message || ({
+    idle: 'Listo para grabar. Máximo 6 segundos.', requesting: 'Permite el micrófono para comenzar.',
+    recording: 'Grabando… se detiene a los 6 segundos.', processing: 'Preparando tu clip…',
+    ready: 'Escúchalo y guárdalo cuando esté listo.', saving: 'Guardando en este dispositivo…'
+  })[state];
+  $('#record-toggle').textContent = state === 'recording' ? '■ Detener' : state === 'ready' ? '● Grabar de nuevo' : '● Grabar';
+  $('#record-toggle').disabled = ['requesting', 'processing', 'saving'].includes(state);
+  $('#record-name').disabled = ['requesting', 'recording', 'processing', 'saving'].includes(state);
+  $('#record-preview').hidden = $('#record-save').hidden = !['ready', 'saving'].includes(state);
+  $('#record-preview').disabled = $('#record-save').disabled = state !== 'ready';
+  $('#record-close').disabled = state === 'saving';
+}
+function recordingError(error) {
+  const messages = {
+    NotAllowedError: 'Activa el permiso del micrófono para este sitio y vuelve a intentar.',
+    NotFoundError: 'No se encontró un micrófono en este dispositivo.',
+    NotReadableError: 'No se pudo abrir el micrófono. Comprueba si otra app lo está usando.',
+    NotSupportedError: 'Abre la app en Safari o Chrome actualizado para grabar.'
+  };
+  setRecordingState('idle', messages[error?.name] || 'No se pudo grabar el clip. Inténtalo de nuevo.');
+}
+$('#record-progress').max = MAX_RECORDING_SECONDS;
+const clipRecorder = createClipRecorder({
+  decode: bytes => context.decodeAudioData(bytes),
+  onState: setRecordingState,
+  onTick: seconds => { $('#record-time').textContent = seconds.toFixed(1); $('#record-progress').value = seconds; },
+  onComplete: clip => {
+    recordingDraft = { ...clip, id: crypto.randomUUID(), name: 'Grabación', category: 'Your recording' };
+    $('#record-time').textContent = clip.duration.toFixed(1); $('#record-progress').value = clip.duration;
+    setRecordingState('ready');
+  },
+  onError: recordingError
+});
+function discardRecording() {
+  recordingSession++;
+  clipRecorder.cancel();
+  if (recordingDraft) forgetDecoded(recordingDraft.id);
+  recordingDraft = null;
+  stopAll();
+}
+function openRecorder() {
+  if (!libraryReady) { toast('El almacenamiento local no está disponible. Reabre la app para intentarlo.'); return; }
+  discardRecording();
+  $('#record-name').value = `Clip ${customs.length + 1}`;
+  $('#record-time').textContent = '0.0'; $('#record-progress').value = 0;
+  setRecordingState('idle');
+  openDialog('recorder-dialog');
+}
+$('#record-add').onclick = openRecorder;
+$('#record-toggle').onclick = () => {
+  if (recordingState === 'recording') { clipRecorder.stop(); return; }
+  if (!['idle', 'ready'].includes(recordingState)) return;
+  discardRecording();
+  $('#record-time').textContent = '0.0'; $('#record-progress').value = 0;
+  const session = recordingSession;
+  try {
+    initializeAudio().catch(error => {
+      if (session !== recordingSession) return;
+      clipRecorder.cancel(); recordingError(error);
+    });
+    clipRecorder.start();
+  } catch (error) { recordingError(error); }
+};
+$('#record-preview').onclick = () => { if (recordingState === 'ready' && recordingDraft) play({ ...recordingDraft, name: $('#record-name').value.trim() || 'Grabación' }); };
+$('#record-save').onclick = async () => {
+  if (recordingState !== 'ready' || !recordingDraft) return;
+  const sound = { ...recordingDraft, name: $('#record-name').value.trim().slice(0, 64) || 'Grabación' };
+  setRecordingState('saving'); stopAll();
+  try {
+    await storage('readwrite', store => store.put(sound));
+    customs.push(sound);
+    bank = 'custom'; page = Math.floor((customs.length - 1) / PAGE_SIZE);
+    saveSetting('meme-deck-bank', bank);
+    recordingDraft = null; setRecordingState('idle');
+    $('#recorder-dialog').close(); renderPads();
+    toast('Clip guardado en este dispositivo.');
+  } catch { setRecordingState('ready', 'No se pudo guardar. Libera espacio y vuelve a intentarlo; tu clip sigue aquí.'); }
+};
+$('#recorder-dialog').addEventListener('close', () => {
+  discardRecording(); setRecordingState('idle');
+  if (reloadAfterRecording) location.reload();
+});
+$('#recorder-dialog').addEventListener('cancel', event => { if (recordingState === 'saving') event.preventDefault(); });
 $('#settings-button').onclick = () => { openDialog('settings-dialog'); requestOfflineStatus(); };
 $('#library-button').onclick = () => openLibrary(bank === 'fav');
 document.querySelectorAll('dialog .close').forEach(button => button.onclick = () => button.closest('dialog').close());
 document.querySelectorAll('dialog').forEach(dialog => {
-  dialog.addEventListener('click', event => { if (event.target !== dialog) return; const r = dialog.getBoundingClientRect(); if (event.clientX < r.left || event.clientX > r.right || event.clientY < r.top || event.clientY > r.bottom) dialog.close(); });
+  dialog.addEventListener('click', event => { if (event.target !== dialog || (dialog.id === 'recorder-dialog' && recordingState === 'saving')) return; const r = dialog.getBoundingClientRect(); if (event.clientX < r.left || event.clientX > r.right || event.clientY < r.top || event.clientY > r.bottom) dialog.close(); });
   dialog.addEventListener('cancel', stopAll);
 });
 $('#stop').onclick = stopAll;
@@ -348,8 +439,13 @@ function selectBank(value) {
   renderPads();
 }
 $('#bank-picker').onclick = () => openDialog('category-dialog');
-$('#previous').onclick = () => { page = Math.max(0, page - 1); renderPads(); };
-$('#next').onclick = () => { page++; renderPads(); };
+function changePage(delta) {
+  const next = Math.max(0, Math.min(Math.max(0, Math.ceil(bankSounds().length / PAGE_SIZE) - 1), page + delta));
+  if (next !== page) { page = next; renderPads(); }
+}
+$('#previous').onclick = () => changePage(-1);
+$('#next').onclick = () => changePage(1);
+attachSwipePages($('#pads'), { onPage: changePage });
 $('#search').oninput = renderLibrary;
 $('#import').onclick = () => { if (!libraryReady) { toast('Local storage is unavailable. Built-in sounds still work.'); return; } try { initializeAudio().catch(() => {}); } catch { toast('Audio import requires Safari or Chrome.'); return; } $('#files').click(); };
 $('#files').onchange = async event => {
@@ -378,8 +474,14 @@ document.addEventListener('keydown', event => {
   const index = SHORTCUTS.indexOf(event.key.toLowerCase());
   if (index >= 0) { event.preventDefault(); play(visibleSounds()[index]); }
 });
-document.addEventListener('visibilitychange', () => { if (document.hidden) stopAll(); });
-window.addEventListener('pagehide', stopAll);
+function suspendAudio() {
+  stopAll();
+  if (['requesting', 'recording', 'processing'].includes(recordingState)) {
+    discardRecording(); setRecordingState('idle', 'Grabación cancelada al salir de la app. Toca Grabar para empezar.');
+  }
+}
+document.addEventListener('visibilitychange', () => { if (document.hidden) suspendAudio(); });
+window.addEventListener('pagehide', suspendAudio);
 window.addEventListener('resize', drawScope);
 async function loadCatalog() {
   try {
@@ -407,7 +509,14 @@ if ('serviceWorker' in navigator) {
   navigator.serviceWorker.addEventListener('message', event => showOfflineStatus(event.data || {}));
   let refreshing = false;
   const hadController = !!navigator.serviceWorker.controller;
-  navigator.serviceWorker.addEventListener('controllerchange', () => { if (hadController && !refreshing) { refreshing = true; stopAll(); location.reload(); } else requestOfflineStatus(); });
+  navigator.serviceWorker.addEventListener('controllerchange', () => {
+    if (hadController && !refreshing) {
+      refreshing = true;
+      // Keep an unsaved microphone clip intact while an offline update arrives.
+      if ($('#recorder-dialog').open) reloadAfterRecording = true;
+      else { stopAll(); location.reload(); }
+    } else requestOfflineStatus();
+  });
   navigator.serviceWorker.register('sw.js', { updateViaCache: 'none' }).then(registration => { registration.update().catch(() => {}); return navigator.serviceWorker.ready; }).then(requestOfflineStatus).catch(() => { $('#offline').textContent = 'ONLINE'; $('#download-status').textContent = 'Offline mode requires HTTPS or localhost.'; });
 }
 loadCatalog();
