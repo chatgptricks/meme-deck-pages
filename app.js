@@ -29,7 +29,7 @@ let volume = Math.max(0, Math.min(100, Number(readSetting('meme-deck-volume', 75
 let context, master, analyser, animation, toastTimer, generation = 0, lastSound;
 const buffers = new Map(), downloads = new Map(), pending = new Map(), playing = new Map();
 const decodedSizes = new Map(), MAX_DECODED_BUFFERS = 8, MAX_DECODED_BYTES = 48 * 1024 * 1024;
-let libraryReady = false, catalogFailed = false, favoritePicker = false;
+let libraryReady = false, catalogFailed = false, favoritePicker = false, boardQuery = '';
 const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
 const dbReady = new Promise((resolve, reject) => {
   const request = indexedDB.open('meme-deck', 1);
@@ -56,6 +56,26 @@ function toast(message) {
   toastTimer = setTimeout(() => $('#toast').classList.remove('visible'), 4200);
 }
 function allSounds() { return [...catalog, ...customs]; }
+function searchTerms(value) {
+  return value.normalize('NFD').replace(/\p{M}/gu, '').toLowerCase().trim().split(/\s+/).filter(Boolean);
+}
+function matchesSearch(sound, terms) {
+  const soundBank = sound.blob ? 'custom' : !sound.pack || sound.pack === 'memes' ? sound.bank || 'reactions' : sound.pack;
+  const collection = BANKS.find(item => item.id === soundBank);
+  const text = searchTerms([sound.name, sound.label, sound.category || sound.cat, sound.context, sound.artist, sound.pack, collection?.name, collection?.group].filter(Boolean).join(' ')).join(' ');
+  return terms.every(term => text.includes(term));
+}
+function isSearching() { return searchTerms(boardQuery).length > 0; }
+function boardSounds() {
+  const terms = searchTerms(boardQuery);
+  return terms.length ? allSounds().filter(sound => matchesSearch(sound, terms)) : bankSounds();
+}
+function setBoardSearch(value) {
+  boardQuery = value;
+  $('#sound-search').value = value;
+  page = 0;
+  renderPads();
+}
 function bankSounds(selectedBank = bank) {
   return allSounds().filter(sound => {
     if (selectedBank === 'fav') return favorites.has(sound.id);
@@ -83,13 +103,14 @@ function renderCategories() {
   }
   $('#category-list').replaceChildren(fragment);
 }
-function visibleSounds() { return bankSounds().slice(page * PAGE_SIZE, (page + 1) * PAGE_SIZE); }
+function visibleSounds() { return boardSounds().slice(page * PAGE_SIZE, (page + 1) * PAGE_SIZE); }
 function renderPads() {
-  const list = bankSounds();
+  const list = boardSounds(), searching = isSearching();
   const pads = $('#pads');
-  $('#library-icon').textContent = bank === 'fav' ? '★' : '＋';
-  $('#library-label').textContent = bank === 'fav' ? 'ADD FAVORITES' : 'SOUND LIBRARY';
-  $('#record-add').hidden = bank !== 'custom';
+  $('#library-icon').textContent = bank === 'fav' && !searching ? '★' : '＋';
+  $('#library-label').textContent = bank === 'fav' && !searching ? 'ADD FAVORITES' : 'SOUND LIBRARY';
+  $('#record-add').hidden = bank !== 'custom' || searching;
+  $('#clear-sound-search').hidden = !boardQuery;
   const pages = Math.max(1, Math.ceil(list.length / PAGE_SIZE));
   page = Math.min(page, pages - 1);
   $('#page').textContent = `${String(page + 1).padStart(2, '0')} / ${String(pages).padStart(2, '0')}`;
@@ -97,23 +118,24 @@ function renderPads() {
   $('#next').disabled = page >= pages - 1;
   $('#pagination').hidden = pages <= 1;
   const selectedBank = BANKS.find(item => item.id === bank);
-  $('#bank-group').textContent = selectedBank.group;
-  $('#bank-name').textContent = selectedBank.name;
+  $('#bank-group').textContent = searching ? 'Todos los sonidos' : selectedBank.group;
+  $('#bank-name').textContent = searching ? 'Resultados' : selectedBank.name;
   $('#bank-size').textContent = `${list.length} sonidos`;
-  $('#bank-picker').setAttribute('aria-label', `Cambiar categoría: ${selectedBank.name}, ${list.length} sonidos`);
+  $('#bank-picker').setAttribute('aria-label', `Cambiar categoría: ${searching ? 'resultados de búsqueda' : selectedBank.name}, ${list.length} sonidos`);
+  $('#search-status').textContent = searching ? `${list.length} ${list.length === 1 ? 'sonido encontrado' : 'sonidos encontrados'}` : '';
   if ($('#category-dialog').open) renderCategories();
-  $('#sound-count').textContent = `${list.length} ${bank === 'custom' ? 'CUSTOM SOUNDS' : bank === 'fav' ? 'FAVORITES' : bank === 'sfx' ? 'SOUND EFFECTS' : bank === 'animals' ? 'ANIMAL SOUNDS' : bank === 'mj' ? 'MJ VOCAL CLIPS' : bank === 'betty' ? 'BETTY LA FEA' : bank === 'ticos' ? 'AUDIOS TICOS' : 'REAL MEME CLIPS'}`;
+  $('#sound-count').textContent = `${list.length} ${searching ? 'RESULTADOS' : bank === 'custom' ? 'CUSTOM SOUNDS' : bank === 'fav' ? 'FAVORITES' : bank === 'sfx' ? 'SOUND EFFECTS' : bank === 'animals' ? 'ANIMAL SOUNDS' : bank === 'mj' ? 'MJ VOCAL CLIPS' : bank === 'betty' ? 'BETTY LA FEA' : bank === 'ticos' ? 'AUDIOS TICOS' : 'REAL MEME CLIPS'}`;
   const fragment = document.createDocumentFragment();
   if (!list.length) {
     const empty = document.createElement('div'); empty.className = 'empty-message';
     const title = document.createElement('strong');
     const failed = catalogFailed;
-    title.textContent = bank === 'custom' ? 'Your sounds. Your board.' : bank === 'fav' ? 'Keep your favorites close.' : failed ? 'Sound pack couldn’t load.' : 'Loading the good stuff…';
+    title.textContent = searching && !failed ? 'No encontramos sonidos' : bank === 'custom' ? 'Your sounds. Your board.' : bank === 'fav' ? 'Keep your favorites close.' : failed ? 'Sound pack couldn’t load.' : 'Loading the good stuff…';
     const text = document.createElement('p');
-    text.textContent = bank === 'custom' ? 'Graba hasta 6 segundos o importa un audio desde la biblioteca.' : bank === 'fav' ? 'Pick your go-to memes and sound effects with a tap.' : failed ? 'Check your connection and retry.' : 'One tiny pack. Plenty of chaos.';
+    text.textContent = searching && !failed ? 'Prueba otro nombre, frase o categoría.' : bank === 'custom' ? 'Graba hasta 6 segundos o importa un audio desde la biblioteca.' : bank === 'fav' ? 'Pick your go-to memes and sound effects with a tap.' : failed ? 'Check your connection and retry.' : 'One tiny pack. Plenty of chaos.';
     const action = document.createElement('button'); action.className = 'primary-button';
-    action.textContent = !['fav', 'custom'].includes(bank) ? 'Retry' : bank === 'fav' ? '★ Choose favorites' : '＋ Grabar clip';
-    action.onclick = bank === 'custom' ? openRecorder : bank === 'fav' ? () => openLibrary(true) : loadCatalog;
+    action.textContent = searching && !failed ? 'Limpiar búsqueda' : !['fav', 'custom'].includes(bank) ? 'Retry' : bank === 'fav' ? '★ Choose favorites' : '＋ Grabar clip';
+    action.onclick = searching && !failed ? () => setBoardSearch('') : bank === 'custom' ? openRecorder : bank === 'fav' ? () => openLibrary(true) : loadCatalog;
     empty.append(title, text, action); fragment.append(empty);
   } else {
     for (let index = 0; index < PAGE_SIZE; index++) {
@@ -121,7 +143,7 @@ function renderPads() {
       const button = document.createElement('button');
       button.className = sound?.id === 'fahhh' ? 'pad accent' : 'pad';
       if (!sound) {
-        if (['fav', 'custom'].includes(bank) && page * PAGE_SIZE + index === list.length) {
+        if (!searching && ['fav', 'custom'].includes(bank) && page * PAGE_SIZE + index === list.length) {
           button.className = 'pad favorite-add';
           button.setAttribute('aria-label', bank === 'custom' ? 'Grabar un clip' : 'Add a favorite');
           const plus = document.createElement('span'); plus.className = 'pad-icon'; plus.textContent = '＋';
@@ -272,8 +294,8 @@ function animate() {
   drawScope(); animation = requestAnimationFrame(animate);
 }
 function renderLibrary() {
-  const fragment = document.createDocumentFragment(), search = $('#search').value.trim().toLowerCase();
-  const sounds = allSounds().filter(sound => `${sound.name} ${sound.category || sound.cat || ''} ${BANKS.find(item => item.id === sound.bank)?.name || ''} ${sound.pack || 'memes'} ${sound.context || ''} ${sound.artist || ''}`.toLowerCase().includes(search));
+  const fragment = document.createDocumentFragment(), terms = searchTerms($('#search').value);
+  const sounds = allSounds().filter(sound => matchesSearch(sound, terms));
   sounds.forEach(sound => {
     const row = document.createElement('div'); row.className = 'sound-row';
     const preview = document.createElement('button'); preview.className = 'sound-preview'; preview.textContent = '▶'; preview.setAttribute('aria-label', `Preview ${sound.name}`); preview.onclick = () => play(sound);
@@ -407,6 +429,7 @@ $('#record-save').onclick = async () => {
   try {
     await storage('readwrite', store => store.put(sound));
     customs.push(sound);
+    boardQuery = ''; $('#sound-search').value = '';
     bank = 'custom'; page = Math.floor((customs.length - 1) / PAGE_SIZE);
     saveSetting('meme-deck-bank', bank);
     recordingDraft = null; setRecordingState('idle');
@@ -420,7 +443,7 @@ $('#recorder-dialog').addEventListener('close', () => {
 });
 $('#recorder-dialog').addEventListener('cancel', event => { if (recordingState === 'saving') event.preventDefault(); });
 $('#settings-button').onclick = () => { openDialog('settings-dialog'); requestOfflineStatus(); };
-$('#library-button').onclick = () => openLibrary(bank === 'fav');
+$('#library-button').onclick = () => openLibrary(bank === 'fav' && !isSearching());
 document.querySelectorAll('dialog .close').forEach(button => button.onclick = () => button.closest('dialog').close());
 document.querySelectorAll('dialog').forEach(dialog => {
   dialog.addEventListener('click', event => { if (event.target !== dialog || (dialog.id === 'recorder-dialog' && recordingState === 'saving')) return; const r = dialog.getBoundingClientRect(); if (event.clientX < r.left || event.clientX > r.right || event.clientY < r.top || event.clientY > r.bottom) dialog.close(); });
@@ -435,18 +458,22 @@ updateMix();
 function selectBank(value) {
   if (!BANKS.some(item => item.id === value)) return;
   stopAll();
+  boardQuery = ''; $('#sound-search').value = '';
   bank = value; page = 0;
   saveSetting('meme-deck-bank', bank);
   renderPads();
 }
 $('#bank-picker').onclick = () => openDialog('category-dialog');
 function changePage(delta) {
-  const next = Math.max(0, Math.min(Math.max(0, Math.ceil(bankSounds().length / PAGE_SIZE) - 1), page + delta));
+  const next = Math.max(0, Math.min(Math.max(0, Math.ceil(boardSounds().length / PAGE_SIZE) - 1), page + delta));
   if (next !== page) { page = next; renderPads(); }
 }
 $('#previous').onclick = () => changePage(-1);
 $('#next').onclick = () => changePage(1);
 attachSwipePages($('#pads'), { onPage: changePage });
+$('#sound-search').oninput = event => setBoardSearch(event.target.value);
+$('#clear-sound-search').onclick = () => { setBoardSearch(''); $('#sound-search').focus(); };
+$('#board-search').onsubmit = event => { event.preventDefault(); $('#sound-search').blur(); };
 $('#search').oninput = renderLibrary;
 $('#import').onclick = () => { if (!libraryReady) { toast('Local storage is unavailable. Built-in sounds still work.'); return; } try { initializeAudio().catch(() => {}); } catch { toast('Audio import requires Safari or Chrome.'); return; } $('#files').click(); };
 $('#files').onchange = async event => {
@@ -470,7 +497,7 @@ $('#files').onchange = async event => {
   if (count) toast(`${count} ${count === 1 ? 'sound' : 'sounds'} saved on this device.`);
 };
 document.addEventListener('keydown', event => {
-  if (event.key === 'Escape') { stopAll(); return; }
+  if (event.key === 'Escape') { stopAll(); if (event.target === $('#sound-search')) { event.preventDefault(); setBoardSearch(''); $('#sound-search').blur(); } return; }
   if (event.ctrlKey || event.metaKey || event.altKey || event.repeat || event.isComposing || /INPUT|TEXTAREA|SELECT/.test(event.target.tagName) || event.target.isContentEditable || document.querySelector('dialog[open]')) return;
   const index = SHORTCUTS.indexOf(event.key.toLowerCase());
   if (index >= 0) { event.preventDefault(); play(visibleSounds()[index]); }
@@ -502,8 +529,8 @@ async function loadCatalog() {
 }
 function showOfflineStatus(data) {
   if (data.type !== 'OFFLINE_STATUS') return;
-  $('#offline').textContent = data.ready ? 'OFFLINE READY' : data.error ? 'ONLINE' : `SAVING ${data.count || 0}/${data.total || catalog.length || 166}`;
-  $('#download-status').textContent = data.ready ? `${data.count} clips saved. Ready without Wi-Fi.` : data.error ? 'Offline pack unavailable. Reopen online to retry.' : `Saving sound pack… ${data.count || 0}/${data.total || catalog.length || 166}`;
+  $('#offline').textContent = data.ready ? 'OFFLINE READY' : data.error ? 'ONLINE' : `SAVING ${data.count || 0}/${data.total || catalog.length || 168}`;
+  $('#download-status').textContent = data.ready ? `${data.count} clips saved. Ready without Wi-Fi.` : data.error ? 'Offline pack unavailable. Reopen online to retry.' : `Saving sound pack… ${data.count || 0}/${data.total || catalog.length || 168}`;
 }
 function requestOfflineStatus() { navigator.serviceWorker?.controller?.postMessage({ type: 'GET_OFFLINE_STATUS' }); }
 if ('serviceWorker' in navigator) {
