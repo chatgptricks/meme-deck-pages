@@ -3158,5 +3158,27 @@
     "bytes": 340027,
     "sha256": "24dd14f169d493e068ad8fa96042f936404d09e4d1ed87b9fb60d7c5586d27c7",
     "peakDb": -5.3
+  },
+  {
+    "id": "tico-hoy-vengo-a-conversar",
+    "name": "Hoy vengo a conversar",
+    "label": "Vengo a conversar",
+    "pack": "ticos",
+    "category": "Audios ticos",
+    "file": "audio/tico-hoy-vengo-a-conversar.mp3",
+    "source": "https://www.youtube.com/watch?v=onuVM3UPcqw",
+    "videoId": "onuVM3UPcqw",
+    "sourceTitle": "😂 Cosas que pasan en Costa Rica Parte 6",
+    "sourceChannel": "FinalBoyBeats",
+    "sourceChannelUrl": "https://www.youtube.com/channel/UCqf3gwVVnMMQq4ZTKix9D1g",
+    "sourceDuration": 552,
+    "start": 519.0,
+    "end": 537.0,
+    "duration": 18.0,
+    "context": "Hoy vengo a conversar con quienes me dicen… Fragmento completo de 8:39 a 8:57, con la lista de calificativos hasta la frase final.",
+    "normalizationGainDb": -1.54,
+    "bytes": 289447,
+    "sha256": "de18c22d02fe2e259b458a078f58086e6079effef5696e74160ab014a6c5f458",
+    "peakDb": -1.9
   }
 ]
