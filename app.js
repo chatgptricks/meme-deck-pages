@@ -529,8 +529,8 @@ async function loadCatalog() {
 }
 function showOfflineStatus(data) {
   if (data.type !== 'OFFLINE_STATUS') return;
-  $('#offline').textContent = data.ready ? 'OFFLINE READY' : data.error ? 'ONLINE' : `SAVING ${data.count || 0}/${data.total || catalog.length || 168}`;
-  $('#download-status').textContent = data.ready ? `${data.count} clips saved. Ready without Wi-Fi.` : data.error ? 'Offline pack unavailable. Reopen online to retry.' : `Saving sound pack… ${data.count || 0}/${data.total || catalog.length || 168}`;
+  $('#offline').textContent = data.ready ? 'OFFLINE READY' : data.error ? 'ONLINE' : `SAVING ${data.count || 0}/${data.total || catalog.length || 169}`;
+  $('#download-status').textContent = data.ready ? `${data.count} clips saved. Ready without Wi-Fi.` : data.error ? 'Offline pack unavailable. Reopen online to retry.' : `Saving sound pack… ${data.count || 0}/${data.total || catalog.length || 169}`;
 }
 function requestOfflineStatus() { navigator.serviceWorker?.controller?.postMessage({ type: 'GET_OFFLINE_STATUS' }); }
 if ('serviceWorker' in navigator) {

@@ -3136,5 +3136,27 @@
     "bytes": 371386,
     "sha256": "2447abc8207e5384d27329105e302294a3f43a226ccafaba623b69d46f1b1307",
     "peakDb": -7.7
+  },
+  {
+    "id": "tico-johanna",
+    "name": "Johanna, no me vuelva a llamar",
+    "label": "Johanna",
+    "pack": "ticos",
+    "category": "Audios ticos",
+    "file": "audio/tico-johanna.mp3",
+    "source": "https://www.youtube.com/watch?v=WAcZFoxr_Zo",
+    "videoId": "WAcZFoxr_Zo",
+    "sourceTitle": "😂 Cosas que Pasan en Costa Rica 🇨🇷 | Parte 3",
+    "sourceChannel": "FinalBoyBeats",
+    "sourceChannelUrl": "https://www.youtube.com/channel/UCqf3gwVVnMMQq4ZTKix9D1g",
+    "sourceDuration": 414,
+    "start": 37.0,
+    "end": 58.16,
+    "duration": 21.16,
+    "context": "Johanna… no me vuelva a llamar. Fragmento continuo desde 0:37 hasta terminar «no me vuelva a llamar», en 0:58.16.",
+    "normalizationGainDb": -3.95,
+    "bytes": 340027,
+    "sha256": "24dd14f169d493e068ad8fa96042f936404d09e4d1ed87b9fb60d7c5586d27c7",
+    "peakDb": -5.3
   }
 ]
