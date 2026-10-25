@@ -2,8 +2,8 @@ import { createClipRecorder, MAX_RECORDING_SECONDS } from './recorder.js';
 import { attachSwipePages } from './swipe.js';
 
 const $ = selector => document.querySelector(selector);
-const PAGE_SIZE = 16;
-const SHORTCUTS = '1234qwerasdfzxcv';
+const PAGE_SIZE = 20;
+const SHORTCUTS = '12345qwertasdfgzxcvb';
 const readSetting = (key, fallback) => { try { return JSON.parse(localStorage.getItem(key)) ?? fallback; } catch { return fallback; } };
 const saveSetting = (key, value) => { try { localStorage.setItem(key, JSON.stringify(value)); } catch { /* The board still works without localStorage. */ } };
 const BANKS = [
@@ -17,6 +17,7 @@ const BANKS = [
   { id: 'animals', name: 'Animales', group: 'Colecciones' },
   { id: 'mj', name: 'Michael Jackson', group: 'Colecciones' },
   { id: 'betty', name: 'Betty la fea', group: 'Colecciones' },
+  { id: 'ticos', name: 'Audios ticos', group: 'Colecciones' },
   { id: 'fav', name: 'Favoritos', group: 'Tu colección' },
   { id: 'custom', name: 'Mis sonidos', group: 'Tu colección' }
 ];
@@ -59,7 +60,7 @@ function bankSounds(selectedBank = bank) {
   return allSounds().filter(sound => {
     if (selectedBank === 'fav') return favorites.has(sound.id);
     if (selectedBank === 'custom') return !!sound.blob;
-    if (['sfx', 'animals', 'mj', 'betty'].includes(selectedBank)) return sound.pack === selectedBank;
+    if (['sfx', 'animals', 'mj', 'betty', 'ticos'].includes(selectedBank)) return sound.pack === selectedBank;
     return !sound.blob && (!sound.pack || sound.pack === 'memes') && (sound.bank || 'reactions') === selectedBank;
   });
 }
@@ -101,7 +102,7 @@ function renderPads() {
   $('#bank-size').textContent = `${list.length} sonidos`;
   $('#bank-picker').setAttribute('aria-label', `Cambiar categoría: ${selectedBank.name}, ${list.length} sonidos`);
   if ($('#category-dialog').open) renderCategories();
-  $('#sound-count').textContent = `${list.length} ${bank === 'custom' ? 'CUSTOM SOUNDS' : bank === 'fav' ? 'FAVORITES' : bank === 'sfx' ? 'SOUND EFFECTS' : bank === 'animals' ? 'ANIMAL SOUNDS' : bank === 'mj' ? 'MJ VOCAL CLIPS' : bank === 'betty' ? 'BETTY LA FEA' : 'REAL MEME CLIPS'}`;
+  $('#sound-count').textContent = `${list.length} ${bank === 'custom' ? 'CUSTOM SOUNDS' : bank === 'fav' ? 'FAVORITES' : bank === 'sfx' ? 'SOUND EFFECTS' : bank === 'animals' ? 'ANIMAL SOUNDS' : bank === 'mj' ? 'MJ VOCAL CLIPS' : bank === 'betty' ? 'BETTY LA FEA' : bank === 'ticos' ? 'AUDIOS TICOS' : 'REAL MEME CLIPS'}`;
   const fragment = document.createDocumentFragment();
   if (!list.length) {
     const empty = document.createElement('div'); empty.className = 'empty-message';
@@ -278,10 +279,10 @@ function renderLibrary() {
     const preview = document.createElement('button'); preview.className = 'sound-preview'; preview.textContent = '▶'; preview.setAttribute('aria-label', `Preview ${sound.name}`); preview.onclick = () => play(sound);
     const info = document.createElement('div'); info.className = 'sound-info';
     const name = document.createElement('strong'); name.textContent = sound.name; info.append(name);
-    if (favoritePicker) { const detail = document.createElement('small'); detail.textContent = `${sound.blob ? 'Your audio' : sound.pack === 'sfx' ? 'Sound effect' : sound.pack === 'animals' ? 'Animal' : sound.pack === 'mj' ? 'Michael Jackson' : sound.pack === 'betty' ? 'Betty la fea' : 'Meme'}${sound.duration ? ' · ' + sound.duration.toFixed(1) + 's' : ''}`; info.append(detail); }
+    if (favoritePicker) { const detail = document.createElement('small'); detail.textContent = `${sound.blob ? 'Your audio' : sound.pack === 'sfx' ? 'Sound effect' : sound.pack === 'animals' ? 'Animal' : sound.pack === 'mj' ? 'Michael Jackson' : sound.pack === 'betty' ? 'Betty la fea' : sound.pack === 'ticos' ? 'Audio tico' : 'Meme'}${sound.duration ? ' · ' + sound.duration.toFixed(1) + 's' : ''}`; info.append(detail); }
     else if (sound.source) { const source = document.createElement('a'); source.textContent = `${sound.duration.toFixed(1)}s · View source ↗`; source.href = sound.source; source.target = '_blank'; source.rel = 'noopener noreferrer'; info.append(source); }
     else { const detail = document.createElement('small'); detail.textContent = `${sound.duration ? sound.duration.toFixed(1) + 's · ' : ''}On this device`; info.append(detail); }
-    if (sound.pack === 'betty' && !favoritePicker) {
+    if (['betty', 'ticos'].includes(sound.pack) && !favoritePicker) {
       const credit = document.createElement('small'); credit.className = 'sound-context'; credit.textContent = [sound.artist, sound.context].filter(Boolean).join(' · ');
       if (credit.textContent) info.append(credit);
     }
@@ -501,8 +502,8 @@ async function loadCatalog() {
 }
 function showOfflineStatus(data) {
   if (data.type !== 'OFFLINE_STATUS') return;
-  $('#offline').textContent = data.ready ? 'OFFLINE READY' : data.error ? 'ONLINE' : `SAVING ${data.count || 0}/${data.total || catalog.length || 128}`;
-  $('#download-status').textContent = data.ready ? `${data.count} clips saved. Ready without Wi-Fi.` : data.error ? 'Offline pack unavailable. Reopen online to retry.' : `Saving sound pack… ${data.count || 0}/${data.total || catalog.length || 128}`;
+  $('#offline').textContent = data.ready ? 'OFFLINE READY' : data.error ? 'ONLINE' : `SAVING ${data.count || 0}/${data.total || catalog.length || 148}`;
+  $('#download-status').textContent = data.ready ? `${data.count} clips saved. Ready without Wi-Fi.` : data.error ? 'Offline pack unavailable. Reopen online to retry.' : `Saving sound pack… ${data.count || 0}/${data.total || catalog.length || 148}`;
 }
 function requestOfflineStatus() { navigator.serviceWorker?.controller?.postMessage({ type: 'GET_OFFLINE_STATUS' }); }
 if ('serviceWorker' in navigator) {

@@ -1,5 +1,5 @@
 /* Increment VERSION whenever the app shell or bundled sound catalog changes. */
-const VERSION = 'meme-deck-v18-record-and-swipe';
+const VERSION = 'meme-deck-v36-ticos-ella-se-fue';
 const BASE = new URL('./', self.registration.scope);
 // CacheStorage is shared by every project on a GitHub Pages origin.
 const CACHE_PREFIX = `meme-deck-scope:${encodeURIComponent(BASE.pathname)}:`;
@@ -11,7 +11,7 @@ let catalogPromise;
 let filling;
 
 function validCatalog(value) {
-  if (!Array.isArray(value) || !value.length || value.length > 128) throw new Error('Invalid sound catalog');
+  if (!Array.isArray(value) || !value.length || value.length > 512) throw new Error('Invalid sound catalog');
   const paths = new Set();
   for (const sound of value) {
     if (!/^audio\/[a-z0-9-]+\.mp3$/.test(sound.file) || !/^[a-f0-9]{64}$/.test(sound.sha256) || paths.has(sound.file)) {
