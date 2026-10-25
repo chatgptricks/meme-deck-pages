@@ -292,6 +292,7 @@ dialog::backdrop { background: #25271fa6; backdrop-filter: blur(5px); }
 
 @media (max-width: 650px) {
   #category-dialog { padding: 18px; }
+  .bank-bar:has(.pagination:not([hidden])) #bank-size { display: none; }
   .category-card { padding: 9px; }
   .category-name { font-size: 12px; }
 }
