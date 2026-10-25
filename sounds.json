@@ -3054,5 +3054,43 @@
     "bytes": 129357,
     "sha256": "d1c729a07bb3f1dc4ca20ec534016d455475c9b9cfc4f4f6f362f5128fea9c66",
     "peakDb": -7.5
+  },
+  {
+    "id": "tico-la-hielera",
+    "name": "La hielera",
+    "label": "La hielera",
+    "pack": "ticos",
+    "category": "Audios ticos",
+    "file": "audio/tico-la-hielera.mp3",
+    "source": "https://www.youtube.com/watch?v=SOyK6gWK9oo",
+    "videoId": "SOyK6gWK9oo",
+    "sourceTitle": "Audios y memes ticos.",
+    "sourceChannel": "Ale_simes",
+    "sourceChannelUrl": "https://www.youtube.com/channel/UCw-YIhFLCh5cTjjyKnZ51bA",
+    "sourceDuration": 545,
+    "segments": [
+      {
+        "start": 1.2,
+        "end": 4.4
+      },
+      {
+        "start": 6.55,
+        "end": 11.85
+      },
+      {
+        "start": 13.35,
+        "end": 16.8
+      },
+      {
+        "start": 17.4,
+        "end": 22.5
+      }
+    ],
+    "duration": 17.05,
+    "context": "Diálogo de la hielera, con las pausas entre respuestas acortadas. El remate «soy un imbécil» se conserva completo, hasta 0:22.50 del original.",
+    "normalizationGainDb": -8.59,
+    "bytes": 274059,
+    "sha256": "59f951d533c6301aaf80aa31f317a3ae0d49ea1c726d517b80b0acf0ec5eaa4f",
+    "peakDb": -8.7
   }
 ]
