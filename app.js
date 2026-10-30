@@ -570,11 +570,66 @@ function showOfflineStatus(data) {
   $('#download-status').textContent = data.ready ? `${data.count} clips guardados. Listos para usar sin conexión.` : data.error ? 'Los sonidos aún no están disponibles sin conexión. Reabre la app con internet.' : `Guardando sonidos… ${data.count || 0}/${data.total || catalog.length || 212}`;
 }
 function requestOfflineStatus() { navigator.serviceWorker?.controller?.postMessage({ type: 'GET_OFFLINE_STATUS' }); }
+let manualRefreshInProgress = false;
+function waitForUpdate(worker) {
+  return new Promise((resolve, reject) => {
+    let timer;
+    const finish = error => {
+      clearTimeout(timer); worker.removeEventListener('statechange', check);
+      error ? reject(error) : resolve();
+    };
+    const check = () => {
+      if (worker.state === 'activated') finish();
+      else if (worker.state === 'redundant') finish(new Error('Update installation failed'));
+    };
+    worker.addEventListener('statechange', check);
+    timer = setTimeout(() => finish(new Error('Update timed out')), 180000);
+    if (worker.state === 'installed') worker.postMessage({ type: 'SKIP_WAITING' });
+    check();
+  });
+}
+$('#refresh-app').onclick = async () => {
+  const button = $('#refresh-app'), status = $('#refresh-status');
+  if (manualRefreshInProgress) return;
+  manualRefreshInProgress = true; button.disabled = true;
+  status.textContent = 'Buscando la versión más reciente…';
+  try {
+    // The query bypasses the service worker and no-store bypasses the HTTP cache.
+    const controller = new AbortController();
+    const timeout = setTimeout(() => controller.abort(), 15000);
+    let response;
+    try { response = await fetch(`sw.js?refresh=${Date.now()}`, { cache: 'no-store', redirect: 'error', signal: controller.signal }); }
+    finally { clearTimeout(timeout); }
+    if (!response.ok || !(response.headers.get('content-type') || '').toLowerCase().includes('javascript')) throw new Error('Update server unavailable');
+    if ('serviceWorker' in navigator) {
+      const registration = await navigator.serviceWorker.getRegistration();
+      if (registration) {
+        let worker = registration.installing || registration.waiting;
+        const found = () => { worker = registration.installing || worker; };
+        registration.addEventListener('updatefound', found);
+        try {
+          await registration.update();
+          worker = registration.installing || registration.waiting || worker;
+          if (worker) {
+            status.textContent = 'Descargando la actualización y los sonidos…';
+            await waitForUpdate(worker);
+          }
+        } finally { registration.removeEventListener('updatefound', found); }
+      }
+    }
+    status.textContent = 'Actualización lista. Abriendo la app…';
+    stopAll(); location.reload();
+  } catch (_) {
+    status.textContent = 'No se pudo actualizar. Revisa tu conexión e inténtalo de nuevo.';
+    button.disabled = false; manualRefreshInProgress = false;
+  }
+};
 if ('serviceWorker' in navigator) {
   navigator.serviceWorker.addEventListener('message', event => showOfflineStatus(event.data || {}));
   let refreshing = false;
   const hadController = !!navigator.serviceWorker.controller;
   navigator.serviceWorker.addEventListener('controllerchange', () => {
+    if (manualRefreshInProgress) { requestOfflineStatus(); return; }
     if (hadController && !refreshing) {
       refreshing = true;
       // Keep an unsaved microphone clip intact while an offline update arrives.
