@@ -10,7 +10,8 @@ export const BANKS = [
   { id: 'animals', name: 'Animales' },
   { id: 'mj', name: 'Michael Jackson' },
   { id: 'betty', name: 'Betty la fea' },
-  { id: 'ticos', name: 'Audios ticos' }
+  { id: 'ticos', name: 'Audios ticos' },
+  { id: 'disfraces', name: 'Disfraces' }
 ];
 
 const legacyBanks = new Map([

@@ -134,6 +134,8 @@ dialog::backdrop { background: #25271fa6; backdrop-filter: blur(5px); }
 .sound-info strong { display: block; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: 13px; }
 .sound-info a, .sound-info small { display: block; margin-top: 5px; color: #5e6456; font-size: 11px; }
 .sound-info .sound-context { line-height: 1.4; }
+.sound-credits { margin-top: 7px; color: #5e6456; font-size: 11px; }
+.sound-credits summary { cursor: pointer; }
 .favorite, .delete-sound { flex-shrink: 0; width: 44px; height: 44px; background: transparent; color: #666d5b; font-size: 25px; }
 .favorite[aria-pressed=true] { color: #ad421c; }
 .delete-sound { width: 30px; font-size: 20px; }
@@ -369,6 +371,7 @@ dialog::backdrop { background: #25271fa6; backdrop-filter: blur(5px); }
 .pad[data-bank=mj] { --pad-top: #d3d1d4; --pad-base: #bdb9c0; --pad-edge: #99959d; }
 .pad[data-bank=betty] { --pad-top: #e2d3da; --pad-base: #cfb9c3; --pad-edge: #ad96a0; }
 .pad[data-bank=ticos] { --pad-top: #e3d3cb; --pad-base: #d0b8ac; --pad-edge: #af968b; }
+.pad[data-bank=disfraces] { --pad-top: #d9d1dc; --pad-base: #c4b7cb; --pad-edge: #a295a9; }
 .pad[data-bank=custom] { --pad-top: #d8dcda; --pad-base: #bfc7c3; --pad-edge: #9ca69f; }
 @media (min-width: 651px) and (min-height: 621px) and (max-height: 900px) {
   .machine { grid-template-rows: 32px 60px 36px 44px minmax(0, 1fr) 42px; }

@@ -5087,5 +5087,90 @@
       "chamaco",
       "preñó la güila"
     ]
+  },
+  {
+    "id": "disfraz-la-cegua",
+    "name": "La Cegua",
+    "label": "La Cegua",
+    "pack": "disfraces",
+    "category": "Disfraces",
+    "bank": "disfraces",
+    "bankOrder": 1,
+    "file": "audio/disfraz-la-cegua.mp3",
+    "duration": 90,
+    "bytes": 3602276,
+    "sha256": "66932b2edc659a6eebcd2b85a4b72834f91d8ae43e1cb7f1060e57c475f40f04",
+    "peakDb": -1.7,
+    "source": "https://incompetech.com/music/royalty-free/index.html?isrc=USUAN1100048",
+    "sourceTitle": "The Dread — Kevin MacLeod (música base de la mezcla)",
+    "artist": "Kevin MacLeod · efectos de Mixkit y Freesound",
+    "context": "Mezcla incidental completa para La Cegua: música de terror, galope y relinchos, grito principal a los 40 s, más gritos y carcajadas con reverberación y ecos.",
+    "editNotes": "Versión final de 1:30 con gritos y risas. Se conserva el MP3 completo, sin recortar ni volver a codificar.",
+    "searchAliases": [
+      "Disfraces",
+      "Cegua",
+      "Segua",
+      "La Cegua",
+      "terror",
+      "horror",
+      "caballo",
+      "galope",
+      "relincho",
+      "gritos",
+      "risas",
+      "carcajadas",
+      "entrada",
+      "Halloween"
+    ],
+    "attributions": [
+      {
+        "title": "The Dread — Kevin MacLeod (incompetech.com)",
+        "source": "https://incompetech.com/music/royalty-free/index.html?isrc=USUAN1100048",
+        "license": "CC BY 4.0 · música editada y mezclada",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      {
+        "title": "Classic Horror 3 — Kevin MacLeod (incompetech.com)",
+        "source": "https://incompetech.com/music/royalty-free/index.html?isrc=USUAN1100469",
+        "license": "CC BY 4.0 · música editada y mezclada",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      {
+        "title": "Horse fast gallop in the dirt — Mixkit",
+        "source": "https://mixkit.co/free-sound-effects/horse/",
+        "license": "Mixkit Sound Effects Free License",
+        "licenseUrl": "https://mixkit.co/license/modal/sfxFree/"
+      },
+      {
+        "title": "Scared horse neighing — Mixkit",
+        "source": "https://mixkit.co/free-sound-effects/horse/",
+        "license": "Mixkit Sound Effects Free License",
+        "licenseUrl": "https://mixkit.co/license/modal/sfxFree/"
+      },
+      {
+        "title": "Woman Screaming — DanJFilms · voz editada con reverberación y ecos",
+        "source": "https://freesound.org/people/DanJFilms/sounds/845164/",
+        "license": "CC0",
+        "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
+      },
+      {
+        "title": "Female scream 02 — missozzy · grito editado",
+        "source": "https://freesound.org/people/missozzy/sounds/169811/",
+        "license": "CC0",
+        "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
+      },
+      {
+        "title": "Female Evil Laugh — mvVoiceActing · carcajada editada",
+        "source": "https://freesound.org/people/mvVoiceActing/sounds/219778/",
+        "license": "CC0",
+        "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
+      },
+      {
+        "title": "Female Evil Laugh 1.wav — XfiXy8 · interpretación de C. Tompkins; grabación de Peter Brucker · voz editada",
+        "source": "https://freesound.org/people/XfiXy8/sounds/467280/",
+        "license": "CC0",
+        "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    ]
   }
 ]

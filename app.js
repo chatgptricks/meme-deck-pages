@@ -342,12 +342,25 @@ function renderLibrary() {
     const preview = document.createElement('button'); preview.className = 'sound-preview'; preview.textContent = '▶'; preview.setAttribute('aria-label', `Escuchar ${sound.name}`); preview.onclick = () => play(sound);
     const info = document.createElement('div'); info.className = 'sound-info';
     const name = document.createElement('strong'); name.textContent = sound.name; info.append(name);
-    if (favoritePicker) { const detail = document.createElement('small'); detail.textContent = `${sound.blob ? 'Tu audio' : sound.pack === 'sfx' ? 'Efecto de sonido' : sound.pack === 'cartoons' ? 'Cartoon clásico' : sound.pack === 'games' ? 'Videojuego clásico' : sound.pack === 'animals' ? 'Animal' : sound.pack === 'mj' ? 'Michael Jackson' : sound.pack === 'betty' ? 'Betty la fea' : sound.pack === 'ticos' ? 'Audio tico' : 'Meme'}${sound.duration ? ' · ' + sound.duration.toFixed(1) + 's' : ''}`; info.append(detail); }
-    else if (sound.source) { const source = document.createElement('a'); source.textContent = `${sound.duration.toFixed(1)}s · Ver fuente ↗`; source.href = sound.source; source.target = '_blank'; source.rel = 'noopener noreferrer'; info.append(source); }
+    if (favoritePicker) { const detail = document.createElement('small'); detail.textContent = `${sound.blob ? 'Tu audio' : sound.pack === 'sfx' ? 'Efecto de sonido' : sound.pack === 'cartoons' ? 'Cartoon clásico' : sound.pack === 'games' ? 'Videojuego clásico' : sound.pack === 'animals' ? 'Animal' : sound.pack === 'mj' ? 'Michael Jackson' : sound.pack === 'betty' ? 'Betty la fea' : sound.pack === 'ticos' ? 'Audio tico' : sound.pack === 'disfraces' ? 'Disfraces' : 'Meme'}${sound.duration ? ' · ' + sound.duration.toFixed(1) + 's' : ''}`; info.append(detail); }
+    else if (sound.source) { const source = document.createElement('a'); source.textContent = `${sound.duration.toFixed(1)}s · ${sound.attributions?.length ? 'Música base' : 'Ver fuente'} ↗`; source.href = sound.source; source.target = '_blank'; source.rel = 'noopener noreferrer'; info.append(source); }
     else { const detail = document.createElement('small'); detail.textContent = `${sound.duration ? sound.duration.toFixed(1) + 's · ' : ''}En este dispositivo`; info.append(detail); }
-    if (['betty', 'ticos', 'cartoons', 'games'].includes(sound.pack) && !favoritePicker) {
+    if (['betty', 'ticos', 'cartoons', 'games', 'disfraces'].includes(sound.pack) && !favoritePicker) {
       const credit = document.createElement('small'); credit.className = 'sound-context'; credit.textContent = [sound.artist, sound.context].filter(Boolean).join(' · ');
       if (credit.textContent) info.append(credit);
+    }
+    if (sound.attributions?.length && !favoritePicker) {
+      const credits = document.createElement('details'); credits.className = 'sound-credits';
+      const heading = document.createElement('summary'); heading.textContent = 'Créditos de la mezcla'; credits.append(heading);
+      for (const attribution of sound.attributions) {
+        const line = document.createElement('small'); line.className = 'sound-context';
+        const link = document.createElement('a'); link.textContent = attribution.title; link.href = attribution.source; link.target = '_blank'; link.rel = 'noopener noreferrer'; line.append(link);
+        if (attribution.license) {
+          const license = document.createElement('a'); license.textContent = attribution.license; license.href = attribution.licenseUrl; license.target = '_blank'; license.rel = 'noopener noreferrer'; line.append(license);
+        }
+        credits.append(line);
+      }
+      info.append(credits);
     }
     const favorite = document.createElement('button'); favorite.className = 'favorite'; favorite.textContent = favorites.has(sound.id) ? '★' : '☆'; favorite.setAttribute('aria-label', `Favorito: ${sound.name}`); favorite.setAttribute('aria-pressed', favorites.has(sound.id));
     row.classList.toggle('is-favorite', favorites.has(sound.id));
@@ -566,8 +579,8 @@ async function loadCatalog() {
 }
 function showOfflineStatus(data) {
   if (data.type !== 'OFFLINE_STATUS') return;
-  $('#offline').textContent = data.ready ? 'SIN CONEXIÓN ✓' : data.error ? 'EN LÍNEA' : `GUARDANDO ${data.count || 0}/${data.total || catalog.length || 212}`;
-  $('#download-status').textContent = data.ready ? `${data.count} clips guardados. Listos para usar sin conexión.` : data.error ? 'Los sonidos aún no están disponibles sin conexión. Reabre la app con internet.' : `Guardando sonidos… ${data.count || 0}/${data.total || catalog.length || 212}`;
+  $('#offline').textContent = data.ready ? 'SIN CONEXIÓN ✓' : data.error ? 'EN LÍNEA' : `GUARDANDO ${data.count || 0}/${data.total || catalog.length || 213}`;
+  $('#download-status').textContent = data.ready ? `${data.count} clips guardados. Listos para usar sin conexión.` : data.error ? 'Los sonidos aún no están disponibles sin conexión. Reabre la app con internet.' : `Guardando sonidos… ${data.count || 0}/${data.total || catalog.length || 213}`;
 }
 function requestOfflineStatus() { navigator.serviceWorker?.controller?.postMessage({ type: 'GET_OFFLINE_STATUS' }); }
 let manualRefreshInProgress = false;
