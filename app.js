@@ -68,24 +68,63 @@ function bankSounds(selectedBank = bank) {
   return catalog.filter(sound => sound.bank === selectedBank).sort((left, right) => left.bankOrder - right.bankOrder);
 }
 const categoryOptions = new Map();
+const categoryIcons = {
+  fav: '<path d="m12 3 2.8 5.7 6.3.9-4.5 4.4 1.1 6.2-5.7-3-5.7 3 1.1-6.2L3 9.6l6.2-.9Z"/>',
+  custom: '<rect x="9" y="3" width="6" height="12" rx="3"/><path d="M6 10v2a6 6 0 0 0 12 0v-2m-6 8v3m-3 0h6"/>',
+  reactions: '<circle cx="12" cy="12" r="9"/><path d="M8 9h.01M16 9h.01M8 14s1 3 4 3 4-3 4-3"/>',
+  quotes: '<path d="M5 5h14v11h-8l-5 4v-4H5Zm3 4h8m-8 3h5"/>',
+  effects: '<path d="m13 2-8 12h6l-1 8 9-13h-7Z"/>',
+  games: '<path d="M7 7h10c3 0 4 5 4 9 0 3-3 3-5 0H8c-2 3-5 3-5 0 0-4 1-9 4-9Zm0 4v4m-2-2h4m7-1h.01m2 2h.01"/>',
+  cartoons: '<path d="m12 3 2.4 5.8L21 8l-3.7 5 3.7 5-6.6-.8L12 23l-2.4-5.8L3 18l3.7-5L3 8l6.6.8Z"/>',
+  animals: '<ellipse cx="12" cy="16" rx="5" ry="4"/><ellipse cx="5" cy="9" rx="2" ry="3"/><ellipse cx="10" cy="5" rx="2" ry="3"/><ellipse cx="16" cy="6" rx="2" ry="3"/><ellipse cx="20" cy="11" rx="2" ry="3"/>',
+  mj: '<path d="M5 10v4m4-8v12m4-15v18m4-14v10m4-6v2"/>',
+  betty: '<path d="M3 11h18M3 11l1 6h6l1-6m2 0 1 6h6l1-6M4 11V8m16 3V8"/>',
+  ticos: '<path d="M5 21V3m0 1c5-4 9 4 15 0v12c-6 4-10-4-15 0m0-8c5-4 9 4 15 0M5 12c5-4 9 4 15 0"/>',
+  disfraces: '<path d="M3 5c5 3 13 3 18 0v6c0 7-6 10-9 10S3 18 3 11Zm3 6 4 1m4 0 4-1m-9 5c2 1 4 1 6 0"/>'
+};
+const categoryIcon = id => `<svg viewBox="0 0 24 24" aria-hidden="true">${categoryIcons[id] || categoryIcons.effects}</svg>`;
 function updateCategories() {
   for (const item of BANKS) {
-    const option = categoryOptions.get(item.id);
-    if (!option) continue;
-    option.textContent = `${item.name} (${bankSounds(item.id).length})`;
-    option.selected = item.id === bank;
+    const card = categoryOptions.get(item.id);
+    if (!card) continue;
+    const count = bankSounds(item.id).length;
+    card.count.textContent = `${count} ${count === 1 ? 'sonido' : 'sonidos'}`;
+    card.button.setAttribute('aria-pressed', String(item.id === bank));
+    card.button.setAttribute('aria-label', `${item.name}, ${card.count.textContent}`);
   }
-  $('#category-select').value = bank;
+  const selected = BANKS.find(item => item.id === bank);
+  const count = bankSounds(bank).length;
+  $('#category-picker').dataset.bank = bank;
+  $('#category-picker').setAttribute('aria-label', `Cambiar categoría: ${selected.name}, ${count} ${count === 1 ? 'sonido' : 'sonidos'}`);
+  $('#category-name').textContent = selected.name;
+  $('#category-size').textContent = `${count} ${count === 1 ? 'sonido' : 'sonidos'}`;
+  $('#category-dot').innerHTML = categoryIcon(bank);
 }
 function renderCategories() {
   const fragment = document.createDocumentFragment();
   categoryOptions.clear();
   for (const item of BANKS) {
-    const option = document.createElement('option'); option.value = item.id;
-    categoryOptions.set(item.id, option); fragment.append(option);
+    const button = document.createElement('button'); button.type = 'button'; button.className = 'category-card'; button.dataset.bank = item.id;
+    const icon = document.createElement('span'); icon.className = 'category-card-icon'; icon.innerHTML = categoryIcon(item.id);
+    const name = document.createElement('strong'); name.className = 'category-card-name'; name.textContent = item.name;
+    const count = document.createElement('small'); count.className = 'category-card-count';
+    button.append(icon, name, count);
+    button.onclick = () => { selectBank(item.id); closeCategories(); };
+    categoryOptions.set(item.id, { button, count }); fragment.append(button);
   }
-  $('#category-select').replaceChildren(fragment);
+  $('#category-list').replaceChildren(fragment);
   updateCategories();
+}
+function openCategories() {
+  updateCategories();
+  $('#category-picker').setAttribute('aria-expanded', 'true');
+  $('#category-dialog').showModal();
+  categoryOptions.get(bank)?.button.focus();
+}
+function closeCategories() {
+  $('#category-dialog').close();
+  $('#category-picker').setAttribute('aria-expanded', 'false');
+  $('#category-picker').focus({ preventScroll: true });
 }
 function renderPageDots(pages) {
   const indices = new Set(pages <= 7 ? Array.from({ length: pages }, (_, index) => index) : [0, pages - 1, page - 1, page, page + 1]);
@@ -516,7 +555,9 @@ function selectBank(value) {
   saveSetting('meme-deck-bank', bank);
   renderPads();
 }
-$('#category-select').onchange = event => selectBank(event.target.value);
+$('#category-picker').onclick = openCategories;
+$('#category-close').onclick = closeCategories;
+$('#category-dialog').addEventListener('close', () => $('#category-picker').setAttribute('aria-expanded', 'false'));
 function changePage(delta) {
   const next = Math.max(0, Math.min(Math.max(0, Math.ceil(boardSounds().length / PAGE_SIZE) - 1), page + delta));
   if (next !== page) { page = next; renderPads(); }
