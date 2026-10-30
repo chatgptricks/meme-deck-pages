@@ -2930,7 +2930,7 @@
     "sha256": "aa13f37ebdd990441c042d58568f1093fe6930efb293b5f621e4535f2d9566b7",
     "peakDb": -5.0,
     "bank": "ticos",
-    "bankOrder": 32,
+    "bankOrder": 33,
     "searchAliases": [
       "Audios ticos"
     ]
@@ -3524,7 +3524,7 @@
     "sha256": "2129a3b8f5d883dab80ebeacaa446a121e29ea55c5e86befa64497968182eb16",
     "peakDb": -5.7,
     "bank": "ticos",
-    "bankOrder": 37,
+    "bankOrder": 38,
     "searchAliases": [
       "Audios ticos"
     ]
@@ -3551,7 +3551,7 @@
     "sha256": "16b051277f3e9d14073c9c19b8272c8a96294373747603de035e06317a3c5969",
     "peakDb": -5.7,
     "bank": "ticos",
-    "bankOrder": 38,
+    "bankOrder": 39,
     "searchAliases": [
       "Audios ticos"
     ]
@@ -3578,7 +3578,7 @@
     "sha256": "34d5d8070105eacdb9c1f7d3afb244bfb321761c01de17b8e82631cbfda4436e",
     "peakDb": -6.5,
     "bank": "ticos",
-    "bankOrder": 35,
+    "bankOrder": 36,
     "searchAliases": [
       "Audios ticos"
     ]
@@ -3605,7 +3605,7 @@
     "sha256": "8ba1b8d91640a19455122c73319331cbc2e557f93b7af804757caed826f1cf93",
     "peakDb": -5.5,
     "bank": "ticos",
-    "bankOrder": 33,
+    "bankOrder": 34,
     "searchAliases": [
       "Audios ticos"
     ]
@@ -3659,7 +3659,7 @@
     "sha256": "670767ac15318e4a0a012608635c307627343e85aebf055037f4ad88697055ed",
     "peakDb": -2.7,
     "bank": "ticos",
-    "bankOrder": 39,
+    "bankOrder": 40,
     "searchAliases": [
       "Audios ticos"
     ]
@@ -3686,7 +3686,7 @@
     "sha256": "7d778250f6845c082cecfbd22f7d75eeaafe23a0a75a713d6a2b2db8f82b2825",
     "peakDb": -5.4,
     "bank": "ticos",
-    "bankOrder": 36,
+    "bankOrder": 37,
     "searchAliases": [
       "Audios ticos"
     ]
@@ -3713,7 +3713,7 @@
     "sha256": "6f97d34b376aaea59cc4375b65df8303225660c63796d19987621a201ea96211",
     "peakDb": -6.5,
     "bank": "ticos",
-    "bankOrder": 34,
+    "bankOrder": 35,
     "searchAliases": [
       "Audios ticos"
     ]
@@ -3767,7 +3767,7 @@
     "sha256": "1465a5216221210457ce5f65822c72c7c3acf05d9bd1c96964db6a2897565ed5",
     "peakDb": -8.1,
     "bank": "ticos",
-    "bankOrder": 43,
+    "bankOrder": 44,
     "searchAliases": [
       "Audios ticos"
     ]
@@ -3821,7 +3821,7 @@
     "sha256": "9bc76d5c0dfaf35833495db7380ed77c965d478a124dd4bfa7fba5b5bde043d7",
     "peakDb": -8.5,
     "bank": "ticos",
-    "bankOrder": 40,
+    "bankOrder": 41,
     "searchAliases": [
       "Audios ticos"
     ]
@@ -3848,7 +3848,7 @@
     "sha256": "c05d094866cd8e8f0dac891d3e4e69370dac93b1cb0f11bd8a851df346216f63",
     "peakDb": -7.5,
     "bank": "ticos",
-    "bankOrder": 41,
+    "bankOrder": 42,
     "searchAliases": [
       "Audios ticos"
     ]
@@ -3875,7 +3875,7 @@
     "sha256": "d1c729a07bb3f1dc4ca20ec534016d455475c9b9cfc4f4f6f362f5128fea9c66",
     "peakDb": -7.5,
     "bank": "ticos",
-    "bankOrder": 42,
+    "bankOrder": 43,
     "searchAliases": [
       "Audios ticos"
     ]
@@ -5055,6 +5055,37 @@
         "start": 6.57,
         "end": 10.52
       }
+    ]
+  },
+  {
+    "id": "tico-voy-a-cuidar-al-chamaco",
+    "name": "Voy a cuidar al chamaco",
+    "label": "Cuidar al chamaco",
+    "pack": "ticos",
+    "category": "Audios ticos",
+    "file": "audio/tico-voy-a-cuidar-al-chamaco.mp3",
+    "source": "https://www.tiktok.com/@.audiosticos/video/7701806538033302816",
+    "videoId": "7701806538033302816",
+    "sourceTitle": "tiene la realidad toda alterada JAJA #paratiiiiiiiiiiiiiiiiiiiiiiiiii...",
+    "sourceChannel": "@.audiosticos",
+    "sourceChannelUrl": "https://www.tiktok.com/@.audiosticos",
+    "sourceDuration": 14.446,
+    "start": 0,
+    "end": 4.72,
+    "duration": 4.72,
+    "context": "Desde el inicio hasta el primer «chamaco», antes de la siguiente frase. Fuente: @.audiosticos en TikTok.",
+    "normalizationGainDb": -1.46,
+    "bytes": 76717,
+    "sha256": "68d45e092eb05915bb5ea0c5f36134bae635991fd9710693352ddde88ea190c6",
+    "peakDb": -7.8,
+    "bank": "ticos",
+    "bankOrder": 32,
+    "searchAliases": [
+      "Audios ticos",
+      "TikTok",
+      "audiosticos",
+      "chamaco",
+      "preñó la güila"
     ]
   }
 ]
