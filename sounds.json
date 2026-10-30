@@ -11,11 +11,16 @@
     "duration": 1.824,
     "bytes": 29229,
     "sha256": "ab794077c69c1acc2e207925b56229d599146e03b6429abda209bcb9a9bd401b",
-    "peakDb": -9.0
+    "peakDb": -9.0,
+    "bankOrder": 1,
+    "searchAliases": [
+      "Reacciones",
+      "Memes"
+    ]
   },
   {
     "id": "vine-boom",
-    "bank": "stings",
+    "bank": "effects",
     "name": "Vine Boom",
     "category": "Classics",
     "icon": "💥",
@@ -25,7 +30,12 @@
     "duration": 3.088,
     "bytes": 50501,
     "sha256": "c025b801a20fc275799e9d97d6e45c1e3d809b05e35cfb2c2266e38dc2cce9c6",
-    "peakDb": -0.4
+    "peakDb": -0.4,
+    "bankOrder": 1,
+    "searchAliases": [
+      "Efectos meme",
+      "Memes"
+    ]
   },
   {
     "id": "bruh",
@@ -39,11 +49,16 @@
     "duration": 0.588,
     "bytes": 11772,
     "sha256": "8cc584ec8103bd770fcef353cf1127cb2f474f5d87e576f5f10ad6eabff9891f",
-    "peakDb": -5.4
+    "peakDb": -5.4,
+    "bankOrder": 2,
+    "searchAliases": [
+      "Reacciones",
+      "Memes"
+    ]
   },
   {
     "id": "emotional-damage",
-    "bank": "taunts",
+    "bank": "quotes",
     "name": "Emotional Damage",
     "category": "Reactions",
     "icon": "💔",
@@ -53,11 +68,16 @@
     "duration": 3.32,
     "bytes": 54471,
     "sha256": "8a9eafb89b4f3bf34e63677ecd5ff743e2fa03f378d3d64ed627d5728ab45d76",
-    "peakDb": -0.2
+    "peakDb": -0.2,
+    "bankOrder": 1,
+    "searchAliases": [
+      "Risas y burlas",
+      "Memes"
+    ]
   },
   {
     "id": "metal-pipe",
-    "bank": "stings",
+    "bank": "effects",
     "name": "Metal Pipe",
     "category": "Effects",
     "icon": "🔧",
@@ -67,11 +87,16 @@
     "duration": 2.902,
     "bytes": 47575,
     "sha256": "76e90c9f225825a8a6bceea580e97811f36abcb850ef985eb4bca0c3c7ed6f94",
-    "peakDb": -6.1
+    "peakDb": -6.1,
+    "bankOrder": 2,
+    "searchAliases": [
+      "Efectos meme",
+      "Memes"
+    ]
   },
   {
     "id": "air-horn",
-    "bank": "stings",
+    "bank": "effects",
     "name": "Air Horn",
     "category": "Classics",
     "icon": "📣",
@@ -81,11 +106,16 @@
     "duration": 2.102,
     "bytes": 42683,
     "sha256": "61343f51a9384c273f77baf986bb000cfbc87705e1105103ddb53a9c633498b5",
-    "peakDb": -3.1
+    "peakDb": -3.1,
+    "bankOrder": 6,
+    "searchAliases": [
+      "Efectos meme",
+      "Memes"
+    ]
   },
   {
     "id": "xp-error",
-    "bank": "gaming",
+    "bank": "effects",
     "name": "Windows Error",
     "category": "Gaming",
     "icon": "⚠",
@@ -95,11 +125,16 @@
     "duration": 0.993,
     "bytes": 8377,
     "sha256": "e5c633eda2370c0e08b4289dbf990d5aa180c00a4cc27de46d9d45b0df3795e8",
-    "peakDb": -0.8
+    "peakDb": -0.8,
+    "bankOrder": 22,
+    "searchAliases": [
+      "Gaming",
+      "Memes"
+    ]
   },
   {
     "id": "discord",
-    "bank": "gaming",
+    "bank": "effects",
     "name": "Discord Ping",
     "category": "Gaming",
     "icon": "🔔",
@@ -109,11 +144,16 @@
     "duration": 0.476,
     "bytes": 8301,
     "sha256": "8f4d3150992cf86049b5a7beca5d0e9343b78e8dd9243f6dbe4d03a310ffaee1",
-    "peakDb": -0.9
+    "peakDb": -0.9,
+    "bankOrder": 23,
+    "searchAliases": [
+      "Gaming",
+      "Memes"
+    ]
   },
   {
     "id": "among-us",
-    "bank": "gaming",
+    "bank": "games",
     "name": "Among Us",
     "category": "Gaming",
     "icon": "👾",
@@ -123,11 +163,16 @@
     "duration": 4.493,
     "bytes": 145964,
     "sha256": "44880dea81cf21ac7d7c130ad1e0a7973fc4b937baf669089032cb7ef7448304",
-    "peakDb": -3.1
+    "peakDb": -3.1,
+    "bankOrder": 1,
+    "searchAliases": [
+      "Gaming",
+      "Memes"
+    ]
   },
   {
     "id": "king-laugh",
-    "bank": "gaming",
+    "bank": "games",
     "name": "HE HE HE HA",
     "category": "Gaming",
     "icon": "👑",
@@ -137,11 +182,16 @@
     "duration": 1.416,
     "bytes": 23966,
     "sha256": "07796a03840b8b137f56ba5c32d94b219f3f484dae46941138d8908ec093f1e8",
-    "peakDb": -11.8
+    "peakDb": -11.8,
+    "bankOrder": 5,
+    "searchAliases": [
+      "Gaming",
+      "Memes"
+    ]
   },
   {
     "id": "sad-violin",
-    "bank": "drama",
+    "bank": "effects",
     "name": "Sad Violin",
     "category": "Classics",
     "icon": "🎻",
@@ -154,7 +204,12 @@
     "originalSha256": "3498c87f5264c35dec62896d7ea3423bda26f5e9dc97c27a6e48d3bac9410f26",
     "originalDuration": 22.396,
     "edit": "First 7.5 seconds, 0.25 second fade-out; original recording.",
-    "peakDb": -6.7
+    "peakDb": -6.7,
+    "bankOrder": 16,
+    "searchAliases": [
+      "Drama y fails",
+      "Memes"
+    ]
   },
   {
     "id": "wow",
@@ -168,11 +223,16 @@
     "duration": 4.18,
     "bytes": 67637,
     "sha256": "5118c619f0ab62e181f32d9eacd490441b49aaa7bb8e1be1b6b51e7a3c25debc",
-    "peakDb": -4.5
+    "peakDb": -4.5,
+    "bankOrder": 3,
+    "searchAliases": [
+      "Reacciones",
+      "Memes"
+    ]
   },
   {
     "id": "taco-bell",
-    "bank": "stings",
+    "bank": "effects",
     "name": "Taco Bell",
     "category": "Classics",
     "icon": "🌮",
@@ -182,11 +242,16 @@
     "duration": 1.858,
     "bytes": 30863,
     "sha256": "be74ccfc1b4d536464ebdb5b7e80bc549a807dcb56c5d153f84aab17762dd976",
-    "peakDb": -3.2
+    "peakDb": -3.2,
+    "bankOrder": 8,
+    "searchAliases": [
+      "Efectos meme",
+      "Memes"
+    ]
   },
   {
     "id": "oof",
-    "bank": "gaming",
+    "bank": "games",
     "name": "Roblox Oof",
     "category": "Gaming",
     "icon": "🤕",
@@ -196,7 +261,12 @@
     "duration": 0.58,
     "bytes": 10377,
     "sha256": "c81ba39c5997f222fbf220b8d006dd5264a209d6e0191561d1160d3de4580722",
-    "peakDb": -6.1
+    "peakDb": -6.1,
+    "bankOrder": 2,
+    "searchAliases": [
+      "Gaming",
+      "Memes"
+    ]
   },
   {
     "id": "huh",
@@ -210,11 +280,16 @@
     "duration": 1.161,
     "bytes": 19572,
     "sha256": "b02bde40353d889f8194e280b722fdc12b47a433278aba4212f2213aa3f2bfc4",
-    "peakDb": -12.1
+    "peakDb": -12.1,
+    "bankOrder": 4,
+    "searchAliases": [
+      "Reacciones",
+      "Memes"
+    ]
   },
   {
     "id": "sad-trombone",
-    "bank": "drama",
+    "bank": "effects",
     "name": "Womp Womp",
     "category": "Classics",
     "icon": "🎺",
@@ -224,7 +299,12 @@
     "duration": 3.631,
     "bytes": 29484,
     "sha256": "9fcf29d267bb09288eb368d20b27cb8885e4713cf0beef46e856bb0c02614fd2",
-    "peakDb": -0.1
+    "peakDb": -0.1,
+    "bankOrder": 12,
+    "searchAliases": [
+      "Drama y fails",
+      "Memes"
+    ]
   },
   {
     "id": "get-out",
@@ -238,7 +318,12 @@
     "duration": 1.765,
     "bytes": 29394,
     "sha256": "b2427377ef4c4a1a084a866156e5eb683f1058ffab3e00fe0c77a83f7c127e10",
-    "peakDb": -1.9
+    "peakDb": -1.9,
+    "bankOrder": 6,
+    "searchAliases": [
+      "Reacciones",
+      "Memes"
+    ]
   },
   {
     "id": "fbi",
@@ -252,11 +337,16 @@
     "duration": 2.229,
     "bytes": 55307,
     "sha256": "4e4fe153f2e432b2f4a27847eadbb4dbad380cbb3221e354ed3f517b59844e02",
-    "peakDb": -0.8
+    "peakDb": -0.8,
+    "bankOrder": 10,
+    "searchAliases": [
+      "Frases",
+      "Memes"
+    ]
   },
   {
     "id": "rizz",
-    "bank": "taunts",
+    "bank": "effects",
     "name": "Rizz",
     "category": "Reactions",
     "icon": "😏",
@@ -269,11 +359,16 @@
     "peakDb": -1.9,
     "originalSha256": "dbbde7a7920b680ab42a6b8cab49dbd59e24841878bb622fb889669f9fae286f",
     "originalDuration": 1.933,
-    "edit": "Re-encoded original recording to remove a malformed MP3 frame."
+    "edit": "Re-encoded original recording to remove a malformed MP3 frame.",
+    "bankOrder": 19,
+    "searchAliases": [
+      "Risas y burlas",
+      "Memes"
+    ]
   },
   {
     "id": "bonk",
-    "bank": "stings",
+    "bank": "effects",
     "name": "Bonk",
     "category": "Effects",
     "icon": "🔨",
@@ -283,7 +378,12 @@
     "duration": 2.113,
     "bytes": 17456,
     "sha256": "9f5433b549e790d65f4446fcbcf982036b705e23e56f3111f08988eb99d4b8f8",
-    "peakDb": -0.8
+    "peakDb": -0.8,
+    "bankOrder": 3,
+    "searchAliases": [
+      "Efectos meme",
+      "Memes"
+    ]
   },
   {
     "id": "oh-my-god",
@@ -297,7 +397,12 @@
     "duration": 1.637,
     "bytes": 27002,
     "sha256": "a7644c29ba16e100b3d57d171539691e302545ca098ff18c77cc8748178ae0df",
-    "peakDb": -2.0
+    "peakDb": -2.0,
+    "bankOrder": 5,
+    "searchAliases": [
+      "Reacciones",
+      "Memes"
+    ]
   },
   {
     "id": "yeet",
@@ -311,11 +416,16 @@
     "duration": 2.534,
     "bytes": 41306,
     "sha256": "2129da18565db80183707f14a14b5b928538ef763fb5e8da4ba6f56dd43ef097",
-    "peakDb": -0.0
+    "peakDb": -0.0,
+    "bankOrder": 9,
+    "searchAliases": [
+      "Reacciones",
+      "Memes"
+    ]
   },
   {
     "id": "goofy-laugh",
-    "bank": "taunts",
+    "bank": "reactions",
     "name": "Goofy Laugh",
     "category": "Reactions",
     "icon": "😂",
@@ -325,11 +435,16 @@
     "duration": 6.548,
     "bytes": 96685,
     "sha256": "5d528914885202dca93ecf08e1fd091f34da741b13691c61750f4080b12ac494",
-    "peakDb": -3.6
+    "peakDb": -3.6,
+    "bankOrder": 14,
+    "searchAliases": [
+      "Risas y burlas",
+      "Memes"
+    ]
   },
   {
     "id": "sad-meow",
-    "bank": "drama",
+    "bank": "reactions",
     "name": "Sad Meow",
     "category": "Classics",
     "icon": "😿",
@@ -342,11 +457,16 @@
     "originalSha256": "ae48f9c83bb6e2feb14c364229b095945eb486e74311d04a25d62ff20e786720",
     "originalDuration": 25.039,
     "edit": "First 7.5 seconds, 0.25 second fade-out; original recording.",
-    "peakDb": -4.3
+    "peakDb": -4.3,
+    "bankOrder": 16,
+    "searchAliases": [
+      "Drama y fails",
+      "Memes"
+    ]
   },
   {
     "id": "spongebob-fail",
-    "bank": "drama",
+    "bank": "effects",
     "name": "SpongeBob Fail",
     "category": "Classics",
     "icon": "🧽",
@@ -356,11 +476,16 @@
     "duration": 3.553,
     "bytes": 85401,
     "sha256": "69abf2456614815b10d908c7cbcaafe8a1f3d0cb931b05e8f663968bba625eea",
-    "peakDb": -0.2
+    "peakDb": -0.2,
+    "bankOrder": 14,
+    "searchAliases": [
+      "Drama y fails",
+      "Memes"
+    ]
   },
   {
     "id": "record-scratch",
-    "bank": "stings",
+    "bank": "effects",
     "name": "Record Scratch",
     "category": "Effects",
     "icon": "💿",
@@ -370,11 +495,16 @@
     "duration": 6.452,
     "bytes": 103929,
     "sha256": "c028de7d5e6843dcf17a431994fd479cc87b42080c278702c0d1a3dc0baf75f4",
-    "peakDb": 0.0
+    "peakDb": 0.0,
+    "bankOrder": 9,
+    "searchAliases": [
+      "Efectos meme",
+      "Memes"
+    ]
   },
   {
     "id": "ba-dum-tss",
-    "bank": "taunts",
+    "bank": "effects",
     "name": "Ba Dum Tss",
     "category": "Effects",
     "icon": "🥁",
@@ -384,11 +514,16 @@
     "duration": 1.776,
     "bytes": 29037,
     "sha256": "2f0420ea580c12dfe5d56c973f63e06c97d9b7caece1e73825f1b943659d2c98",
-    "peakDb": -8.4
+    "peakDb": -8.4,
+    "bankOrder": 10,
+    "searchAliases": [
+      "Risas y burlas",
+      "Memes"
+    ]
   },
   {
     "id": "crickets",
-    "bank": "drama",
+    "bank": "effects",
     "name": "Crickets",
     "category": "Effects",
     "icon": "🦗",
@@ -398,7 +533,12 @@
     "duration": 4.435,
     "bytes": 107970,
     "sha256": "6ee67f8a354d5b6ff5960c4943e719b5e7548f4fa00818dc43c7425f2f12670b",
-    "peakDb": -9.6
+    "peakDb": -9.6,
+    "bankOrder": 15,
+    "searchAliases": [
+      "Drama y fails",
+      "Memes"
+    ]
   },
   {
     "id": "nope",
@@ -412,11 +552,16 @@
     "duration": 0.369,
     "bytes": 3570,
     "sha256": "17b2fb60e79a19245147028e35073d2d32be0b87dc25dd65501cdf6b54665463",
-    "peakDb": -0.9
+    "peakDb": -0.9,
+    "bankOrder": 7,
+    "searchAliases": [
+      "Reacciones",
+      "Memes"
+    ]
   },
   {
     "id": "side-eye",
-    "bank": "taunts",
+    "bank": "quotes",
     "name": "Side Eye",
     "category": "Reactions",
     "icon": "👀",
@@ -426,11 +571,16 @@
     "duration": 6.48,
     "bytes": 152355,
     "sha256": "fdc9de3f8a06aa74b7246346409820c650efb8235d224898a9d7a210d2f7be21",
-    "peakDb": 0.0
+    "peakDb": 0.0,
+    "bankOrder": 2,
+    "searchAliases": [
+      "Risas y burlas",
+      "Memes"
+    ]
   },
   {
     "id": "stop-cap",
-    "bank": "taunts",
+    "bank": "quotes",
     "name": "Stop the Cap",
     "category": "Reactions",
     "icon": "🧢",
@@ -440,7 +590,12 @@
     "duration": 0.784,
     "bytes": 12538,
     "sha256": "b9812e9ec552e74a434533c3b513e88524f17f59fe87186ea45f2f54f728223b",
-    "peakDb": -1.7
+    "peakDb": -1.7,
+    "bankOrder": 3,
+    "searchAliases": [
+      "Risas y burlas",
+      "Memes"
+    ]
   },
   {
     "id": "dog-doin",
@@ -454,7 +609,12 @@
     "duration": 1.231,
     "bytes": 20826,
     "sha256": "48f19e81a3d9caae64833fab24786628ff28011ef3d7e85f3c1c98f276708df1",
-    "peakDb": -2.1
+    "peakDb": -2.1,
+    "bankOrder": 11,
+    "searchAliases": [
+      "Frases",
+      "Memes"
+    ]
   },
   {
     "id": "2000-years",
@@ -468,11 +628,16 @@
     "duration": 2.808,
     "bytes": 83047,
     "sha256": "de6b2f51465f4213cdf48d5b6c2c76a435a8c2c079435dd691f1a542bef658b9",
-    "peakDb": -5.2
+    "peakDb": -5.2,
+    "bankOrder": 20,
+    "searchAliases": [
+      "Frases",
+      "Memes"
+    ]
   },
   {
     "id": "deez-nuts",
-    "bank": "taunts",
+    "bank": "quotes",
     "name": "Deez Nuts",
     "category": "Reactions",
     "icon": "🥜",
@@ -482,7 +647,12 @@
     "duration": 1.189,
     "bytes": 17764,
     "sha256": "062f72784824b0c5d54556063a19d363073dc59e883a2b5372d14847682c0f4e",
-    "peakDb": -3.0
+    "peakDb": -3.0,
+    "bankOrder": 16,
+    "searchAliases": [
+      "Risas y burlas",
+      "Memes"
+    ]
   },
   {
     "id": "cut-g",
@@ -496,7 +666,12 @@
     "duration": 4.131,
     "bytes": 168000,
     "sha256": "9290e431abfdd51f50767c2652f4401814ff98c6fe1510c2fc63c25f5a108169",
-    "peakDb": -1.9
+    "peakDb": -1.9,
+    "bankOrder": 12,
+    "searchAliases": [
+      "Frases",
+      "Memes"
+    ]
   },
   {
     "id": "what-he-say",
@@ -510,11 +685,16 @@
     "duration": 2.04,
     "bytes": 43245,
     "sha256": "ee325566d5d82f054aa278820e63db31a51567ecb414860fc84bba27441fd0cc",
-    "peakDb": -0.4
+    "peakDb": -0.4,
+    "bankOrder": 9,
+    "searchAliases": [
+      "Frases",
+      "Memes"
+    ]
   },
   {
     "id": "why-bully",
-    "bank": "gaming",
+    "bank": "quotes",
     "name": "Why You Bully",
     "category": "Gaming",
     "icon": "🥺",
@@ -524,11 +704,16 @@
     "duration": 2.067,
     "bytes": 68681,
     "sha256": "9039650a147ad4e08ff716b8271bf06911098e708c96b3799a3271164ac5a793",
-    "peakDb": -3.7
+    "peakDb": -3.7,
+    "bankOrder": 22,
+    "searchAliases": [
+      "Gaming",
+      "Memes"
+    ]
   },
   {
     "id": "john-cena",
-    "bank": "stings",
+    "bank": "effects",
     "name": "John Cena",
     "category": "Classics",
     "icon": "🏆",
@@ -541,11 +726,16 @@
     "originalSha256": "e2cdfbd661e565f68e5a88ee061e38f13ca34a4b345e551c885956253a4b87f6",
     "originalDuration": 20.201,
     "edit": "First 7.5 seconds, 0.25 second fade-out; original recording.",
-    "peakDb": 0.0
+    "peakDb": 0.0,
+    "bankOrder": 20,
+    "searchAliases": [
+      "Efectos meme",
+      "Memes"
+    ]
   },
   {
     "id": "fortnite-death",
-    "bank": "gaming",
+    "bank": "games",
     "name": "Fortnite Death",
     "category": "Gaming",
     "icon": "🎮",
@@ -555,11 +745,16 @@
     "duration": 2.067,
     "bytes": 68681,
     "sha256": "fbfa5bb163dc1cd5a4b91e637f341753ed0511d87e5bc54fabef0ba381337e2b",
-    "peakDb": -7.9
+    "peakDb": -7.9,
+    "bankOrder": 4,
+    "searchAliases": [
+      "Gaming",
+      "Memes"
+    ]
   },
   {
     "id": "minecraft-eat",
-    "bank": "gaming",
+    "bank": "games",
     "name": "Minecraft Eat",
     "category": "Gaming",
     "icon": "🍖",
@@ -569,11 +764,16 @@
     "duration": 1.571,
     "bytes": 62821,
     "sha256": "955d9b2a490ed3813def37edb434a2a4425fee43194ddf3f014f205c91ad65c5",
-    "peakDb": -0.6
+    "peakDb": -0.6,
+    "bankOrder": 3,
+    "searchAliases": [
+      "Gaming",
+      "Memes"
+    ]
   },
   {
     "id": "old-spice",
-    "bank": "stings",
+    "bank": "effects",
     "name": "Old Spice",
     "category": "Classics",
     "icon": "🎵",
@@ -583,7 +783,12 @@
     "duration": 2.22,
     "bytes": 53289,
     "sha256": "8edc6b64a08745d15ca0a6ab436496e89a82fde1314150b6507b78df8ded9263",
-    "peakDb": -0.3
+    "peakDb": -0.3,
+    "bankOrder": 21,
+    "searchAliases": [
+      "Efectos meme",
+      "Memes"
+    ]
   },
   {
     "id": "twenty-one",
@@ -597,11 +802,16 @@
     "duration": 4.415,
     "bytes": 70635,
     "sha256": "e140b74d16bd7d3b536126153fcf3dc3eec9181895368f8a36db4251cca1690e",
-    "peakDb": -0.9
+    "peakDb": -0.9,
+    "bankOrder": 15,
+    "searchAliases": [
+      "Frases",
+      "Memes"
+    ]
   },
   {
     "id": "daddy-chill",
-    "bank": "reactions",
+    "bank": "quotes",
     "name": "Daddy Chill",
     "category": "Reactions",
     "icon": "🧊",
@@ -611,11 +821,16 @@
     "duration": 1.123,
     "bytes": 37387,
     "sha256": "97abb73fab75dc2ca297c17c71ba3ca5f6d4121eb41f9b6d509a0487a13370a1",
-    "peakDb": -10.4
+    "peakDb": -10.4,
+    "bankOrder": 7,
+    "searchAliases": [
+      "Reacciones",
+      "Memes"
+    ]
   },
   {
     "id": "dont-care",
-    "bank": "taunts",
+    "bank": "quotes",
     "name": "We Do Not Care",
     "category": "Reactions",
     "icon": "🤷",
@@ -625,11 +840,16 @@
     "duration": 6.217,
     "bytes": 100030,
     "sha256": "adea38ceb358c373c15f7fe44d112fad6ce80b816fa16ed73b68bc0afa71fd79",
-    "peakDb": 0.0
+    "peakDb": 0.0,
+    "bankOrder": 4,
+    "searchAliases": [
+      "Risas y burlas",
+      "Memes"
+    ]
   },
   {
     "id": "he-knew",
-    "bank": "taunts",
+    "bank": "quotes",
     "name": "He Knew",
     "category": "Reactions",
     "icon": "💀",
@@ -639,11 +859,16 @@
     "duration": 3.425,
     "bytes": 55565,
     "sha256": "869039f4c2bbbe28a1b2e614a18672cceb73f0e03f55d8b676988380b0ab8a14",
-    "peakDb": -6.2
+    "peakDb": -6.2,
+    "bankOrder": 5,
+    "searchAliases": [
+      "Risas y burlas",
+      "Memes"
+    ]
   },
   {
     "id": "rehehehe",
-    "bank": "taunts",
+    "bank": "reactions",
     "name": "Rehehehe",
     "category": "Reactions",
     "icon": "😈",
@@ -653,11 +878,16 @@
     "duration": 1.333,
     "bytes": 25439,
     "sha256": "6de330b50a2dfabf1c8ce0b6083517d6a743fa4b6a10017374c7e873b2c14712",
-    "peakDb": -4.8
+    "peakDb": -4.8,
+    "bankOrder": 15,
+    "searchAliases": [
+      "Risas y burlas",
+      "Memes"
+    ]
   },
   {
     "id": "wrong-answer",
-    "bank": "stings",
+    "bank": "effects",
     "name": "Wrong Answer",
     "category": "Effects",
     "icon": "❌",
@@ -667,11 +897,16 @@
     "duration": 1.207,
     "bytes": 20479,
     "sha256": "2a6164739dabfa72efc8b70d3e795a202b551327f6acde940d9185740834f652",
-    "peakDb": -0.8
+    "peakDb": -0.8,
+    "bankOrder": 11,
+    "searchAliases": [
+      "Efectos meme",
+      "Memes"
+    ]
   },
   {
     "id": "continued",
-    "bank": "drama",
+    "bank": "effects",
     "name": "To Be Continued",
     "category": "Classics",
     "icon": "➡",
@@ -684,7 +919,12 @@
     "originalSha256": "7a294df817e78a038f5781a4045dbbd7b0fafed363c56b546694acbb5538285a",
     "originalDuration": 10.92,
     "edit": "First 7.5 seconds, 0.25 second fade-out; original recording.",
-    "peakDb": -3.4
+    "peakDb": -3.4,
+    "bankOrder": 18,
+    "searchAliases": [
+      "Drama y fails",
+      "Memes"
+    ]
   },
   {
     "id": "sfx-glass",
@@ -701,7 +941,12 @@
     "peakDb": -3.3,
     "originalSha256": "2f1b3393410a09462cb0f7cdb2a8f7a50fb555afd2eb5598120641e3d9f6d09d",
     "originalDuration": 1.855,
-    "edit": "Re-encoded published SFX as 128 kbps MP3; reduced by 5.0 dB."
+    "edit": "Re-encoded published SFX as 128 kbps MP3; reduced by 5.0 dB.",
+    "bank": "effects",
+    "bankOrder": 25,
+    "searchAliases": [
+      "Efectos de sonido"
+    ]
   },
   {
     "id": "sfx-machine-gun",
@@ -718,7 +963,12 @@
     "peakDb": -5.4,
     "originalSha256": "776e865274f4b5848d161aea730e892c48cd53b062fa51c663b95b1f5dac74d4",
     "originalDuration": 4.441,
-    "edit": "Re-encoded published SFX as 128 kbps MP3; reduced by 5.0 dB."
+    "edit": "Re-encoded published SFX as 128 kbps MP3; reduced by 5.0 dB.",
+    "bank": "effects",
+    "bankOrder": 27,
+    "searchAliases": [
+      "Efectos de sonido"
+    ]
   },
   {
     "id": "sfx-helicopter",
@@ -735,7 +985,12 @@
     "peakDb": -10.5,
     "originalSha256": "90b4f6b69c4d83453cdc7fe8b1c07f2bd59e9ec80ce2ddfa80ea5bf99fdf7fd6",
     "originalDuration": 6.744,
-    "edit": "Re-encoded published SFX as 128 kbps MP3."
+    "edit": "Re-encoded published SFX as 128 kbps MP3.",
+    "bank": "effects",
+    "bankOrder": 30,
+    "searchAliases": [
+      "Efectos de sonido"
+    ]
   },
   {
     "id": "sfx-ship-horn",
@@ -752,7 +1007,12 @@
     "peakDb": -5.7,
     "originalSha256": "2cca4521e94298a471f53073a41c79a5fdb020b886ca7fae5c8203cc62182a84",
     "originalDuration": 6.757,
-    "edit": "Re-encoded published SFX as 128 kbps MP3; reduced by 1.9 dB."
+    "edit": "Re-encoded published SFX as 128 kbps MP3; reduced by 1.9 dB.",
+    "bank": "effects",
+    "bankOrder": 7,
+    "searchAliases": [
+      "Efectos de sonido"
+    ]
   },
   {
     "id": "sfx-explosion",
@@ -769,7 +1029,12 @@
     "peakDb": -5.5,
     "originalSha256": "92c0bc3eb48d0ee762be42bd602721a89fffd07fff80beb5f11ded7f3dd5276b",
     "originalDuration": 1.815,
-    "edit": "Re-encoded published SFX as 128 kbps MP3; reduced by 5.0 dB."
+    "edit": "Re-encoded published SFX as 128 kbps MP3; reduced by 5.0 dB.",
+    "bank": "effects",
+    "bankOrder": 28,
+    "searchAliases": [
+      "Efectos de sonido"
+    ]
   },
   {
     "id": "sfx-thunder",
@@ -786,7 +1051,12 @@
     "peakDb": -4.9,
     "originalSha256": "88a8c29ddf9cbba3b45034b680cbd2bebd73a11ab3a215baa79916590986a989",
     "originalDuration": 5.564,
-    "edit": "Re-encoded published SFX as 128 kbps MP3; reduced by 5.0 dB."
+    "edit": "Re-encoded published SFX as 128 kbps MP3; reduced by 5.0 dB.",
+    "bank": "effects",
+    "bankOrder": 34,
+    "searchAliases": [
+      "Efectos de sonido"
+    ]
   },
   {
     "id": "sfx-siren",
@@ -803,7 +1073,12 @@
     "peakDb": -5.5,
     "originalSha256": "11a856bdfa40acd6e4c853808775e1a224e7291ce3b6768f79c49efe5785c9ef",
     "originalDuration": 3.518,
-    "edit": "Re-encoded published SFX as 128 kbps MP3; reduced by 2.5 dB."
+    "edit": "Re-encoded published SFX as 128 kbps MP3; reduced by 2.5 dB.",
+    "bank": "effects",
+    "bankOrder": 33,
+    "searchAliases": [
+      "Efectos de sonido"
+    ]
   },
   {
     "id": "sfx-engine",
@@ -820,7 +1095,12 @@
     "peakDb": -8.3,
     "originalSha256": "37e8541a14fbbc7179e29e80051d85d44fe688ce6820dd65140ba1207e00e1c8",
     "originalDuration": 3.796,
-    "edit": "Re-encoded published SFX as 128 kbps MP3."
+    "edit": "Re-encoded published SFX as 128 kbps MP3.",
+    "bank": "effects",
+    "bankOrder": 31,
+    "searchAliases": [
+      "Efectos de sonido"
+    ]
   },
   {
     "id": "sfx-tires",
@@ -837,7 +1117,12 @@
     "peakDb": -5.5,
     "originalSha256": "1eb5119d81d6f464d575086e74cb908bcdbead5e4ec4a67977eede50a65d22fa",
     "originalDuration": 2.142,
-    "edit": "Re-encoded published SFX as 128 kbps MP3; reduced by 4.3 dB."
+    "edit": "Re-encoded published SFX as 128 kbps MP3; reduced by 4.3 dB.",
+    "bank": "effects",
+    "bankOrder": 32,
+    "searchAliases": [
+      "Efectos de sonido"
+    ]
   },
   {
     "id": "sfx-siuuu",
@@ -855,7 +1140,12 @@
     "bytes": 25389,
     "sha256": "fe39b742681c1ce9d1b8a14cc4a1f9379da676d6b7e4cb180d54908f2c7f1102",
     "peakDb": -3.2,
-    "pcmSha256": "8736d52e6c2dc4454850021619d343cd12d11ba20e0efefc5d162364262d0bf2"
+    "pcmSha256": "8736d52e6c2dc4454850021619d343cd12d11ba20e0efefc5d162364262d0bf2",
+    "bank": "reactions",
+    "bankOrder": 11,
+    "searchAliases": [
+      "Efectos de sonido"
+    ]
   },
   {
     "id": "sfx-punch",
@@ -872,7 +1162,12 @@
     "peakDb": -4.4,
     "originalSha256": "db5263d3caa9e1731f0ebff60422ca227b45a550a91aa57f09eb152cf32c0109",
     "originalDuration": 0.549,
-    "edit": "Re-encoded published SFX as 128 kbps MP3; reduced by 5.0 dB."
+    "edit": "Re-encoded published SFX as 128 kbps MP3; reduced by 5.0 dB.",
+    "bank": "effects",
+    "bankOrder": 4,
+    "searchAliases": [
+      "Efectos de sonido"
+    ]
   },
   {
     "id": "sfx-whip",
@@ -890,7 +1185,12 @@
     "bytes": 31901,
     "sha256": "174d2fde1b2301bf4bf321245921a34b8d522ef57e4e939051ecf79695d34200",
     "peakDb": -6.1,
-    "pcmSha256": "b09518076632fdb7a2a6280e8862265b6b15ad04be893dfc57a228d9345d813c"
+    "pcmSha256": "b09518076632fdb7a2a6280e8862265b6b15ad04be893dfc57a228d9345d813c",
+    "bank": "effects",
+    "bankOrder": 5,
+    "searchAliases": [
+      "Efectos de sonido"
+    ]
   },
   {
     "id": "sfx-rocket",
@@ -907,7 +1207,12 @@
     "peakDb": -5.3,
     "originalSha256": "7aa7c060623ebc0429cc2259fb550cdcf06c5023e2ca225db3959abb15c1e942",
     "originalDuration": 4.859,
-    "edit": "Re-encoded published SFX as 128 kbps MP3; reduced by 3.0 dB."
+    "edit": "Re-encoded published SFX as 128 kbps MP3; reduced by 3.0 dB.",
+    "bank": "effects",
+    "bankOrder": 29,
+    "searchAliases": [
+      "Efectos de sonido"
+    ]
   },
   {
     "id": "sfx-camera",
@@ -924,7 +1229,12 @@
     "peakDb": -7.0,
     "originalSha256": "85a4e8cce719c10439e78273063cfdf563f0b9f3404648ec445d25ff303ce173",
     "originalDuration": 0.415,
-    "edit": "Re-encoded published SFX as 128 kbps MP3."
+    "edit": "Re-encoded published SFX as 128 kbps MP3.",
+    "bank": "effects",
+    "bankOrder": 24,
+    "searchAliases": [
+      "Efectos de sonido"
+    ]
   },
   {
     "id": "sfx-dog",
@@ -941,7 +1251,12 @@
     "peakDb": -5.5,
     "originalSha256": "ada8697476cf801ba529443eb4ad11ac6a348235946931203e2633264eac42e1",
     "originalDuration": 2.482,
-    "edit": "Re-encoded published SFX as 128 kbps MP3; reduced by 2.1 dB."
+    "edit": "Re-encoded published SFX as 128 kbps MP3; reduced by 2.1 dB.",
+    "bank": "animals",
+    "bankOrder": 3,
+    "searchAliases": [
+      "Efectos de sonido"
+    ]
   },
   {
     "id": "sfx-applause",
@@ -958,11 +1273,16 @@
     "peakDb": -5.1,
     "originalSha256": "dc6d506e415414506ed4d9235888acbe1946ff415d3e0ad18fd7761cec4e3c2f",
     "originalDuration": 6.021,
-    "edit": "Re-encoded published SFX as 128 kbps MP3; reduced by 0.3 dB."
+    "edit": "Re-encoded published SFX as 128 kbps MP3; reduced by 0.3 dB.",
+    "bank": "effects",
+    "bankOrder": 26,
+    "searchAliases": [
+      "Efectos de sonido"
+    ]
   },
   {
     "id": "meme-run-meme",
-    "bank": "drama",
+    "bank": "reactions",
     "name": "Run!",
     "category": "Reactions",
     "pack": "memes",
@@ -977,11 +1297,16 @@
     "originalSha256": "51750a85449f15883fa4e80c2423023f564468abb2c35ae45e00192ad8de2f14",
     "originalDuration": 10.266,
     "edit": "First 7.5 seconds with a 0.25 second fade-out; published original recording re-encoded as 128 kbps MP3 with -5.0 dB gain.",
-    "pcmSha256": "aa32d22023810e12786b5d98d3eb299b6bb14c2ad5a749406cd776b4c2446695"
+    "pcmSha256": "aa32d22023810e12786b5d98d3eb299b6bb14c2ad5a749406cd776b4c2446695",
+    "bankOrder": 12,
+    "searchAliases": [
+      "Drama y fails",
+      "Memes"
+    ]
   },
   {
     "id": "meme-dun-dun-dunnnn",
-    "bank": "drama",
+    "bank": "effects",
     "name": "Dun Dun Duuun",
     "category": "Classics",
     "pack": "memes",
@@ -996,7 +1321,12 @@
     "originalSha256": "6cc67ae7ef0b4008bc14b62a4fc4fe016858f972a4c8f5e4de0fda15f55d5474",
     "originalDuration": 5.12,
     "edit": "published original recording re-encoded as 128 kbps MP3 with -5.0 dB gain.",
-    "pcmSha256": "23e14fff49742fd3dbf46c760c91ff09f070035dd13d7601e07f61302e7eec77"
+    "pcmSha256": "23e14fff49742fd3dbf46c760c91ff09f070035dd13d7601e07f61302e7eec77",
+    "bankOrder": 17,
+    "searchAliases": [
+      "Drama y fails",
+      "Memes"
+    ]
   },
   {
     "id": "meme-open-the-noor",
@@ -1015,7 +1345,12 @@
     "originalSha256": "e07ef50350a475de9ba0c541c65dbba4de9a4830e5d3278846ee2a3dec99f73d",
     "originalDuration": 6.768,
     "edit": "published original recording re-encoded as 128 kbps MP3 with -3.7 dB gain.",
-    "pcmSha256": "32e0b8e04322e379a8a814d1c75e7dac267966bf9da472cebfffa9b4b4ab0cf7"
+    "pcmSha256": "32e0b8e04322e379a8a814d1c75e7dac267966bf9da472cebfffa9b4b4ab0cf7",
+    "bankOrder": 14,
+    "searchAliases": [
+      "Frases",
+      "Memes"
+    ]
   },
   {
     "id": "meme-hell-nah",
@@ -1034,11 +1369,16 @@
     "originalSha256": "cb6b3179d9964d200929b8733a57a972a7c7b1a64dfd8b16e8e691e8c205b238",
     "originalDuration": 10.797,
     "edit": "First 7.5 seconds with a 0.25 second fade-out; published original recording re-encoded as 128 kbps MP3 with -4.1 dB gain.",
-    "pcmSha256": "9e82f4b3ffc248c8bbba9ef00cce7c2db6498fa134d278af5999421361a27ae5"
+    "pcmSha256": "9e82f4b3ffc248c8bbba9ef00cce7c2db6498fa134d278af5999421361a27ae5",
+    "bankOrder": 8,
+    "searchAliases": [
+      "Reacciones",
+      "Memes"
+    ]
   },
   {
     "id": "meme-are-you-serious-right-now-bro",
-    "bank": "reactions",
+    "bank": "quotes",
     "name": "Are You Serious?",
     "category": "Reactions",
     "pack": "memes",
@@ -1053,7 +1393,12 @@
     "originalSha256": "1dbba2eda0da39decd366280f4ec571afa8f292dc91985c18223bb42f1b461c0",
     "originalDuration": 3.422,
     "edit": "published original recording re-encoded as 128 kbps MP3 with +0.9 dB gain.",
-    "pcmSha256": "17376b3839fe81948b388c0b1c8e3e33c8215b74b24c574e5391fe819dc653e6"
+    "pcmSha256": "17376b3839fe81948b388c0b1c8e3e33c8215b74b24c574e5391fe819dc653e6",
+    "bankOrder": 8,
+    "searchAliases": [
+      "Reacciones",
+      "Memes"
+    ]
   },
   {
     "id": "meme-i-like-turtles",
@@ -1072,7 +1417,12 @@
     "originalSha256": "4453dd92871838faf0bd219efc8afa345e0c375a064070d20a3fcda5edbc7fb4",
     "originalDuration": 0.993,
     "edit": "published original recording re-encoded as 128 kbps MP3 with -2.9 dB gain.",
-    "pcmSha256": "57eb0499c6b3a5722f8ab08f40475c725d63a9a544b23207a8a7caa08a68f968"
+    "pcmSha256": "57eb0499c6b3a5722f8ab08f40475c725d63a9a544b23207a8a7caa08a68f968",
+    "bankOrder": 17,
+    "searchAliases": [
+      "Frases",
+      "Memes"
+    ]
   },
   {
     "id": "meme-bing-chilling",
@@ -1091,11 +1441,16 @@
     "originalSha256": "48c815e63ed9f3c6a9504e7a4f6cb70978a501dc232fee91bb03310c06398b04",
     "originalDuration": 12.364,
     "edit": "First 7.5 seconds with a 0.25 second fade-out; published original recording re-encoded as 128 kbps MP3 with -5.0 dB gain.",
-    "pcmSha256": "e799766a7c285b254cc35f58499892e235c7b07589d27dfb907baa9fecc65aec"
+    "pcmSha256": "e799766a7c285b254cc35f58499892e235c7b07589d27dfb907baa9fecc65aec",
+    "bankOrder": 18,
+    "searchAliases": [
+      "Frases",
+      "Memes"
+    ]
   },
   {
     "id": "meme-please-speed-i-need-this",
-    "bank": "gaming",
+    "bank": "quotes",
     "name": "Please Speed",
     "category": "Gaming",
     "pack": "memes",
@@ -1110,11 +1465,16 @@
     "originalSha256": "37f0e08dfeed90c0482c30f45ad0df41f7cc2d43f48503ebdd58f1198432d3e1",
     "originalDuration": 12.073,
     "edit": "First 7.5 seconds with a 0.25 second fade-out; published original recording re-encoded as 128 kbps MP3 with -2.2 dB gain.",
-    "pcmSha256": "e3c133d32ee48123ce8e98412d1c5d752e4a063e35a33f22cfa73d9d533e20eb"
+    "pcmSha256": "e3c133d32ee48123ce8e98412d1c5d752e4a063e35a33f22cfa73d9d533e20eb",
+    "bankOrder": 23,
+    "searchAliases": [
+      "Gaming",
+      "Memes"
+    ]
   },
   {
     "id": "meme-hog-raida",
-    "bank": "gaming",
+    "bank": "games",
     "name": "Hog Rider",
     "category": "Gaming",
     "pack": "memes",
@@ -1129,7 +1489,12 @@
     "originalSha256": "4c7b877cdd939e7b2ca748cdc5baa573529acbf4e572deb4107c4ff77c3b808b",
     "originalDuration": 4.319,
     "edit": "published original recording re-encoded as 128 kbps MP3 with -5.0 dB gain.",
-    "pcmSha256": "3896c9c20b8ad22db03c35296c45e28786b754c2ca91226790d2008f2c079adb"
+    "pcmSha256": "3896c9c20b8ad22db03c35296c45e28786b754c2ca91226790d2008f2c079adb",
+    "bankOrder": 6,
+    "searchAliases": [
+      "Gaming",
+      "Memes"
+    ]
   },
   {
     "id": "meme-you-need-to-leave",
@@ -1148,11 +1513,16 @@
     "originalSha256": "a9eccd259079cde9ea6a328ee493e852f5910223121b5ad07d0768b47389750b",
     "originalDuration": 4.11,
     "edit": "published original recording re-encoded as 128 kbps MP3 with -3.2 dB gain.",
-    "pcmSha256": "ec4c4f2cdff38f212b00c9f1bdde6fe3da6b072f5b9c9a9d3eb2ca48625baf75"
+    "pcmSha256": "ec4c4f2cdff38f212b00c9f1bdde6fe3da6b072f5b9c9a9d3eb2ca48625baf75",
+    "bankOrder": 13,
+    "searchAliases": [
+      "Frases",
+      "Memes"
+    ]
   },
   {
     "id": "meme-price-is-right-losing-horn",
-    "bank": "drama",
+    "bank": "effects",
     "name": "Price Is Right Fail",
     "category": "Classics",
     "pack": "memes",
@@ -1167,7 +1537,12 @@
     "originalSha256": "ad2424b7ddcb7e9c9a78978b8263573563db72bb44f910509ffbdb91a0fdf370",
     "originalDuration": 5.068,
     "edit": "published original recording re-encoded as 128 kbps MP3 with -3.7 dB gain.",
-    "pcmSha256": "c7859192f37eea6144ea92111f54fd65ae83a59d9531e59b95ec83e1d84014d2"
+    "pcmSha256": "c7859192f37eea6144ea92111f54fd65ae83a59d9531e59b95ec83e1d84014d2",
+    "bankOrder": 13,
+    "searchAliases": [
+      "Drama y fails",
+      "Memes"
+    ]
   },
   {
     "id": "meme-yippee-tbh",
@@ -1186,11 +1561,16 @@
     "originalSha256": "2ae9cfd3399b230f5fcbeb472dd052eb73ef32eed190aaf7477e0cb5761dd1ba",
     "originalDuration": 0.981,
     "edit": "published original recording re-encoded as 128 kbps MP3 with +2.9 dB gain.",
-    "pcmSha256": "bf719f1010903dfeac6e09e282d70c7b6e74576fee56f01a45eab6be0f57083d"
+    "pcmSha256": "bf719f1010903dfeac6e09e282d70c7b6e74576fee56f01a45eab6be0f57083d",
+    "bankOrder": 10,
+    "searchAliases": [
+      "Reacciones",
+      "Memes"
+    ]
   },
   {
     "id": "meme-r2d2-scream",
-    "bank": "drama",
+    "bank": "reactions",
     "name": "R2-D2 Scream",
     "category": "Classics",
     "pack": "memes",
@@ -1205,11 +1585,16 @@
     "originalSha256": "8743256fb82707a296b1ceb3e116b15eb65e9372742db34640c15e815684ce58",
     "originalDuration": 3.005,
     "edit": "published original recording re-encoded as 128 kbps MP3 with -3.6 dB gain.",
-    "pcmSha256": "34a22bfdb5600ab318544fc6ff96d21cd6e8f294e8f21fa8f403629f05c63e98"
+    "pcmSha256": "34a22bfdb5600ab318544fc6ff96d21cd6e8f294e8f21fa8f403629f05c63e98",
+    "bankOrder": 13,
+    "searchAliases": [
+      "Drama y fails",
+      "Memes"
+    ]
   },
   {
     "id": "meme-boo-you-stink",
-    "bank": "taunts",
+    "bank": "quotes",
     "name": "Boo! You Stink",
     "category": "Reactions",
     "pack": "memes",
@@ -1224,11 +1609,16 @@
     "originalSha256": "56b57dec94c2f989ab8e095804a5c7bd02a5c82c7e3dc9d946c162a83bf91adf",
     "originalDuration": 3.082,
     "edit": "published original recording re-encoded as 128 kbps MP3 with +12.3 dB gain.",
-    "pcmSha256": "4312b10e9f0d9f1d57d5789c274c4115cc0f453ddc620bc3ece9f3529399d50f"
+    "pcmSha256": "4312b10e9f0d9f1d57d5789c274c4115cc0f453ddc620bc3ece9f3529399d50f",
+    "bankOrder": 6,
+    "searchAliases": [
+      "Risas y burlas",
+      "Memes"
+    ]
   },
   {
     "id": "meme-they-ask-you-how-you-feeling",
-    "bank": "drama",
+    "bank": "quotes",
     "name": "Say That You’re Fine",
     "category": "Reactions",
     "pack": "memes",
@@ -1243,7 +1633,12 @@
     "originalSha256": "8792f6dea8065369bb2ff99af32ca97983532a0fab605798413e63cfe6608983",
     "originalDuration": 6.092,
     "edit": "published original recording re-encoded as 128 kbps MP3 with +5.6 dB gain.",
-    "pcmSha256": "31ea65bf506f571f6062b5f150e37f7cb0eefffccd46dea6ce25948cb776f3f2"
+    "pcmSha256": "31ea65bf506f571f6062b5f150e37f7cb0eefffccd46dea6ce25948cb776f3f2",
+    "bankOrder": 21,
+    "searchAliases": [
+      "Drama y fails",
+      "Memes"
+    ]
   },
   {
     "id": "meme-giggity",
@@ -1262,7 +1657,12 @@
     "originalSha256": "efe55250217a2f874c38d629d6f55289643fc18e2ceec2af56ee4a0e4b4fbb13",
     "originalDuration": 3.135,
     "edit": "published original recording re-encoded as 128 kbps MP3 with -5.0 dB gain.",
-    "pcmSha256": "7a6bbdd43cbec2dde7b63e561004034f1a0745d9e3616be628157fdb15ea5314"
+    "pcmSha256": "7a6bbdd43cbec2dde7b63e561004034f1a0745d9e3616be628157fdb15ea5314",
+    "bankOrder": 19,
+    "searchAliases": [
+      "Frases",
+      "Memes"
+    ]
   },
   {
     "id": "animal-cat",
@@ -1281,7 +1681,12 @@
     "originalSha256": "db22164ec27a043583a09b471336824187ba94dd6ead1a2f0b948a35e399dd71",
     "originalDuration": 4.023,
     "edit": "Original downloaded recording, unchanged.",
-    "pcmSha256": "5895f2290bd4cba9c226b4521c78dcdcf262ec616bb6e34c7168238ffa1865b2"
+    "pcmSha256": "5895f2290bd4cba9c226b4521c78dcdcf262ec616bb6e34c7168238ffa1865b2",
+    "bank": "animals",
+    "bankOrder": 1,
+    "searchAliases": [
+      "Animales"
+    ]
   },
   {
     "id": "animal-dog",
@@ -1300,7 +1705,12 @@
     "originalSha256": "7876a890602232bb1c3481e65357a4b2159bc37e40d57a5c277d2173bdc7bf1a",
     "originalDuration": 4.65,
     "edit": "Original downloaded recording, unchanged.",
-    "pcmSha256": "5e66754a86d69ada799134e28b1b9ac9492d09a765dd727000c933b21fe22cf7"
+    "pcmSha256": "5e66754a86d69ada799134e28b1b9ac9492d09a765dd727000c933b21fe22cf7",
+    "bank": "animals",
+    "bankOrder": 2,
+    "searchAliases": [
+      "Animales"
+    ]
   },
   {
     "id": "animal-wolf",
@@ -1319,7 +1729,12 @@
     "originalSha256": "3622f51bda83dc589d8858d695ea52b492c7b554c64f588a7bcb6d562d6a2d9a",
     "originalDuration": 3.811,
     "edit": "Original downloaded recording, unchanged.",
-    "pcmSha256": "2c4defab2cd13c2af8364ab271f62ea5230e755b0c4e58da5438ac2ffef64ad6"
+    "pcmSha256": "2c4defab2cd13c2af8364ab271f62ea5230e755b0c4e58da5438ac2ffef64ad6",
+    "bank": "animals",
+    "bankOrder": 13,
+    "searchAliases": [
+      "Animales"
+    ]
   },
   {
     "id": "animal-lion",
@@ -1338,7 +1753,12 @@
     "originalSha256": "0db3fecf22400eb380a1ac5087255ed59df4f2c719d3b83dce1decc47b485e70",
     "originalDuration": 1.75,
     "edit": "Adjusted recording gain by -2.7 dB; Encoded as 128 kbps MP3",
-    "pcmSha256": "24afc53a51fab3a974de5d426c1d256a789537a9acf39de63db372e218b523b8"
+    "pcmSha256": "24afc53a51fab3a974de5d426c1d256a789537a9acf39de63db372e218b523b8",
+    "bank": "animals",
+    "bankOrder": 14,
+    "searchAliases": [
+      "Animales"
+    ]
   },
   {
     "id": "animal-elephant",
@@ -1357,7 +1777,12 @@
     "originalSha256": "87c49bd3e47cbfbc6ff2b5ef4e1b9c49233af68c5376dae0768cb70a64575526",
     "originalDuration": 3.239,
     "edit": "Adjusted recording gain by -3.0 dB; Encoded as 128 kbps MP3",
-    "pcmSha256": "c8564bf20130d4d1a65471441830a84ffdb8df5f31c55612778c7cb477ad965e"
+    "pcmSha256": "c8564bf20130d4d1a65471441830a84ffdb8df5f31c55612778c7cb477ad965e",
+    "bank": "animals",
+    "bankOrder": 16,
+    "searchAliases": [
+      "Animales"
+    ]
   },
   {
     "id": "animal-horse",
@@ -1376,7 +1801,12 @@
     "originalSha256": "83781ac561fdd7e520dd2470e8a1ec616a902a7f9857939d27f0dfb2f3d15822",
     "originalDuration": 2.9,
     "edit": "Original downloaded recording, unchanged.",
-    "pcmSha256": "7bddf937d7a62d3eb7140b03089c1dc072887eeb56e597edf63ea09ab02c081e"
+    "pcmSha256": "7bddf937d7a62d3eb7140b03089c1dc072887eeb56e597edf63ea09ab02c081e",
+    "bank": "animals",
+    "bankOrder": 4,
+    "searchAliases": [
+      "Animales"
+    ]
   },
   {
     "id": "animal-cow",
@@ -1395,7 +1825,12 @@
     "originalSha256": "41c0c7b14baa215e3e27dfcea03e099e45336de35aaec44e06c057d9ce19e006",
     "originalDuration": 2.795,
     "edit": "Original downloaded recording, unchanged.",
-    "pcmSha256": "6bf31ac64a476ca787a70c2405390e11c0c446225436b8a58c14c8cee14001af"
+    "pcmSha256": "6bf31ac64a476ca787a70c2405390e11c0c446225436b8a58c14c8cee14001af",
+    "bank": "animals",
+    "bankOrder": 5,
+    "searchAliases": [
+      "Animales"
+    ]
   },
   {
     "id": "animal-pig",
@@ -1414,7 +1849,12 @@
     "originalSha256": "d50c03d0b1bd7c362fb780951316d53afaf5e713d6f712dbf7f49c0c0feedc65",
     "originalDuration": 1.416,
     "edit": "Original downloaded recording, unchanged.",
-    "pcmSha256": "0986aeee574af2e2cb19407705d9a33687aa6a706a48cb7b29ae985898a7a76b"
+    "pcmSha256": "0986aeee574af2e2cb19407705d9a33687aa6a706a48cb7b29ae985898a7a76b",
+    "bank": "animals",
+    "bankOrder": 6,
+    "searchAliases": [
+      "Animales"
+    ]
   },
   {
     "id": "animal-sheep",
@@ -1433,7 +1873,12 @@
     "originalSha256": "6468e8de3f1f648558809c0318a1ad6f1f384f5eaf92dc6df8e97e25fa3f91bd",
     "originalDuration": 6.322,
     "edit": "Adjusted recording gain by -3.0 dB; Encoded as 128 kbps MP3",
-    "pcmSha256": "e26975b1753b1ebdecffb4edf7cf6f769e20222b150afc2c483dcce8ca52d722"
+    "pcmSha256": "e26975b1753b1ebdecffb4edf7cf6f769e20222b150afc2c483dcce8ca52d722",
+    "bank": "animals",
+    "bankOrder": 7,
+    "searchAliases": [
+      "Animales"
+    ]
   },
   {
     "id": "animal-goat",
@@ -1452,7 +1897,12 @@
     "originalSha256": "b86d2d770896a9671a18ea97e752a7e699482495eaab2c0dad9f8cb9786326a5",
     "originalDuration": 2.02,
     "edit": "Adjusted recording gain by -2.8 dB; Encoded as 128 kbps MP3",
-    "pcmSha256": "9c1fb185cea9ff426fec12390d906ab3cd72b356ba8bb6c410d4101b316de037"
+    "pcmSha256": "9c1fb185cea9ff426fec12390d906ab3cd72b356ba8bb6c410d4101b316de037",
+    "bank": "animals",
+    "bankOrder": 8,
+    "searchAliases": [
+      "Animales"
+    ]
   },
   {
     "id": "animal-rooster",
@@ -1471,7 +1921,12 @@
     "originalSha256": "75adf4cd1cfb95e148c3af225da304e8ce0ca057476bd28da1d6bdba7d06c4db",
     "originalDuration": 1.672,
     "edit": "Original downloaded recording, unchanged.",
-    "pcmSha256": "c048a23e47ad954ff2dae635dd5f30a6068464b312f23c95576dc6c652b2a2a3"
+    "pcmSha256": "c048a23e47ad954ff2dae635dd5f30a6068464b312f23c95576dc6c652b2a2a3",
+    "bank": "animals",
+    "bankOrder": 9,
+    "searchAliases": [
+      "Animales"
+    ]
   },
   {
     "id": "animal-duck",
@@ -1490,7 +1945,12 @@
     "originalSha256": "8305b3745603e60022b288f2f17d8525d14747edf3690b8878601fdb7bc8ce57",
     "originalDuration": 6.583,
     "edit": "Original downloaded recording, unchanged.",
-    "pcmSha256": "491872fa30cbcd6f1343d3c2db0b48d9aa8c9497506ddbaf4ab41b89abb0978a"
+    "pcmSha256": "491872fa30cbcd6f1343d3c2db0b48d9aa8c9497506ddbaf4ab41b89abb0978a",
+    "bank": "animals",
+    "bankOrder": 10,
+    "searchAliases": [
+      "Animales"
+    ]
   },
   {
     "id": "animal-owl",
@@ -1509,7 +1969,12 @@
     "originalSha256": "e4b9546bd1241cfa285043d3bb049df63188b107c58c98fa58c2b0bef6ec1941",
     "originalDuration": 2.015,
     "edit": "Original downloaded recording, unchanged.",
-    "pcmSha256": "a108294ee413ac55314c5f3e4f031a4ea5e0aae681c9382d292d0ddb0a599b89"
+    "pcmSha256": "a108294ee413ac55314c5f3e4f031a4ea5e0aae681c9382d292d0ddb0a599b89",
+    "bank": "animals",
+    "bankOrder": 11,
+    "searchAliases": [
+      "Animales"
+    ]
   },
   {
     "id": "animal-monkey",
@@ -1528,7 +1993,12 @@
     "originalSha256": "22318d7e1a7648443a0f4236183e6e5c4eb96545f39b7057ec09d47e048543b7",
     "originalDuration": 1.881,
     "edit": "Original downloaded recording, unchanged.",
-    "pcmSha256": "e0006fb99a90f608a78504f8fde7089f51aad4cecc8ff0f54b41e0356a6078d3"
+    "pcmSha256": "e0006fb99a90f608a78504f8fde7089f51aad4cecc8ff0f54b41e0356a6078d3",
+    "bank": "animals",
+    "bankOrder": 15,
+    "searchAliases": [
+      "Animales"
+    ]
   },
   {
     "id": "animal-frog",
@@ -1547,7 +2017,12 @@
     "originalSha256": "4ee9b1fc85665b9bf706b40d70d9798eb32e13035b68df3ed2001c4b3d5ece9b",
     "originalDuration": 2.544,
     "edit": "Original downloaded recording, unchanged.",
-    "pcmSha256": "e1d06201c9c15760efae9aafdbb06cdb37a78eb4a78ed6db23e4002e50e17d39"
+    "pcmSha256": "e1d06201c9c15760efae9aafdbb06cdb37a78eb4a78ed6db23e4002e50e17d39",
+    "bank": "animals",
+    "bankOrder": 12,
+    "searchAliases": [
+      "Animales"
+    ]
   },
   {
     "id": "animal-dolphin",
@@ -1566,7 +2041,12 @@
     "originalSha256": "3d9202807c54601289fe43cf7685ca89fde632c59c6ecbb1c6058f15e046d9c2",
     "originalDuration": 2.795,
     "edit": "Original downloaded recording, unchanged.",
-    "pcmSha256": "a8c3fe58dadf04402139f38315d9a73dbcb7fcc420d8e95566c9b2fca1d700c1"
+    "pcmSha256": "a8c3fe58dadf04402139f38315d9a73dbcb7fcc420d8e95566c9b2fca1d700c1",
+    "bank": "animals",
+    "bankOrder": 17,
+    "searchAliases": [
+      "Animales"
+    ]
   },
   {
     "id": "mj-hee-hee",
@@ -1588,7 +2068,12 @@
     "sha256": "5e90451a7408b1f7cc4c701ec4ecb845c02f1a41db6ef6507b98277aff8c257e",
     "peakDb": -3.4,
     "pcmSha256": "9a1522ee9070b8d35232ccbfb691e691f8d7af5be4cbb5780ee57c65be988a2c",
-    "downloadNote": "Downloaded using the public soundboard Download sound control; signed download URLs expire. Reopen source page for a fresh download."
+    "downloadNote": "Downloaded using the public soundboard Download sound control; signed download URLs expire. Reopen source page for a fresh download.",
+    "bank": "mj",
+    "bankOrder": 1,
+    "searchAliases": [
+      "Michael Jackson"
+    ]
   },
   {
     "id": "mj-hee-hee-hee",
@@ -1610,7 +2095,12 @@
     "sha256": "525752635530358af9766a559364a7b68202f4b6e409704aae6896d330fbe48b",
     "peakDb": -5.2,
     "pcmSha256": "b4abd27cc4bf79f48bf38495fa583a989f0d264f81b7df1e53ea288d9ffa587e",
-    "downloadNote": "Downloaded using the public soundboard Download sound control; signed download URLs expire. Reopen source page for a fresh download."
+    "downloadNote": "Downloaded using the public soundboard Download sound control; signed download URLs expire. Reopen source page for a fresh download.",
+    "bank": "mj",
+    "bankOrder": 2,
+    "searchAliases": [
+      "Michael Jackson"
+    ]
   },
   {
     "id": "mj-hoo",
@@ -1632,7 +2122,12 @@
     "sha256": "970e898378ea752932eb6decfa186675265c00ce2f2ab91b653a4a101c56d338",
     "peakDb": -6.0,
     "pcmSha256": "047c8e07387e33c475f791f527e50ba8e683724f880a48ad1940faba9619a1ad",
-    "downloadNote": "Downloaded using the public soundboard Download sound control; signed download URLs expire. Reopen source page for a fresh download."
+    "downloadNote": "Downloaded using the public soundboard Download sound control; signed download URLs expire. Reopen source page for a fresh download.",
+    "bank": "mj",
+    "bankOrder": 3,
+    "searchAliases": [
+      "Michael Jackson"
+    ]
   },
   {
     "id": "mj-hoow",
@@ -1654,7 +2149,12 @@
     "sha256": "7d77de83fcb3567c3dbf05f23ad938ec4a212ec00e9921a632fed7326054065b",
     "peakDb": -4.2,
     "pcmSha256": "8151424335acb25a61d2fda1f2d4933d3a59ad991e7184516c8e59e0aac1f202",
-    "downloadNote": "Downloaded using the public soundboard Download sound control; signed download URLs expire. Reopen source page for a fresh download."
+    "downloadNote": "Downloaded using the public soundboard Download sound control; signed download URLs expire. Reopen source page for a fresh download.",
+    "bank": "mj",
+    "bankOrder": 4,
+    "searchAliases": [
+      "Michael Jackson"
+    ]
   },
   {
     "id": "mj-ooow",
@@ -1676,7 +2176,12 @@
     "sha256": "3d908161a9415f6f613a3983ea2f37b22c2c7fab27de222b0aab1436968d2c25",
     "peakDb": -4.0,
     "pcmSha256": "70f0db119364816a4b90314176f39fb4e4d60d1f657490d3bba55258b79a2845",
-    "downloadNote": "Downloaded using the public soundboard Download sound control; signed download URLs expire. Reopen source page for a fresh download."
+    "downloadNote": "Downloaded using the public soundboard Download sound control; signed download URLs expire. Reopen source page for a fresh download.",
+    "bank": "mj",
+    "bankOrder": 5,
+    "searchAliases": [
+      "Michael Jackson"
+    ]
   },
   {
     "id": "mj-aow",
@@ -1698,7 +2203,12 @@
     "sha256": "542ba45659f5d9e646efbc5a9c86814705da8070bd497dee654c05260353f5a1",
     "peakDb": -5.7,
     "pcmSha256": "a3bd2ee5770b02b58b3915719fbc215d06c0685cb48bc591303997f9eb4fb977",
-    "downloadNote": "Downloaded using the public soundboard Download sound control; signed download URLs expire. Reopen source page for a fresh download."
+    "downloadNote": "Downloaded using the public soundboard Download sound control; signed download URLs expire. Reopen source page for a fresh download.",
+    "bank": "mj",
+    "bankOrder": 6,
+    "searchAliases": [
+      "Michael Jackson"
+    ]
   },
   {
     "id": "mj-daaw",
@@ -1720,7 +2230,12 @@
     "sha256": "19f74390ecaebc6e11f10d39e77376f637a3eb46a4348a9882aaa04c9de90afb",
     "peakDb": -5.3,
     "pcmSha256": "6b764baa90d11b1ca48dd2a84ff2d57a7c2e19f453eede4f382c82495b5393fb",
-    "downloadNote": "Downloaded using the public soundboard Download sound control; signed download URLs expire. Reopen source page for a fresh download."
+    "downloadNote": "Downloaded using the public soundboard Download sound control; signed download URLs expire. Reopen source page for a fresh download.",
+    "bank": "mj",
+    "bankOrder": 7,
+    "searchAliases": [
+      "Michael Jackson"
+    ]
   },
   {
     "id": "mj-dah",
@@ -1742,7 +2257,12 @@
     "sha256": "fe409f020fce92475615401ffdc6d01f43af762c8dfdad05528766f7bccdb98e",
     "peakDb": -5.1,
     "pcmSha256": "abe3a2f110a5a5e62554a7ae29e8b3fd914458fdc71b1253e33767de57c768fd",
-    "downloadNote": "Downloaded using the public soundboard Download sound control; signed download URLs expire. Reopen source page for a fresh download."
+    "downloadNote": "Downloaded using the public soundboard Download sound control; signed download URLs expire. Reopen source page for a fresh download.",
+    "bank": "mj",
+    "bankOrder": 8,
+    "searchAliases": [
+      "Michael Jackson"
+    ]
   },
   {
     "id": "mj-duh-ah",
@@ -1764,7 +2284,12 @@
     "sha256": "13e79226acb2c63a31f1c9b08b7ba6af305a4f721aeefa9409db4814268473a7",
     "peakDb": -5.5,
     "pcmSha256": "c2b8d23f7e7baebefa2bc29e9787b4bc336fb5cd15ea7a33c0e09532d8807f3f",
-    "downloadNote": "Downloaded using the public soundboard Download sound control; signed download URLs expire. Reopen source page for a fresh download."
+    "downloadNote": "Downloaded using the public soundboard Download sound control; signed download URLs expire. Reopen source page for a fresh download.",
+    "bank": "mj",
+    "bankOrder": 9,
+    "searchAliases": [
+      "Michael Jackson"
+    ]
   },
   {
     "id": "mj-ah-chuk-aah",
@@ -1786,7 +2311,12 @@
     "sha256": "4d0a56330b4ce7926e1c9b0170d560ef4586abc07ea08958b483eee380f55df6",
     "peakDb": -5.4,
     "pcmSha256": "e89ceafaf3d2780adb86bd113b738858b4769a0b5bdaf2b093bad09c58b8b771",
-    "downloadNote": "Downloaded using the public soundboard Download sound control; signed download URLs expire. Reopen source page for a fresh download."
+    "downloadNote": "Downloaded using the public soundboard Download sound control; signed download URLs expire. Reopen source page for a fresh download.",
+    "bank": "mj",
+    "bankOrder": 10,
+    "searchAliases": [
+      "Michael Jackson"
+    ]
   },
   {
     "id": "mj-ba-da-bah",
@@ -1808,7 +2338,12 @@
     "sha256": "acf4ec6ebe8d82b8fde3b1bcbcce87cb9e0dcde232c98670c09b68e01a039d5b",
     "peakDb": -4.0,
     "pcmSha256": "6832341b775b93766ee49ea8de5fda85378c8f64e7e0ee37c381f588e62678a2",
-    "downloadNote": "Downloaded using the public soundboard Download sound control; signed download URLs expire. Reopen source page for a fresh download."
+    "downloadNote": "Downloaded using the public soundboard Download sound control; signed download URLs expire. Reopen source page for a fresh download.",
+    "bank": "mj",
+    "bankOrder": 11,
+    "searchAliases": [
+      "Michael Jackson"
+    ]
   },
   {
     "id": "mj-shukka-chukka",
@@ -1830,7 +2365,12 @@
     "sha256": "44451315b1d3ffd53167aa13a38d90ca7b18be0697a7ca9e4ea4f2c0553d029c",
     "peakDb": -5.5,
     "pcmSha256": "ac224f7ce50ca89cdd5b422dac03d44922205371e7c08bf41f1249db7893e751",
-    "downloadNote": "Downloaded using the public soundboard Download sound control; signed download URLs expire. Reopen source page for a fresh download."
+    "downloadNote": "Downloaded using the public soundboard Download sound control; signed download URLs expire. Reopen source page for a fresh download.",
+    "bank": "mj",
+    "bankOrder": 12,
+    "searchAliases": [
+      "Michael Jackson"
+    ]
   },
   {
     "id": "mj-babe",
@@ -1852,7 +2392,12 @@
     "sha256": "3c12ff9ea989cd15bee49a61e7a58a21a6e1b62fab2c12ee8c9801050b919b8a",
     "peakDb": -5.1,
     "pcmSha256": "47c7e1c017fdc5ef53e97ea14887df90223636697432d0ed99f65b48214ab10c",
-    "downloadNote": "Downloaded using the public soundboard Download sound control; signed download URLs expire. Reopen source page for a fresh download."
+    "downloadNote": "Downloaded using the public soundboard Download sound control; signed download URLs expire. Reopen source page for a fresh download.",
+    "bank": "mj",
+    "bankOrder": 13,
+    "searchAliases": [
+      "Michael Jackson"
+    ]
   },
   {
     "id": "mj-yeah-yeah",
@@ -1874,7 +2419,12 @@
     "sha256": "97569f91c913db16519bb147f393eb63f9f032517b9491893ced187d2d42172c",
     "peakDb": -5.3,
     "pcmSha256": "fc6f8d184c8df39bf067cf3988d283f7d6c4ed182201bb51bad17bb3193627a3",
-    "downloadNote": "Downloaded using the public soundboard Download sound control; signed download URLs expire. Reopen source page for a fresh download."
+    "downloadNote": "Downloaded using the public soundboard Download sound control; signed download URLs expire. Reopen source page for a fresh download.",
+    "bank": "mj",
+    "bankOrder": 14,
+    "searchAliases": [
+      "Michael Jackson"
+    ]
   },
   {
     "id": "mj-yeeah",
@@ -1896,7 +2446,12 @@
     "sha256": "86fbaeec096a38924d7ec2926b74cdd7921bbf5458dfb83dde832612a38ed98d",
     "peakDb": -4.0,
     "pcmSha256": "1ff172c7fdd875d59a9cd2e06454b38a8e759c68ad4e1a5f53589c564b9139d7",
-    "downloadNote": "Downloaded using the public soundboard Download sound control; signed download URLs expire. Reopen source page for a fresh download."
+    "downloadNote": "Downloaded using the public soundboard Download sound control; signed download URLs expire. Reopen source page for a fresh download.",
+    "bank": "mj",
+    "bankOrder": 15,
+    "searchAliases": [
+      "Michael Jackson"
+    ]
   },
   {
     "id": "mj-yeeeah",
@@ -1918,7 +2473,12 @@
     "sha256": "22b5b3da9461975174159e10ef71a87b2bb1ec75673c17cee2210b9ec7bd0d78",
     "peakDb": -4.9,
     "pcmSha256": "9af79bd633ff9e99a0952236d78bf1f2f9004078e0299eab95a7cf5097835f85",
-    "downloadNote": "Downloaded using the public soundboard Download sound control; signed download URLs expire. Reopen source page for a fresh download."
+    "downloadNote": "Downloaded using the public soundboard Download sound control; signed download URLs expire. Reopen source page for a fresh download.",
+    "bank": "mj",
+    "bankOrder": 16,
+    "searchAliases": [
+      "Michael Jackson"
+    ]
   },
   {
     "id": "betty-armando",
@@ -1938,7 +2498,12 @@
     "sourceTitle": "soundtrack betty la fea incidental tema armando 1",
     "sourceChannel": "zaenz10",
     "sourceChannelUrl": "https://www.youtube.com/channel/UCtB1M_HA1I0NACE0u5WVu-Q",
-    "trackType": "incidental"
+    "trackType": "incidental",
+    "bank": "betty",
+    "bankOrder": 4,
+    "searchAliases": [
+      "Betty la fea"
+    ]
   },
   {
     "id": "betty-hermes",
@@ -1959,7 +2524,12 @@
     "sourceTitle": "La Trampera, Música de Don Hermes Pinzón (Yo soy Betty, la fea)",
     "sourceChannel": "Xx_Alejandro97_xX",
     "sourceChannelUrl": "https://www.youtube.com/channel/UCi7WA5NEAfz2Fji8PFbPgPw",
-    "trackType": "incidental"
+    "trackType": "incidental",
+    "bank": "betty",
+    "bankOrder": 5,
+    "searchAliases": [
+      "Betty la fea"
+    ]
   },
   {
     "id": "betty-betty",
@@ -1979,7 +2549,12 @@
     "peakDb": -7.5,
     "sourceTitle": "soundtrack betty la fea incidental tema betty",
     "sourceChannel": "zaenz10",
-    "sourceChannelUrl": "https://www.youtube.com/channel/UCtB1M_HA1I0NACE0u5WVu-Q"
+    "sourceChannelUrl": "https://www.youtube.com/channel/UCtB1M_HA1I0NACE0u5WVu-Q",
+    "bank": "betty",
+    "bankOrder": 3,
+    "searchAliases": [
+      "Betty la fea"
+    ]
   },
   {
     "id": "betty-marcela",
@@ -1999,7 +2574,12 @@
     "sourceTitle": "soundtrack betty la fea incidental tema marcela 1",
     "sourceChannel": "zaenz10",
     "sourceChannelUrl": "https://www.youtube.com/channel/UCtB1M_HA1I0NACE0u5WVu-Q",
-    "trackType": "incidental"
+    "trackType": "incidental",
+    "bank": "betty",
+    "bankOrder": 7,
+    "searchAliases": [
+      "Betty la fea"
+    ]
   },
   {
     "id": "betty-daniel",
@@ -2019,7 +2599,12 @@
     "sourceTitle": "soundtrack betty la fea incidental tema daniel",
     "sourceChannel": "zaenz10",
     "sourceChannelUrl": "https://www.youtube.com/channel/UCtB1M_HA1I0NACE0u5WVu-Q",
-    "trackType": "incidental"
+    "trackType": "incidental",
+    "bank": "betty",
+    "bankOrder": 9,
+    "searchAliases": [
+      "Betty la fea"
+    ]
   },
   {
     "id": "betty-calderon",
@@ -2039,7 +2624,12 @@
     "sourceTitle": "soundtrack betty la fea incidental tema mario calderon",
     "sourceChannel": "zaenz10",
     "sourceChannelUrl": "https://www.youtube.com/channel/UCtB1M_HA1I0NACE0u5WVu-Q",
-    "trackType": "incidental"
+    "trackType": "incidental",
+    "bank": "betty",
+    "bankOrder": 8,
+    "searchAliases": [
+      "Betty la fea"
+    ]
   },
   {
     "id": "betty-amor",
@@ -2059,7 +2649,12 @@
     "sourceTitle": "Tema incidental-armando y betty",
     "sourceChannel": "ZaEnZLiVe",
     "sourceChannelUrl": "https://www.youtube.com/channel/UCUTGM8Qh0NmkkiGBtZnR94A",
-    "trackType": "incidental"
+    "trackType": "incidental",
+    "bank": "betty",
+    "bankOrder": 10,
+    "searchAliases": [
+      "Betty la fea"
+    ]
   },
   {
     "id": "betty-se-dice",
@@ -2080,7 +2675,12 @@
     "sourceTitle": "Se Dice De Mí (Betty La Fea - Versión Completa ) - Yolanda Rayo | Tango | Banda Sonora",
     "sourceChannel": "SONOLUX OFICIAL",
     "sourceChannelUrl": "https://www.youtube.com/channel/UCWQ898KeW97nom5fjJ73WZg",
-    "artist": "Yolanda Rayo"
+    "artist": "Yolanda Rayo",
+    "bank": "betty",
+    "bankOrder": 1,
+    "searchAliases": [
+      "Betty la fea"
+    ]
   },
   {
     "id": "betty-patricia",
@@ -2100,7 +2700,12 @@
     "peakDb": -14.0,
     "sourceTitle": "soundtrack betty la fea tema peliteñida patricia fernandez",
     "sourceChannel": "fans ysblf",
-    "sourceChannelUrl": "https://www.youtube.com/channel/UCc2iydI7IHHEdWRUN7VaI5Q"
+    "sourceChannelUrl": "https://www.youtube.com/channel/UCc2iydI7IHHEdWRUN7VaI5Q",
+    "bank": "betty",
+    "bankOrder": 6,
+    "searchAliases": [
+      "Betty la fea"
+    ]
   },
   {
     "id": "betty-azul",
@@ -2121,7 +2726,12 @@
     "sourceTitle": "Se dejaba llevar por ti - Santiago Cruz || Yo soy Betty, La fea",
     "sourceChannel": "Orozcolyrics",
     "sourceChannelUrl": "https://www.youtube.com/channel/UCFrvWQw5cPYoNoOxctbeHaQ",
-    "artist": "Santiago Cruz"
+    "artist": "Santiago Cruz",
+    "bank": "betty",
+    "bankOrder": 2,
+    "searchAliases": [
+      "Betty la fea"
+    ]
   },
   {
     "id": "betty-melancolia",
@@ -2141,7 +2751,12 @@
     "peakDb": -0.8,
     "sourceTitle": "Tema incidental-mario calderon y armando mendoza",
     "sourceChannel": "ZaEnZLiVe",
-    "sourceChannelUrl": "https://www.youtube.com/channel/UCUTGM8Qh0NmkkiGBtZnR94A"
+    "sourceChannelUrl": "https://www.youtube.com/channel/UCUTGM8Qh0NmkkiGBtZnR94A",
+    "bank": "betty",
+    "bankOrder": 11,
+    "searchAliases": [
+      "Betty la fea"
+    ]
   },
   {
     "id": "betty-consuelo",
@@ -2161,7 +2776,12 @@
     "peakDb": -6.2,
     "sourceTitle": "Yo Soy Betty, La Fea - Incidental Melancolía",
     "sourceChannel": "Yupita",
-    "sourceChannelUrl": "https://www.youtube.com/channel/UCyQW3S_-Q4APecKUCPt8EZA"
+    "sourceChannelUrl": "https://www.youtube.com/channel/UCyQW3S_-Q4APecKUCPt8EZA",
+    "bank": "betty",
+    "bankOrder": 12,
+    "searchAliases": [
+      "Betty la fea"
+    ]
   },
   {
     "id": "betty-accion",
@@ -2181,7 +2801,12 @@
     "peakDb": 0.0,
     "sourceTitle": "yo soy Betty lá fea soundtrack original (ação)",
     "sourceChannel": "Novelas Soundtrack",
-    "sourceChannelUrl": "https://www.youtube.com/channel/UCEU-uT7V2DSgSYR-Azzev4A"
+    "sourceChannelUrl": "https://www.youtube.com/channel/UCEU-uT7V2DSgSYR-Azzev4A",
+    "bank": "betty",
+    "bankOrder": 16,
+    "searchAliases": [
+      "Betty la fea"
+    ]
   },
   {
     "id": "betty-intriga",
@@ -2201,7 +2826,12 @@
     "peakDb": -9.4,
     "sourceTitle": "yo soy betty la fea soundtrack suspenso",
     "sourceChannel": "Novelas Soundtrack",
-    "sourceChannelUrl": "https://www.youtube.com/channel/UCEU-uT7V2DSgSYR-Azzev4A"
+    "sourceChannelUrl": "https://www.youtube.com/channel/UCEU-uT7V2DSgSYR-Azzev4A",
+    "bank": "betty",
+    "bankOrder": 14,
+    "searchAliases": [
+      "Betty la fea"
+    ]
   },
   {
     "id": "betty-discrecion",
@@ -2221,7 +2851,12 @@
     "peakDb": -0.5,
     "sourceTitle": "yo soy Betty lá fea soundtrack original discrição",
     "sourceChannel": "Novelas Soundtrack",
-    "sourceChannelUrl": "https://www.youtube.com/channel/UCEU-uT7V2DSgSYR-Azzev4A"
+    "sourceChannelUrl": "https://www.youtube.com/channel/UCEU-uT7V2DSgSYR-Azzev4A",
+    "bank": "betty",
+    "bankOrder": 13,
+    "searchAliases": [
+      "Betty la fea"
+    ]
   },
   {
     "id": "betty-tension",
@@ -2241,7 +2876,12 @@
     "peakDb": 0.0,
     "sourceTitle": "yo soy Betty lá fea soundtrack original (suspense 1)",
     "sourceChannel": "Novelas Soundtrack",
-    "sourceChannelUrl": "https://www.youtube.com/channel/UCEU-uT7V2DSgSYR-Azzev4A"
+    "sourceChannelUrl": "https://www.youtube.com/channel/UCEU-uT7V2DSgSYR-Azzev4A",
+    "bank": "betty",
+    "bankOrder": 15,
+    "searchAliases": [
+      "Betty la fea"
+    ]
   },
   {
     "id": "tico-mami-me-cague",
@@ -2262,7 +2902,12 @@
     "context": "Mami, dígale que me cagué hoy.",
     "bytes": 58718,
     "sha256": "6b86ff49c0232d33ecf7937f50e1d168b62a0fd172ad269c70481177027282ef",
-    "peakDb": -4.5
+    "peakDb": -4.5,
+    "bank": "ticos",
+    "bankOrder": 1,
+    "searchAliases": [
+      "Audios ticos"
+    ]
   },
   {
     "id": "tico-amiguita-jehova",
@@ -2283,7 +2928,12 @@
     "context": "Amiguita, bueno, Jehová está de tu lado y su hijo Jesucristo.",
     "bytes": 92576,
     "sha256": "aa13f37ebdd990441c042d58568f1093fe6930efb293b5f621e4535f2d9566b7",
-    "peakDb": -5.0
+    "peakDb": -5.0,
+    "bank": "ticos",
+    "bankOrder": 32,
+    "searchAliases": [
+      "Audios ticos"
+    ]
   },
   {
     "id": "tico-vea-zorra",
@@ -2304,7 +2954,12 @@
     "context": "Vea zorra.",
     "bytes": 23587,
     "sha256": "4cadc68f637374d7b43b99f9a4439e9b73adb573c6b80741ef7a1c74a3cd1a01",
-    "peakDb": -4.4
+    "peakDb": -4.4,
+    "bank": "ticos",
+    "bankOrder": 5,
+    "searchAliases": [
+      "Audios ticos"
+    ]
   },
   {
     "id": "tico-birra-economico-cerveza",
@@ -2325,7 +2980,12 @@
     "context": "Birra, económico, cerveza.",
     "bytes": 54535,
     "sha256": "f135e60bd03725f01bd3f9db4bb6fed0310462ade600e2d904582a402ebc77cf",
-    "peakDb": -4.0
+    "peakDb": -4.0,
+    "bank": "ticos",
+    "bankOrder": 6,
+    "searchAliases": [
+      "Audios ticos"
+    ]
   },
   {
     "id": "tico-ay-papi-baileys",
@@ -2346,7 +3006,12 @@
     "context": "Ay papi, qué rico whisky, papi. ¿Por qué no pedimos Baileys?",
     "bytes": 88834,
     "sha256": "ee8482d980d4084f10a300fd033486160520180b9c25452c2bbd5df46bd245b1",
-    "peakDb": -4.5
+    "peakDb": -4.5,
+    "bank": "ticos",
+    "bankOrder": 7,
+    "searchAliases": [
+      "Audios ticos"
+    ]
   },
   {
     "id": "tico-buscara-trabajo",
@@ -2367,7 +3032,12 @@
     "context": "¿Por qué no buscará trabajo ese playo?",
     "bytes": 44093,
     "sha256": "d1acfd4aef90bb22fd2dc37eb48344eda9998c49bc4016294c63fcdde0c46ae3",
-    "peakDb": -1.1
+    "peakDb": -1.1,
+    "bank": "ticos",
+    "bankOrder": 11,
+    "searchAliases": [
+      "Audios ticos"
+    ]
   },
   {
     "id": "tico-digamelo-mi-amor",
@@ -2388,7 +3058,12 @@
     "context": "Dígamelo, mi amor. Dígamelo, por favor.",
     "bytes": 70842,
     "sha256": "01becf598766a3b802113d1aade6d59b81884b4fcce93e7627a7d9ecb45bd4a9",
-    "peakDb": -4.9
+    "peakDb": -4.9,
+    "bank": "ticos",
+    "bankOrder": 8,
+    "searchAliases": [
+      "Audios ticos"
+    ]
   },
   {
     "id": "tico-por-lo-mas-sagrado",
@@ -2409,7 +3084,12 @@
     "context": "Por lo más sagrado que tengo, yo a usted nunca le fallé, mami.",
     "bytes": 78806,
     "sha256": "828ea06d65b8c4082757e588d56c57ae155b2d0f6ebb1e1a5391ed0db3d7bc1d",
-    "peakDb": -4.7
+    "peakDb": -4.7,
+    "bank": "ticos",
+    "bankOrder": 9,
+    "searchAliases": [
+      "Audios ticos"
+    ]
   },
   {
     "id": "tico-callese-pepe",
@@ -2430,7 +3110,12 @@
     "context": "Cállese, Pepe, cállese.",
     "bytes": 29866,
     "sha256": "930104c1de8a764a836b4edd245e9593f3b84bfaf5eca62da62d5106c11d8b84",
-    "peakDb": -7.9
+    "peakDb": -7.9,
+    "bank": "ticos",
+    "bankOrder": 10,
+    "searchAliases": [
+      "Audios ticos"
+    ]
   },
   {
     "id": "tico-pero-por-que-ahhh",
@@ -2451,7 +3136,12 @@
     "context": "Pero ¿por qué… así, ahhh?",
     "bytes": 66654,
     "sha256": "9d156e43c336d9c44abf8529d2514689fdfe87728b20484fa46a7bafcfc2c0e2",
-    "peakDb": -7.3
+    "peakDb": -7.3,
+    "bank": "ticos",
+    "bankOrder": 3,
+    "searchAliases": [
+      "Audios ticos"
+    ]
   },
   {
     "id": "tico-digaselo-gerald",
@@ -2472,7 +3162,12 @@
     "context": "Dígale a esa perra que por qué le escribe. Dígaselo, Gerald.",
     "bytes": 77969,
     "sha256": "e98286c80576662b487c362fe724cfdb7dfd37e7a8e82abe9ae2b458b03aae51",
-    "peakDb": -10.1
+    "peakDb": -10.1,
+    "bank": "ticos",
+    "bankOrder": 20,
+    "searchAliases": [
+      "Audios ticos"
+    ]
   },
   {
     "id": "tico-que-duro-jerry",
@@ -2493,7 +3188,12 @@
     "context": "Qué duro, Jerry, qué duro.",
     "bytes": 34881,
     "sha256": "20b4daeaa91d1fdeddadf7868f3f358f786f133f519a02dd2a0fff13362b0469",
-    "peakDb": -0.2
+    "peakDb": -0.2,
+    "bank": "ticos",
+    "bankOrder": 2,
+    "searchAliases": [
+      "Audios ticos"
+    ]
   },
   {
     "id": "tico-pito-no-haga-dano",
@@ -2515,7 +3215,12 @@
     "normalizationGainDb": 7.06,
     "bytes": 43267,
     "sha256": "d3bca4edd67d5fdd2c848f17b20f6895eb72ba970caf761d42c02c2eae8bf67a",
-    "peakDb": -2.2
+    "peakDb": -2.2,
+    "bank": "ticos",
+    "bankOrder": 15,
+    "searchAliases": [
+      "Audios ticos"
+    ]
   },
   {
     "id": "tico-vea-yogur",
@@ -2537,7 +3242,12 @@
     "bytes": 16502,
     "sha256": "8131cc53c365a09685c51fa86203e7ac8ac091b92d43a85ee9ee5ff2d3e97411",
     "peakDb": -7.6,
-    "normalizationGainDb": 3.35
+    "normalizationGainDb": 3.35,
+    "bank": "ticos",
+    "bankOrder": 4,
+    "searchAliases": [
+      "Audios ticos"
+    ]
   },
   {
     "id": "tico-salvatierra-pura-mierda",
@@ -2559,7 +3269,12 @@
     "normalizationGainDb": 2.26,
     "bytes": 41603,
     "sha256": "8ac5fbbf9a157df7f9e998803884decb81446eeff1fb3ea8a02f0832f9f4f01b",
-    "peakDb": -8.0
+    "peakDb": -8.0,
+    "bank": "ticos",
+    "bankOrder": 28,
+    "searchAliases": [
+      "Audios ticos"
+    ]
   },
   {
     "id": "tico-mae-por-que",
@@ -2581,7 +3296,12 @@
     "normalizationGainDb": -4.42,
     "bytes": 59581,
     "sha256": "ec0bcbfa503e5b7fa06640cd684d42ff8b91ab229cad4552eab7301642a82ce1",
-    "peakDb": -5.1
+    "peakDb": -5.1,
+    "bank": "ticos",
+    "bankOrder": 12,
+    "searchAliases": [
+      "Audios ticos"
+    ]
   },
   {
     "id": "tico-carlos-la-perdi",
@@ -2612,7 +3332,12 @@
     "context": "Un solo botón: «¡Carlos!» y después «La perdí cuando más la amaba, mae».",
     "bytes": 65868,
     "sha256": "27b2f1132e4a338015456e95085a2906348b33c5f30b454acd8a43de2e17eac5",
-    "peakDb": -5.4
+    "peakDb": -5.4,
+    "bank": "ticos",
+    "bankOrder": 21,
+    "searchAliases": [
+      "Audios ticos"
+    ]
   },
   {
     "id": "tico-calma-terremoto",
@@ -2634,7 +3359,12 @@
     "normalizationGainDb": -5.61,
     "bytes": 257270,
     "sha256": "aa6ee23815cc8d81ce55929d46134b68e0d595c887b4eda1ded7da9e24c167ef",
-    "peakDb": -7.1
+    "peakDb": -7.1,
+    "bank": "ticos",
+    "bankOrder": 25,
+    "searchAliases": [
+      "Audios ticos"
+    ]
   },
   {
     "id": "tico-metete-en-la-vara",
@@ -2656,7 +3386,12 @@
     "normalizationGainDb": -4.02,
     "bytes": 24035,
     "sha256": "cb45e786e4d93219124fa81c2f7d10d82296edc84d6edb375d6a46cd31931af0",
-    "peakDb": -10.5
+    "peakDb": -10.5,
+    "bank": "ticos",
+    "bankOrder": 13,
+    "searchAliases": [
+      "Audios ticos"
+    ]
   },
   {
     "id": "tico-ella-se-fue-adelante",
@@ -2678,7 +3413,12 @@
     "normalizationGainDb": -3.63,
     "bytes": 56231,
     "sha256": "a94ea42d9476800b1ece8bdffdbb173a0d747f7dd917588b298efb5c1d35a281",
-    "peakDb": -5.0
+    "peakDb": -5.0,
+    "bank": "ticos",
+    "bankOrder": 17,
+    "searchAliases": [
+      "Audios ticos"
+    ]
   },
   {
     "id": "tico-panochita",
@@ -2701,7 +3441,12 @@
     "normalizationGainDb": 2.25,
     "bytes": 47894,
     "sha256": "347ba282e0ef1bdc862860e2b927318bf7f22ccb18b2960ca7239e6db25b504c",
-    "peakDb": -3.2
+    "peakDb": -3.2,
+    "bank": "ticos",
+    "bankOrder": 18,
+    "searchAliases": [
+      "Audios ticos"
+    ]
   },
   {
     "id": "tico-paguele-a-la-caja",
@@ -2723,7 +3468,12 @@
     "normalizationGainDb": -0.78,
     "bytes": 61690,
     "sha256": "0522362ab783727fb4d3fc295c3c1253baf9ded56fb12a9e02a5c5b96ef0d695",
-    "peakDb": -7.4
+    "peakDb": -7.4,
+    "bank": "ticos",
+    "bankOrder": 14,
+    "searchAliases": [
+      "Audios ticos"
+    ]
   },
   {
     "id": "tico-ay-miguel",
@@ -2745,7 +3495,12 @@
     "normalizationGainDb": -11.63,
     "bytes": 56212,
     "sha256": "ada3599d229525e8d1902a0facff135510135151d6aaed77e1974a7170360b20",
-    "peakDb": -11.2
+    "peakDb": -11.2,
+    "bank": "ticos",
+    "bankOrder": 19,
+    "searchAliases": [
+      "Audios ticos"
+    ]
   },
   {
     "id": "tico-telenoticias",
@@ -2767,7 +3522,12 @@
     "normalizationGainDb": -2.86,
     "bytes": 401468,
     "sha256": "2129a3b8f5d883dab80ebeacaa446a121e29ea55c5e86befa64497968182eb16",
-    "peakDb": -5.7
+    "peakDb": -5.7,
+    "bank": "ticos",
+    "bankOrder": 37,
+    "searchAliases": [
+      "Audios ticos"
+    ]
   },
   {
     "id": "tico-obituario-teletica",
@@ -2789,7 +3549,12 @@
     "normalizationGainDb": 2.17,
     "bytes": 401463,
     "sha256": "16b051277f3e9d14073c9c19b8272c8a96294373747603de035e06317a3c5969",
-    "peakDb": -5.7
+    "peakDb": -5.7,
+    "bank": "ticos",
+    "bankOrder": 38,
+    "searchAliases": [
+      "Audios ticos"
+    ]
   },
   {
     "id": "tico-batalla-espiritual",
@@ -2811,7 +3576,12 @@
     "normalizationGainDb": -7.25,
     "bytes": 108888,
     "sha256": "34d5d8070105eacdb9c1f7d3afb244bfb321761c01de17b8e82631cbfda4436e",
-    "peakDb": -6.5
+    "peakDb": -6.5,
+    "bank": "ticos",
+    "bankOrder": 35,
+    "searchAliases": [
+      "Audios ticos"
+    ]
   },
   {
     "id": "tico-ramasheka",
@@ -2833,7 +3603,12 @@
     "normalizationGainDb": -0.89,
     "bytes": 86305,
     "sha256": "8ba1b8d91640a19455122c73319331cbc2e557f93b7af804757caed826f1cf93",
-    "peakDb": -5.5
+    "peakDb": -5.5,
+    "bank": "ticos",
+    "bankOrder": 33,
+    "searchAliases": [
+      "Audios ticos"
+    ]
   },
   {
     "id": "tico-aqui-le-traje-enjuague",
@@ -2855,7 +3630,12 @@
     "normalizationGainDb": -8.52,
     "bytes": 73779,
     "sha256": "14e614be9bba57e340322529f0e0b5aebf2c67b728f489130e10d3a633114ef3",
-    "peakDb": -8.4
+    "peakDb": -8.4,
+    "bank": "ticos",
+    "bankOrder": 16,
+    "searchAliases": [
+      "Audios ticos"
+    ]
   },
   {
     "id": "tico-la-pension",
@@ -2877,7 +3657,12 @@
     "normalizationGainDb": -0.84,
     "bytes": 289434,
     "sha256": "670767ac15318e4a0a012608635c307627343e85aebf055037f4ad88697055ed",
-    "peakDb": -2.7
+    "peakDb": -2.7,
+    "bank": "ticos",
+    "bankOrder": 39,
+    "searchAliases": [
+      "Audios ticos"
+    ]
   },
   {
     "id": "tico-policia-policia",
@@ -2899,7 +3684,12 @@
     "normalizationGainDb": 1.99,
     "bytes": 77973,
     "sha256": "7d778250f6845c082cecfbd22f7d75eeaafe23a0a75a713d6a2b2db8f82b2825",
-    "peakDb": -5.4
+    "peakDb": -5.4,
+    "bank": "ticos",
+    "bankOrder": 36,
+    "searchAliases": [
+      "Audios ticos"
+    ]
   },
   {
     "id": "tico-fuera-satanas",
@@ -2921,7 +3711,12 @@
     "normalizationGainDb": -5.99,
     "bytes": 233449,
     "sha256": "6f97d34b376aaea59cc4375b65df8303225660c63796d19987621a201ea96211",
-    "peakDb": -6.5
+    "peakDb": -6.5,
+    "bank": "ticos",
+    "bankOrder": 34,
+    "searchAliases": [
+      "Audios ticos"
+    ]
   },
   {
     "id": "tico-no-te-vayas",
@@ -2943,7 +3738,12 @@
     "normalizationGainDb": -6.27,
     "bytes": 81305,
     "sha256": "95afbf83e23df14f397385709734889b21cd3f9e07e02499b8b1107c1175ba7b",
-    "peakDb": -8.7
+    "peakDb": -8.7,
+    "bank": "ticos",
+    "bankOrder": 22,
+    "searchAliases": [
+      "Audios ticos"
+    ]
   },
   {
     "id": "tico-cimarrona-fara-fara-chin",
@@ -2965,7 +3765,12 @@
     "normalizationGainDb": -7.32,
     "bytes": 225096,
     "sha256": "1465a5216221210457ce5f65822c72c7c3acf05d9bd1c96964db6a2897565ed5",
-    "peakDb": -8.1
+    "peakDb": -8.1,
+    "bank": "ticos",
+    "bankOrder": 43,
+    "searchAliases": [
+      "Audios ticos"
+    ]
   },
   {
     "id": "tico-aqui-lo-que-hay",
@@ -2987,7 +3792,12 @@
     "normalizationGainDb": -2.26,
     "bytes": 73771,
     "sha256": "bee8f7758019dfc28e94243681d48cf27654a8a64d04110987bf36590572a5a0",
-    "peakDb": -7.8
+    "peakDb": -7.8,
+    "bank": "ticos",
+    "bankOrder": 29,
+    "searchAliases": [
+      "Audios ticos"
+    ]
   },
   {
     "id": "tico-teleclub",
@@ -3009,7 +3819,12 @@
     "normalizationGainDb": 1.59,
     "bytes": 545218,
     "sha256": "9bc76d5c0dfaf35833495db7380ed77c965d478a124dd4bfa7fba5b5bde043d7",
-    "peakDb": -8.5
+    "peakDb": -8.5,
+    "bank": "ticos",
+    "bankOrder": 40,
+    "searchAliases": [
+      "Audios ticos"
+    ]
   },
   {
     "id": "tico-viviana-en-tu-cocina",
@@ -3031,7 +3846,12 @@
     "normalizationGainDb": 0.37,
     "bytes": 225081,
     "sha256": "c05d094866cd8e8f0dac891d3e4e69370dac93b1cb0f11bd8a851df346216f63",
-    "peakDb": -7.5
+    "peakDb": -7.5,
+    "bank": "ticos",
+    "bankOrder": 41,
+    "searchAliases": [
+      "Audios ticos"
+    ]
   },
   {
     "id": "tico-chinamo",
@@ -3053,7 +3873,12 @@
     "normalizationGainDb": 5.93,
     "bytes": 129357,
     "sha256": "d1c729a07bb3f1dc4ca20ec534016d455475c9b9cfc4f4f6f362f5128fea9c66",
-    "peakDb": -7.5
+    "peakDb": -7.5,
+    "bank": "ticos",
+    "bankOrder": 42,
+    "searchAliases": [
+      "Audios ticos"
+    ]
   },
   {
     "id": "tico-la-hielera",
@@ -3091,7 +3916,12 @@
     "normalizationGainDb": -8.59,
     "bytes": 274059,
     "sha256": "59f951d533c6301aaf80aa31f317a3ae0d49ea1c726d517b80b0acf0ec5eaa4f",
-    "peakDb": -8.7
+    "peakDb": -8.7,
+    "bank": "ticos",
+    "bankOrder": 26,
+    "searchAliases": [
+      "Audios ticos"
+    ]
   },
   {
     "id": "tico-gustavo-marrero",
@@ -3113,7 +3943,12 @@
     "normalizationGainDb": -10.47,
     "bytes": 129381,
     "sha256": "17d179ee733c02b9f3822f2fbbd0c011e88cdc6bb4d16fde5d20f6f09fea030f",
-    "peakDb": -10.3
+    "peakDb": -10.3,
+    "bank": "ticos",
+    "bankOrder": 27,
+    "searchAliases": [
+      "Audios ticos"
+    ]
   },
   {
     "id": "tico-cuidado-rafelo",
@@ -3135,7 +3970,12 @@
     "normalizationGainDb": -0.08,
     "bytes": 371386,
     "sha256": "2447abc8207e5384d27329105e302294a3f43a226ccafaba623b69d46f1b1307",
-    "peakDb": -7.7
+    "peakDb": -7.7,
+    "bank": "ticos",
+    "bankOrder": 24,
+    "searchAliases": [
+      "Audios ticos"
+    ]
   },
   {
     "id": "tico-johanna",
@@ -3157,7 +3997,12 @@
     "normalizationGainDb": -3.95,
     "bytes": 340027,
     "sha256": "24dd14f169d493e068ad8fa96042f936404d09e4d1ed87b9fb60d7c5586d27c7",
-    "peakDb": -5.3
+    "peakDb": -5.3,
+    "bank": "ticos",
+    "bankOrder": 23,
+    "searchAliases": [
+      "Audios ticos"
+    ]
   },
   {
     "id": "tico-hoy-vengo-a-conversar",
@@ -3179,6 +4024,1037 @@
     "normalizationGainDb": -1.54,
     "bytes": 289447,
     "sha256": "de18c22d02fe2e259b458a078f58086e6079effef5696e74160ab014a6c5f458",
-    "peakDb": -1.9
+    "peakDb": -1.9,
+    "bank": "ticos",
+    "bankOrder": 30,
+    "searchAliases": [
+      "Audios ticos"
+    ]
+  },
+  {
+    "name": "Boing grave clásico",
+    "label": "Boing",
+    "context": "Boing de vibración grave, el rebote elástico típico del slapstick. Craig Smith lo describe como una grabación óptica antigua de Hollywood preservada por USC.",
+    "id": "cartoon-boing",
+    "pack": "cartoons",
+    "category": "Cartoons clásicos",
+    "file": "audio/cartoon-boing.mp3",
+    "source": "https://freesound.org/people/craigsmith/sounds/438620/",
+    "sourceTitle": "G39-03-Cartoon Boings.wav",
+    "sourceChannel": "craigsmith",
+    "sourceDuration": 23.577,
+    "start": 1.87,
+    "end": 3.9,
+    "duration": 2.03,
+    "bytes": 33480,
+    "sha256": "91cf384bc9b54247c3119d9124321c29ad9b39b49630225d804a5eb6fb7be81c",
+    "peakDb": -8.5,
+    "normalizationGainDb": 8.55,
+    "bank": "cartoons",
+    "bankOrder": 1,
+    "searchAliases": [
+      "Cartoons clásicos"
+    ]
+  },
+  {
+    "name": "Resorte con golpe elástico",
+    "label": "Resorte",
+    "context": "Chasquido de un resorte grande con una cola vibrante. Proviene de la colección histórica Sunset Editorial preservada por Craig Smith.",
+    "id": "cartoon-resorte",
+    "pack": "cartoons",
+    "category": "Cartoons clásicos",
+    "file": "audio/cartoon-resorte.mp3",
+    "source": "https://freesound.org/people/craigsmith/sounds/675995/",
+    "sourceTitle": "S34-18 Large spring snaps with a twang.wav",
+    "sourceChannel": "craigsmith",
+    "sourceDuration": 7.899,
+    "start": 1.34,
+    "end": 2.23,
+    "duration": 0.89,
+    "bytes": 15508,
+    "sha256": "e9b8a87d7f98850bb353bf30d730166bdd3d0cd54826b2b0710cb70d4b19a21e",
+    "peakDb": -2.3,
+    "normalizationGainDb": 11.06,
+    "bank": "cartoons",
+    "bankOrder": 2,
+    "searchAliases": [
+      "Cartoons clásicos"
+    ]
+  },
+  {
+    "name": "Silbato deslizante clásico",
+    "label": "Silbato",
+    "context": "Silbato de tono deslizante para una subida o un movimiento exagerado. La fuente reúne silbatos cómicos de la biblioteca histórica Red Library.",
+    "id": "cartoon-silbato-deslizante",
+    "pack": "cartoons",
+    "category": "Cartoons clásicos",
+    "file": "audio/cartoon-silbato-deslizante.mp3",
+    "source": "https://freesound.org/people/craigsmith/sounds/480010/",
+    "sourceTitle": "R21-51-Slide Whistle.wav",
+    "sourceChannel": "craigsmith",
+    "sourceDuration": 39.455,
+    "start": 11.33,
+    "end": 13.1,
+    "duration": 1.77,
+    "bytes": 29301,
+    "sha256": "6fb4948cd8a8dcfd227d1a645e27c9df2b31914de9d60a1bb530196bfa9d4bd1",
+    "peakDb": -11.1,
+    "normalizationGainDb": 13.77,
+    "bank": "cartoons",
+    "bankOrder": 5,
+    "searchAliases": [
+      "Cartoons clásicos"
+    ]
+  },
+  {
+    "name": "Corcho cómico: pop",
+    "label": "Pop",
+    "context": "Un pop corto de corcho, útil para una aparición o una sorpresa. La fuente lo identifica como un efecto cómico de dibujos animados de Sunset Editorial.",
+    "id": "cartoon-corcho-pop",
+    "pack": "cartoons",
+    "category": "Cartoons clásicos",
+    "file": "audio/cartoon-corcho-pop.mp3",
+    "source": "https://freesound.org/people/craigsmith/sounds/676000/",
+    "sourceTitle": "S24-24 Comedy cartoon cork pop.wav",
+    "sourceChannel": "craigsmith",
+    "sourceDuration": 1.11,
+    "start": 0.08,
+    "end": 0.77,
+    "duration": 0.69,
+    "bytes": 12164,
+    "sha256": "ee54df4f268d1da337690c74aac7bbf84c1091895f3313f41ea5a912d354262a",
+    "peakDb": -7.2,
+    "normalizationGainDb": 2.69,
+    "bank": "cartoons",
+    "bankOrder": 4,
+    "searchAliases": [
+      "Cartoons clásicos"
+    ]
+  },
+  {
+    "name": "Carraca disparatada de Warner",
+    "label": "Carraca",
+    "context": "Carraca mecánica irregular de comedia. El título de Craig Smith la atribuye a Warner Brothers; se conserva aquí a la velocidad publicada.",
+    "id": "cartoon-carraca",
+    "pack": "cartoons",
+    "category": "Cartoons clásicos",
+    "file": "audio/cartoon-carraca.mp3",
+    "source": "https://freesound.org/people/craigsmith/sounds/675999/",
+    "sourceTitle": "S38-26 Goofy ratchet sound from Warner Brothers; speed it up!.wav",
+    "sourceChannel": "craigsmith",
+    "sourceDuration": 9.217,
+    "start": 0.0,
+    "end": 8.8,
+    "duration": 8.8,
+    "bytes": 141732,
+    "sha256": "9da454a0ba05367954302b3ff0ed338ec1a4c0429fc40157f549c99fa204fc68",
+    "peakDb": -3.8,
+    "normalizationGainDb": 2.78,
+    "bank": "cartoons",
+    "bankOrder": 15,
+    "searchAliases": [
+      "Cartoons clásicos"
+    ]
+  },
+  {
+    "name": "Máquina loca de Warner",
+    "label": "Máquina",
+    "context": "Máquina cómica con traqueteo y percusión. Craig Smith la identifica como un efecto de Warner Brothers dentro del archivo Sunset Editorial.",
+    "id": "cartoon-maquina-loca",
+    "pack": "cartoons",
+    "category": "Cartoons clásicos",
+    "file": "audio/cartoon-maquina-loca.mp3",
+    "source": "https://freesound.org/people/craigsmith/sounds/675998/",
+    "sourceTitle": "S38-27 Crazy machine sound from Warner Brothers; loopable.wav",
+    "sourceChannel": "craigsmith",
+    "sourceDuration": 3.757,
+    "start": 0.0,
+    "end": 3.756,
+    "duration": 3.756,
+    "bytes": 61066,
+    "sha256": "2aed83d33b690af326ca210b2efcdb4449c0749867f0eae65b3b6923f015a737",
+    "peakDb": -10.8,
+    "normalizationGainDb": -4.2,
+    "bank": "cartoons",
+    "bankOrder": 16,
+    "searchAliases": [
+      "Cartoons clásicos"
+    ]
+  },
+  {
+    "name": "Puñetazo de caricatura",
+    "label": "Puñetazo",
+    "context": "Un golpe de boxeo exagerado, con el peso sonoro propio de la pelea de caricatura. Se recortó un golpe individual de la grabación histórica de Sunset Editorial.",
+    "id": "cartoon-punetazo",
+    "pack": "cartoons",
+    "category": "Cartoons clásicos",
+    "file": "audio/cartoon-punetazo.mp3",
+    "source": "https://freesound.org/people/craigsmith/sounds/675997/",
+    "sourceTitle": "S03-12 Silly cartoon face punches; boxing.wav",
+    "sourceChannel": "craigsmith",
+    "sourceDuration": 16.282,
+    "start": 0.3,
+    "end": 0.98,
+    "duration": 0.68,
+    "bytes": 12164,
+    "sha256": "5bc419dd35e7fe2fd8248c1a5c4775d59fd0ab87ed4260de83a68c495f87ef74",
+    "peakDb": -9.7,
+    "normalizationGainDb": 5.9,
+    "bank": "cartoons",
+    "bankOrder": 11,
+    "searchAliases": [
+      "Cartoons clásicos"
+    ]
+  },
+  {
+    "name": "Kabong metálico",
+    "label": "Kabong",
+    "context": "Golpe metálico pesado de remate cómico. Craig Smith lo incluye entre los bucles de película de 35 mm que, según su descripción, usaban los editores de Hanna-Barbera.",
+    "id": "cartoon-kabong-metalico",
+    "pack": "cartoons",
+    "category": "Cartoons clásicos",
+    "file": "audio/cartoon-kabong-metalico.mp3",
+    "source": "https://freesound.org/people/craigsmith/sounds/845939/",
+    "sourceTitle": "Heavy Kabong Metal Hit.",
+    "sourceChannel": "craigsmith",
+    "sourceDuration": 1.724,
+    "start": 0.0,
+    "end": 1.65,
+    "duration": 1.65,
+    "bytes": 27629,
+    "sha256": "0d90c4bb20a7c83ad3f6a3d9ed470fc992f31dc4fba440125f577628927b0210",
+    "peakDb": -10.0,
+    "normalizationGainDb": -3.49,
+    "bank": "cartoons",
+    "bankOrder": 12,
+    "searchAliases": [
+      "Cartoons clásicos"
+    ]
+  },
+  {
+    "name": "Pedorreta clásica de burla",
+    "label": "Pedorreta",
+    "context": "Pedorreta vocal breve para una burla de caricatura. La fuente la describe como una de las pedorretas clásicas de los bucles de trabajo de Hanna-Barbera.",
+    "id": "cartoon-pedorreta",
+    "pack": "cartoons",
+    "category": "Cartoons clásicos",
+    "file": "audio/cartoon-pedorreta.mp3",
+    "source": "https://freesound.org/people/craigsmith/sounds/845949/",
+    "sourceTitle": "Short Vocal Raspberries",
+    "sourceChannel": "craigsmith",
+    "sourceDuration": 8.274,
+    "start": 2.06,
+    "end": 2.82,
+    "duration": 0.76,
+    "bytes": 13418,
+    "sha256": "2a841bc442c98d44ecdb4ebefff68caf8a3ab25b5b332863ae883a482a41bf59",
+    "peakDb": -2.5,
+    "normalizationGainDb": 6.74,
+    "bank": "cartoons",
+    "bankOrder": 19,
+    "searchAliases": [
+      "Cartoons clásicos"
+    ]
+  },
+  {
+    "name": "Motor cómico que se apaga",
+    "label": "Motor",
+    "context": "Motor disparatado que pierde velocidad hasta detenerse. Es un fragmento continuo del bucle histórico descrito por Craig Smith como material de trabajo de Hanna-Barbera.",
+    "id": "cartoon-motor-se-apaga",
+    "pack": "cartoons",
+    "category": "Cartoons clásicos",
+    "file": "audio/cartoon-motor-se-apaga.mp3",
+    "source": "https://freesound.org/people/craigsmith/sounds/845948/",
+    "sourceTitle": "Cartoon Motor, Wind Down & Reverse",
+    "sourceChannel": "craigsmith",
+    "sourceDuration": 36.618,
+    "start": 10.8,
+    "end": 18.3,
+    "duration": 7.5,
+    "bytes": 121252,
+    "sha256": "609d13e1368027bbdcd429a7f25af19e91ca58eb10e5acf7f08a61e8ae50bf5c",
+    "peakDb": -4.7,
+    "normalizationGainDb": 7.09,
+    "bank": "cartoons",
+    "bankOrder": 14,
+    "searchAliases": [
+      "Cartoons clásicos"
+    ]
+  },
+  {
+    "name": "Goma o arco que se estira",
+    "label": "Estirón",
+    "context": "Estiramiento chirriante de arco o globo, una tensión elástica de comedia. La fuente preservada de Sunset Editorial describe ese gesto físico sin atribuirlo a una caricatura concreta.",
+    "id": "cartoon-goma-estirada",
+    "pack": "cartoons",
+    "category": "Cartoons clásicos",
+    "file": "audio/cartoon-goma-estirada.mp3",
+    "source": "https://freesound.org/people/craigsmith/sounds/676001/",
+    "sourceTitle": "S34-16 Stretching bow or balloon.wav",
+    "sourceChannel": "craigsmith",
+    "sourceDuration": 40.923,
+    "start": 0.78,
+    "end": 4.3,
+    "duration": 3.52,
+    "bytes": 57304,
+    "sha256": "0ae9e596ba95a2c52ffdb0062a14b91f251a5564db5637306789ca4c27a905f1",
+    "peakDb": -6.6,
+    "normalizationGainDb": -0.43,
+    "bank": "cartoons",
+    "bankOrder": 3,
+    "searchAliases": [
+      "Cartoons clásicos"
+    ]
+  },
+  {
+    "name": "Pies que patinan para correr",
+    "label": "A correr",
+    "context": "Pisadas aceleradas de una arrancada cómica. El archivo público las presenta como «Scrambling Feet» dentro del álbum Hanna-Barbera Cartoon Sound FX.",
+    "id": "cartoon-pies-desesperados",
+    "pack": "cartoons",
+    "category": "Cartoons clásicos",
+    "file": "audio/cartoon-pies-desesperados.mp3",
+    "source": "https://archive.org/details/HannaBarberaCartoonSoundFX/11%20Scrambling%20Feet.mp3",
+    "sourceTitle": "11 Scrambling Feet",
+    "sourceChannel": "Internet Archive",
+    "sourceDuration": 4.091,
+    "start": 0.22,
+    "end": 2.1,
+    "duration": 1.88,
+    "bytes": 30973,
+    "sha256": "9fc883c559f113c74ab50262e02efabfc6429dcb86758b38b83ea8cfabcf4765",
+    "peakDb": -7.4,
+    "normalizationGainDb": -1.39,
+    "bank": "cartoons",
+    "bankOrder": 7,
+    "searchAliases": [
+      "Cartoons clásicos"
+    ]
+  },
+  {
+    "name": "Corneta de carga",
+    "label": "¡Carga!",
+    "context": "Llamada breve de corneta para lanzarse a la acción. El archivo la rotula «Bugle Charge» en el álbum Hanna-Barbera Cartoon Sound FX.",
+    "id": "cartoon-corneta-carga",
+    "pack": "cartoons",
+    "category": "Cartoons clásicos",
+    "file": "audio/cartoon-corneta-carga.mp3",
+    "source": "https://archive.org/details/HannaBarberaCartoonSoundFX/38%20Bugle%20Charge.mp3",
+    "sourceTitle": "38 Bugle Charge",
+    "sourceChannel": "Internet Archive",
+    "sourceDuration": 8.901,
+    "start": 0.42,
+    "end": 7.2,
+    "duration": 6.78,
+    "bytes": 109549,
+    "sha256": "2e2f3d8731b662c0d5a0680fdd1ef369708fcb7ea8d3e174b3482391c5d60b42",
+    "peakDb": -9.6,
+    "normalizationGainDb": -1.77,
+    "bank": "cartoons",
+    "bankOrder": 18,
+    "searchAliases": [
+      "Cartoons clásicos"
+    ]
+  },
+  {
+    "name": "Objeto que cae silbando",
+    "label": "Caída",
+    "context": "Silbido descendente de objeto en caída, un gesto clásico del gag de precipicio. La pista del archivo está rotulada «Falling Object Whistle» en Hanna-Barbera Cartoon Sound FX.",
+    "id": "cartoon-caida-silbando",
+    "pack": "cartoons",
+    "category": "Cartoons clásicos",
+    "file": "audio/cartoon-caida-silbando.mp3",
+    "source": "https://archive.org/details/HannaBarberaCartoonSoundFX/49%20Falling%20Object%20Whistle.mp3",
+    "sourceTitle": "49 Falling Object Whistle",
+    "sourceChannel": "Internet Archive",
+    "sourceDuration": 7.905,
+    "start": 0.65,
+    "end": 5.9,
+    "duration": 5.25,
+    "bytes": 84889,
+    "sha256": "88c17b16a0059f36c8f8709e918f3007fab427d8f23a64c03a88d7e914e733d0",
+    "peakDb": -14.0,
+    "normalizationGainDb": -1.52,
+    "bank": "cartoons",
+    "bankOrder": 6,
+    "searchAliases": [
+      "Cartoons clásicos"
+    ]
+  },
+  {
+    "name": "Timbre espacial de Los Supersónicos",
+    "label": "Timbre",
+    "context": "Timbre electrónico de comedia espacial. La pista del álbum está rotulada «Jetson's Doorbell»; se conserva esa identificación de la fuente sin afirmar una aparición concreta en un episodio.",
+    "id": "cartoon-timbre-espacial",
+    "pack": "cartoons",
+    "category": "Cartoons clásicos",
+    "file": "audio/cartoon-timbre-espacial.mp3",
+    "source": "https://archive.org/details/HannaBarberaCartoonSoundFX/61%20Jetson%27s%20Doorbell.mp3",
+    "sourceTitle": "61 Jetson's Doorbell",
+    "sourceChannel": "Internet Archive",
+    "sourceDuration": 5.684,
+    "start": 0.2,
+    "end": 3.05,
+    "duration": 2.85,
+    "bytes": 46855,
+    "sha256": "5a0f3c827323c46e5272f600d2b4ae7504704fb4ea0713d8cd5fa56656d731d8",
+    "peakDb": -3.9,
+    "normalizationGainDb": 1.07,
+    "bank": "cartoons",
+    "bankOrder": 17,
+    "searchAliases": [
+      "Cartoons clásicos"
+    ]
+  },
+  {
+    "name": "Rebote de bala de caricatura",
+    "label": "Ricochet",
+    "context": "Rebote de bala con silbido metálico exagerado. El archivo agrupa estas variantes en la pista «Ricochets - Pochwong Pchwaaa SzwipP Whoof» del álbum Hanna-Barbera Cartoon Sound FX.",
+    "id": "cartoon-ricochet",
+    "pack": "cartoons",
+    "category": "Cartoons clásicos",
+    "file": "audio/cartoon-ricochet.mp3",
+    "source": "https://archive.org/details/HannaBarberaCartoonSoundFX/73%20Ricochets%20-%20Pochwong%20Pchwaaa%20SzwipP%20Whoof.mp3",
+    "sourceTitle": "73 Ricochets - Pochwong Pchwaaa SzwipP Whoof",
+    "sourceChannel": "Internet Archive",
+    "sourceDuration": 9.064,
+    "start": 0.64,
+    "end": 1.65,
+    "duration": 1.01,
+    "bytes": 17180,
+    "sha256": "6a849f4f4ee7fe12a05dc7e0de7ee0c85f20a60c90a19a17215aa639dccf5a57",
+    "peakDb": -11.0,
+    "normalizationGainDb": -10.05,
+    "bank": "cartoons",
+    "bankOrder": 13,
+    "searchAliases": [
+      "Cartoons clásicos"
+    ]
+  },
+  {
+    "name": "Derrape clásico de caricatura",
+    "label": "Derrape",
+    "context": "Frenazo chirriante para un resbalón o una parada brusca. La pista del archivo se titula «Skids» y forma parte del álbum Hanna-Barbera Cartoon Sound FX.",
+    "id": "cartoon-derrape",
+    "pack": "cartoons",
+    "category": "Cartoons clásicos",
+    "file": "audio/cartoon-derrape.mp3",
+    "source": "https://archive.org/details/HannaBarberaCartoonSoundFX/77%20Skids.mp3",
+    "sourceTitle": "77 Skids",
+    "sourceChannel": "Internet Archive",
+    "sourceDuration": 8.558,
+    "start": 4.26,
+    "end": 6.7,
+    "duration": 2.44,
+    "bytes": 40168,
+    "sha256": "fd15c9b3b97e0edb5405f64a91d6221b03031d5c30f6fac86aba21d4ec123280",
+    "peakDb": -11.1,
+    "normalizationGainDb": -1.29,
+    "bank": "cartoons",
+    "bankOrder": 10,
+    "searchAliases": [
+      "Cartoons clásicos"
+    ]
+  },
+  {
+    "name": "Pasos de puntillas",
+    "label": "Puntillas",
+    "context": "Pisadas discretas de una entrada sigilosa de caricatura. El archivo público rotula la pista «Tip Toe» dentro del álbum Hanna-Barbera Cartoon Sound FX.",
+    "id": "cartoon-puntillas",
+    "pack": "cartoons",
+    "category": "Cartoons clásicos",
+    "file": "audio/cartoon-puntillas.mp3",
+    "source": "https://archive.org/details/HannaBarberaCartoonSoundFX/84%20Tip%20Toe.mp3",
+    "sourceTitle": "84 Tip Toe",
+    "sourceChannel": "Internet Archive",
+    "sourceDuration": 5.449,
+    "start": 0.18,
+    "end": 3.0,
+    "duration": 2.82,
+    "bytes": 46019,
+    "sha256": "c6bc125a3df7c27f2eb749a45bfa566dd5f9c8d8483e9d385e73f9c2d81799f7",
+    "peakDb": -8.8,
+    "normalizationGainDb": -5.71,
+    "bank": "cartoons",
+    "bankOrder": 8,
+    "searchAliases": [
+      "Cartoons clásicos"
+    ]
+  },
+  {
+    "name": "Remate de xilófono",
+    "label": "Xilófono",
+    "context": "Pasada breve de xilófono para un remate cómico. El archivo la identifica como «Xylophone» en el álbum Hanna-Barbera Cartoon Sound FX.",
+    "id": "cartoon-xilofono",
+    "pack": "cartoons",
+    "category": "Cartoons clásicos",
+    "file": "audio/cartoon-xilofono.mp3",
+    "source": "https://archive.org/details/HannaBarberaCartoonSoundFX/90%20Xylophone.mp3",
+    "sourceTitle": "90 Xylophone",
+    "sourceChannel": "Internet Archive",
+    "sourceDuration": 3.673,
+    "start": 0.0,
+    "end": 1.35,
+    "duration": 1.35,
+    "bytes": 22613,
+    "sha256": "3d2cd549ffe159566f2f500aa552267e70d04de1b6e57fdf7ff02e0317694e45",
+    "peakDb": -11.1,
+    "normalizationGainDb": -2.54,
+    "bank": "cartoons",
+    "bankOrder": 20,
+    "searchAliases": [
+      "Cartoons clásicos"
+    ]
+  },
+  {
+    "name": "Zip rápido de caricatura",
+    "label": "Zip",
+    "context": "Un zip agudo para una salida o un desplazamiento instantáneo. Se recortó un gesto individual de la pista «Zip In, Zip Out» del álbum Hanna-Barbera Cartoon Sound FX.",
+    "id": "cartoon-zip-entrada-salida",
+    "pack": "cartoons",
+    "category": "Cartoons clásicos",
+    "file": "audio/cartoon-zip-entrada-salida.mp3",
+    "source": "https://archive.org/details/HannaBarberaCartoonSoundFX/95%20Zip%20In%2C%20Zip%20Out.mp3",
+    "sourceTitle": "95 Zip In, Zip Out",
+    "sourceChannel": "Internet Archive",
+    "sourceDuration": 5.266,
+    "start": 0.25,
+    "end": 0.83,
+    "duration": 0.58,
+    "bytes": 10493,
+    "sha256": "8c0d397d3a7c936257f06983a054ef646ffe4be42799d6b989e6561d009b45e2",
+    "peakDb": -10.3,
+    "normalizationGainDb": -2.5,
+    "bank": "cartoons",
+    "bankOrder": 9,
+    "searchAliases": [
+      "Cartoons clásicos"
+    ]
+  },
+  {
+    "id": "game-mario-coin",
+    "name": "Super Mario Bros. · Moneda",
+    "label": "Mario moneda",
+    "pack": "games",
+    "category": "Videojuegos clásicos",
+    "bank": "games",
+    "icon": "🎮",
+    "file": "audio/game-mario-coin.mp3",
+    "source": "https://themushroomkingdom.net/media/smb/wav",
+    "sourceTitle": "TMK | Downloads | Sounds & Music | Sound Clips | Super Mario Bros. (NES)",
+    "sourceChannel": "Deezer / The Mushroom Kingdom",
+    "context": "Super Mario Bros. (NES, 1985): moneda recogida",
+    "duration": 0.92458,
+    "bytes": 15926,
+    "sha256": "5f474912508a5a78413f6a4773ef1133fff29b9e6f44c2865da39c72e218a1dd",
+    "peakDb": -13.091,
+    "normalizationGainDb": 1.81,
+    "bankOrder": 7,
+    "searchAliases": [
+      "Videojuegos clásicos",
+      "Gaming"
+    ]
+  },
+  {
+    "id": "game-mario-1up",
+    "name": "Super Mario Bros. · Vida extra",
+    "label": "Mario 1-UP",
+    "pack": "games",
+    "category": "Videojuegos clásicos",
+    "bank": "games",
+    "icon": "🎮",
+    "file": "audio/game-mario-1up.mp3",
+    "source": "https://themushroomkingdom.net/media/smb/wav",
+    "sourceTitle": "TMK | Downloads | Sounds & Music | Sound Clips | Super Mario Bros. (NES)",
+    "sourceChannel": "Deezer / The Mushroom Kingdom",
+    "context": "Super Mario Bros. (NES, 1985): vida extra (1-Up)",
+    "duration": 0.84263,
+    "bytes": 14672,
+    "sha256": "418c08d155b3ec2c5961b89a02535f9a0cb9d203093b0198c8b1ec51e694a84b",
+    "peakDb": -15.345,
+    "normalizationGainDb": -1.06,
+    "bankOrder": 10,
+    "searchAliases": [
+      "Videojuegos clásicos",
+      "Gaming"
+    ]
+  },
+  {
+    "id": "game-mario-death",
+    "name": "Super Mario Bros. · Mario murió",
+    "label": "Mario KO",
+    "pack": "games",
+    "category": "Videojuegos clásicos",
+    "bank": "games",
+    "icon": "🎮",
+    "file": "audio/game-mario-death.mp3",
+    "source": "https://themushroomkingdom.net/media/smb/wav",
+    "sourceTitle": "TMK | Downloads | Sounds & Music | Sound Clips | Super Mario Bros. (NES)",
+    "sourceChannel": "Deezer / The Mushroom Kingdom",
+    "context": "Super Mario Bros. (NES, 1985): jingle de muerte de Mario",
+    "duration": 2.646508,
+    "bytes": 43511,
+    "sha256": "ffc59aa6fb077eb8c3f77b412bc72a3e4d15b1794f001a29421447ea685dd656",
+    "peakDb": -6.753,
+    "normalizationGainDb": -0.36,
+    "bankOrder": 12,
+    "searchAliases": [
+      "Videojuegos clásicos",
+      "Gaming"
+    ]
+  },
+  {
+    "id": "game-mario-powerup",
+    "name": "Super Mario Bros. · Power-up",
+    "label": "Mario power",
+    "pack": "games",
+    "category": "Videojuegos clásicos",
+    "bank": "games",
+    "icon": "🎮",
+    "file": "audio/game-mario-powerup.mp3",
+    "source": "https://themushroomkingdom.net/media/smb/wav",
+    "sourceTitle": "TMK | Downloads | Sounds & Music | Sound Clips | Super Mario Bros. (NES)",
+    "sourceChannel": "Deezer / The Mushroom Kingdom",
+    "context": "Super Mario Bros. (NES, 1985): Mario obtiene un potenciador",
+    "duration": 0.946417,
+    "bytes": 16344,
+    "sha256": "1b4379e61fb6a179bffc4a7fe0bcdcc7523379df1613f5cf930a959b5d0d58e1",
+    "peakDb": -14.355,
+    "normalizationGainDb": -0.27,
+    "bankOrder": 9,
+    "searchAliases": [
+      "Videojuegos clásicos",
+      "Gaming"
+    ]
+  },
+  {
+    "id": "game-mario-item",
+    "name": "Super Mario Bros. · Aparece un objeto",
+    "label": "Mario ítem",
+    "pack": "games",
+    "category": "Videojuegos clásicos",
+    "bank": "games",
+    "icon": "🎮",
+    "file": "audio/game-mario-item.mp3",
+    "source": "https://themushroomkingdom.net/media/smb/wav",
+    "sourceTitle": "TMK | Downloads | Sounds & Music | Sound Clips | Super Mario Bros. (NES)",
+    "sourceChannel": "Deezer / The Mushroom Kingdom",
+    "context": "Super Mario Bros. (NES, 1985): aparece un potenciador desde un bloque",
+    "duration": 0.577438,
+    "bytes": 10493,
+    "sha256": "a4469ff5dad8b2b80003f4b056d8ec6a88c94b8a98c39b6aab3d3cd56f890f8c",
+    "peakDb": -14.474,
+    "normalizationGainDb": -0.3,
+    "bankOrder": 8,
+    "searchAliases": [
+      "Videojuegos clásicos",
+      "Gaming"
+    ]
+  },
+  {
+    "id": "game-mario-game-over",
+    "name": "Super Mario Bros. · Game over",
+    "label": "Mario fin",
+    "pack": "games",
+    "category": "Videojuegos clásicos",
+    "bank": "games",
+    "icon": "🎮",
+    "file": "audio/game-mario-game-over.mp3",
+    "source": "https://themushroomkingdom.net/media/smb/wav",
+    "sourceTitle": "TMK | Downloads | Sounds & Music | Sound Clips | Super Mario Bros. (NES)",
+    "sourceChannel": "Deezer / The Mushroom Kingdom",
+    "context": "Super Mario Bros. (NES, 1985): jingle de fin de partida",
+    "duration": 3.665782,
+    "bytes": 59812,
+    "sha256": "ea4e775c0b38c086a4e211b0e19c9589744a521db8b730b870bcbda3f7ba6b06",
+    "peakDb": -10.919,
+    "normalizationGainDb": 1.07,
+    "bankOrder": 13,
+    "searchAliases": [
+      "Videojuegos clásicos",
+      "Gaming"
+    ]
+  },
+  {
+    "id": "game-mario-star",
+    "name": "Super Mario Bros. · Estrella invencible",
+    "label": "Mario Star",
+    "pack": "games",
+    "category": "Videojuegos clásicos",
+    "bank": "games",
+    "icon": "🎮",
+    "file": "audio/game-mario-star.mp3",
+    "source": "https://www.mariowiki.com/File:Invincibility_SMB.oga",
+    "sourceTitle": "File:Invincibility SMB.oga - Super Mario Wiki, the Mario encyclopedia",
+    "sourceChannel": "Super Mario Wiki; música de Koji Kondo",
+    "context": "Super Mario Bros. (NES, 1985): inicio del tema de invencibilidad de la Superestrella; fragmento 0:00–0:06",
+    "duration": 6.0,
+    "bytes": 97010,
+    "sha256": "707e495d758e1fe88c3743c8233a082477326fa50dfb911e7425d1f710dd7ad6",
+    "peakDb": -5.273,
+    "normalizationGainDb": -0.73,
+    "bankOrder": 11,
+    "searchAliases": [
+      "Videojuegos clásicos",
+      "Gaming"
+    ]
+  },
+  {
+    "id": "game-zelda-secret",
+    "name": "Zelda: Ocarina of Time · Secreto",
+    "label": "Zelda secreto",
+    "pack": "games",
+    "category": "Videojuegos clásicos",
+    "bank": "games",
+    "icon": "🎮",
+    "file": "audio/game-zelda-secret.mp3",
+    "source": "https://noproblo.dayjo.org/zeldasounds/oot/",
+    "sourceTitle": "Ocarina of Time — Zelda sound effects by HelpTheWretched",
+    "sourceChannel": "HelpTheWretched / Zelda Sounds",
+    "context": "The Legend of Zelda: Ocarina of Time (Nintendo 64, 1998): jingle al descubrir un secreto o resolver un acertijo",
+    "duration": 1.371315,
+    "bytes": 23031,
+    "sha256": "4aae6eb321835c6a53c0c97c0f192f5bf88da8d44b4d2b1a76e9679b37e1bce1",
+    "peakDb": -12.011,
+    "normalizationGainDb": -5.1,
+    "bankOrder": 14,
+    "searchAliases": [
+      "Videojuegos clásicos",
+      "Gaming"
+    ]
+  },
+  {
+    "id": "game-zelda-item",
+    "name": "Zelda: Ocarina of Time · Objeto obtenido",
+    "label": "Zelda ítem",
+    "pack": "games",
+    "category": "Videojuegos clásicos",
+    "bank": "games",
+    "icon": "🎮",
+    "file": "audio/game-zelda-item.mp3",
+    "source": "https://noproblo.dayjo.org/zeldasounds/oot/",
+    "sourceTitle": "Ocarina of Time — Zelda sound effects by HelpTheWretched",
+    "sourceChannel": "HelpTheWretched / Zelda Sounds",
+    "context": "The Legend of Zelda: Ocarina of Time (Nintendo 64, 1998): fanfarria de objeto obtenido",
+    "duration": 2.646259,
+    "bytes": 43511,
+    "sha256": "4f387997124eb5200151c665c7116abd256307bc1d538a9c0b35f943b4629d79",
+    "peakDb": -6.538,
+    "normalizationGainDb": -0.97,
+    "bankOrder": 16,
+    "searchAliases": [
+      "Videojuegos clásicos",
+      "Gaming"
+    ]
+  },
+  {
+    "id": "game-zelda-chest",
+    "name": "Zelda: Ocarina of Time · Abrir cofre",
+    "label": "Zelda cofre",
+    "pack": "games",
+    "category": "Videojuegos clásicos",
+    "bank": "games",
+    "icon": "🎮",
+    "file": "audio/game-zelda-chest.mp3",
+    "source": "https://downloads.khinsider.com/game-soundtracks/album/legend-of-zelda-the-ocarina-of-time-1998-n64/007.%2520Open%2520Treasure%2520Box.mp3",
+    "sourceTitle": "Open Treasure Box MP3 - The Legend of Zelda: Ocarina of Time (N64) (gamerip) (1998)",
+    "sourceChannel": "StarmanFort03 / KHInsider Video Game Music",
+    "context": "The Legend of Zelda: Ocarina of Time (Nintendo 64, 1998): música original de suspense al abrir un cofre de tesoro (Open Treasure Box); la fanfarria de objeto se conserva por separado.",
+    "duration": 7.995964,
+    "bytes": 129193,
+    "sha256": "96bc62935f4c831c0b1f17bd1503a9a6b62355466aaac652b6d9c16e46dfeeb6",
+    "peakDb": -4.465,
+    "normalizationGainDb": -1.62,
+    "bankOrder": 15,
+    "searchAliases": [
+      "Videojuegos clásicos",
+      "Gaming"
+    ]
+  },
+  {
+    "id": "game-pacman-waka",
+    "name": "Pac-Man · Waka waka",
+    "label": "Pac waka",
+    "pack": "games",
+    "category": "Videojuegos clásicos",
+    "bank": "games",
+    "icon": "🎮",
+    "file": "audio/game-pacman-waka.mp3",
+    "source": "https://classicgaming.cc/classics/pac-man/sounds",
+    "sourceTitle": "Pac-Man Sounds | Sounds Effects, Music for the Classic Namco Arcade Game",
+    "sourceChannel": "Classicgaming.cc",
+    "context": "Pac-Man (arcade, 1980): comer puntos (Pac-Man Munch)",
+    "duration": 0.716553,
+    "bytes": 12582,
+    "sha256": "695d15b126a809dec55438af50215edf91b8752d9e59a9644cd64d79691626ef",
+    "peakDb": -11.009,
+    "normalizationGainDb": -3.46,
+    "bankOrder": 18,
+    "searchAliases": [
+      "Videojuegos clásicos",
+      "Gaming"
+    ]
+  },
+  {
+    "id": "game-pacman-death",
+    "name": "Pac-Man · Muerte",
+    "label": "Pac-Man KO",
+    "pack": "games",
+    "category": "Videojuegos clásicos",
+    "bank": "games",
+    "icon": "🎮",
+    "file": "audio/game-pacman-death.mp3",
+    "source": "https://classicgaming.cc/classics/pac-man/sounds",
+    "sourceTitle": "Pac-Man Sounds | Sounds Effects, Music for the Classic Namco Arcade Game",
+    "sourceChannel": "Classicgaming.cc",
+    "context": "Pac-Man (arcade, 1980): muerte de Pac-Man",
+    "duration": 1.534331,
+    "bytes": 25539,
+    "sha256": "2557a49fbeaea784f447386b46ecc3386ad1ebb83ed8540dc79b6a6ca23de673",
+    "peakDb": -13.483,
+    "normalizationGainDb": -7.92,
+    "bankOrder": 20,
+    "searchAliases": [
+      "Videojuegos clásicos",
+      "Gaming"
+    ]
+  },
+  {
+    "id": "game-pacman-start",
+    "name": "Pac-Man · Inicio",
+    "label": "Pac inicio",
+    "pack": "games",
+    "category": "Videojuegos clásicos",
+    "bank": "games",
+    "icon": "🎮",
+    "file": "audio/game-pacman-start.mp3",
+    "source": "https://classicgaming.cc/classics/pac-man/sounds",
+    "sourceTitle": "Pac-Man Sounds | Sounds Effects, Music for the Classic Namco Arcade Game",
+    "sourceChannel": "Classicgaming.cc",
+    "context": "Pac-Man (arcade, 1980): fanfarria de inicio de partida",
+    "duration": 4.21678,
+    "bytes": 68589,
+    "sha256": "4a1a89b717ec4daba2cf45859f6d182b373b646185ad8bc6c80cfc999f2a908e",
+    "peakDb": -10.689,
+    "normalizationGainDb": -7.12,
+    "bankOrder": 17,
+    "searchAliases": [
+      "Videojuegos clásicos",
+      "Gaming"
+    ]
+  },
+  {
+    "id": "game-pacman-fruit",
+    "name": "Pac-Man · Fruta",
+    "label": "Pac fruta",
+    "pack": "games",
+    "category": "Videojuegos clásicos",
+    "bank": "games",
+    "icon": "🎮",
+    "file": "audio/game-pacman-fruit.mp3",
+    "source": "https://classicgaming.cc/classics/pac-man/sounds",
+    "sourceTitle": "Pac-Man Sounds | Sounds Effects, Music for the Classic Namco Arcade Game",
+    "sourceChannel": "Classicgaming.cc",
+    "context": "Pac-Man (arcade, 1980): comer una fruta de bonificación",
+    "duration": 0.439456,
+    "bytes": 7985,
+    "sha256": "ff94e4cd120d52539feb7fcc8af3a8a6025af0572d44acef7c18158a07e1b543",
+    "peakDb": -13.02,
+    "normalizationGainDb": -9.11,
+    "bankOrder": 19,
+    "searchAliases": [
+      "Videojuegos clásicos",
+      "Gaming"
+    ]
+  },
+  {
+    "id": "game-tetris-line-clear",
+    "name": "Tetris · Línea completa",
+    "label": "Tetris línea",
+    "pack": "games",
+    "category": "Videojuegos clásicos",
+    "bank": "games",
+    "icon": "🎮",
+    "file": "audio/game-tetris-line-clear.mp3",
+    "source": "https://www.101soundboards.com/sounds/1418164-tetris-gb-21-line-clear",
+    "sourceTitle": "♫ Tetris (GB) (21) line clear - Sound Effects - Tetris - Miscellaneous...",
+    "sourceChannel": "101 / 101soundboards.com",
+    "context": "Tetris (Game Boy, 1989): eliminar una línea",
+    "duration": 1.523492,
+    "bytes": 25539,
+    "sha256": "2cb8ce7eee272a972dc5f0280bc317798da64162ea8b0177725091258ec1a378",
+    "peakDb": -6.326,
+    "normalizationGainDb": 4.65,
+    "bankOrder": 21,
+    "searchAliases": [
+      "Videojuegos clásicos",
+      "Gaming"
+    ]
+  },
+  {
+    "id": "game-tetris-four-lines",
+    "name": "Tetris · Cuatro líneas",
+    "label": "Tetris x4",
+    "pack": "games",
+    "category": "Videojuegos clásicos",
+    "bank": "games",
+    "icon": "🎮",
+    "file": "audio/game-tetris-four-lines.mp3",
+    "source": "https://www.101soundboards.com/sounds/1418177-tetris-gb-22-tetris-4-lines",
+    "sourceTitle": "☊ Tetris (GB) (22) tetris 4 lines - Sound Effects - Tetris -...",
+    "sourceChannel": "101 / 101soundboards.com",
+    "context": "Tetris (Game Boy, 1989): eliminar cuatro líneas de una vez (Tetris)",
+    "duration": 1.496712,
+    "bytes": 25121,
+    "sha256": "a5868a00ffc00d184a8cdfeb52b4792e935b9f736f876b9f00d1982ecb00675a",
+    "peakDb": -9.3,
+    "normalizationGainDb": 0.1,
+    "bankOrder": 22,
+    "searchAliases": [
+      "Videojuegos clásicos",
+      "Gaming"
+    ]
+  },
+  {
+    "id": "game-tetris-game-over",
+    "name": "Tetris · Game over",
+    "label": "Tetris fin",
+    "pack": "games",
+    "category": "Videojuegos clásicos",
+    "bank": "games",
+    "icon": "🎮",
+    "file": "audio/game-tetris-game-over.mp3",
+    "source": "https://www.101soundboards.com/sounds/1418174-tetris-gb-25-game-over",
+    "sourceTitle": "☊ Tetris (GB) (25) game over - Sound Effects - Tetris -...",
+    "sourceChannel": "101 / 101soundboards.com",
+    "context": "Tetris (Game Boy, 1989): fin de partida",
+    "duration": 0.985193,
+    "bytes": 16762,
+    "sha256": "e9b15a53f5c4abc808b94749b7f0bedf5d5b27f50332d6db40655a8d740d9244",
+    "peakDb": -7.436,
+    "normalizationGainDb": 3.54,
+    "bankOrder": 23,
+    "searchAliases": [
+      "Videojuegos clásicos",
+      "Gaming"
+    ]
+  },
+  {
+    "id": "game-sonic-ring",
+    "name": "Sonic the Hedgehog · Anillo",
+    "label": "Sonic aro",
+    "pack": "games",
+    "category": "Videojuegos clásicos",
+    "bank": "games",
+    "icon": "🎮",
+    "file": "audio/game-sonic-ring.mp3",
+    "source": "https://www.101soundboards.com/sounds/25000732-s1-b5-ring",
+    "sourceTitle": "♫ S1 B5 Ring - Sonic 1 Sounds",
+    "sourceChannel": "darkness_oswaldo / 101soundboards.com",
+    "context": "Sonic the Hedgehog (Mega Drive / Genesis, 1991): recoger un anillo; activo S1 B5 Ring",
+    "duration": 1.002268,
+    "bytes": 17180,
+    "sha256": "cf01a63a11e547980ad77cddb8d9677c84cfe7fa53c3073475f865531a32649b",
+    "peakDb": -14.002,
+    "normalizationGainDb": -5.1,
+    "bankOrder": 24,
+    "searchAliases": [
+      "Videojuegos clásicos",
+      "Gaming"
+    ]
+  },
+  {
+    "id": "game-space-invaders-shot",
+    "name": "Space Invaders · Disparo",
+    "label": "Invasor láser",
+    "pack": "games",
+    "category": "Videojuegos clásicos",
+    "bank": "games",
+    "icon": "🎮",
+    "file": "audio/game-space-invaders-shot.mp3",
+    "source": "https://www.classicgaming.cc/classics/space-invaders/sounds",
+    "sourceTitle": "Sound Effects and Music from Space Invaders the Classic Arcade Game",
+    "sourceChannel": "Classicgaming.cc",
+    "context": "Space Invaders (arcade, 1978): disparo del jugador",
+    "duration": 0.370068,
+    "bytes": 7149,
+    "sha256": "775df48ce5e449d52ec665cea3426287d39972d9d67be5894b745d89e721b387",
+    "peakDb": -12.267,
+    "normalizationGainDb": -10.31,
+    "bankOrder": 26,
+    "searchAliases": [
+      "Videojuegos clásicos",
+      "Gaming"
+    ]
+  },
+  {
+    "id": "game-donkey-kong-jump",
+    "name": "Donkey Kong · Salto",
+    "label": "DK salto",
+    "pack": "games",
+    "category": "Videojuegos clásicos",
+    "bank": "games",
+    "icon": "🎮",
+    "file": "audio/game-donkey-kong-jump.mp3",
+    "source": "https://www.classicgaming.cc/classics/donkey-kong/sounds",
+    "sourceTitle": "Donkey Kong Sounds",
+    "sourceChannel": "Classicgaming.cc",
+    "context": "Donkey Kong (arcade, 1981): efecto de salto (Jump Sound FX)",
+    "duration": 1.190023,
+    "bytes": 20106,
+    "sha256": "3833bcdd4b0b292c7539de52111c773e21cfcf18895895f4eb5ca7a7cb78edd6",
+    "peakDb": -14.754,
+    "normalizationGainDb": 5.98,
+    "bankOrder": 25,
+    "searchAliases": [
+      "Videojuegos clásicos",
+      "Gaming"
+    ]
+  },
+  {
+    "id": "tico-un-par-de-therians",
+    "name": "Me topé un par de therians",
+    "label": "Un par de therians",
+    "pack": "ticos",
+    "category": "Audios ticos",
+    "file": "audio/tico-un-par-de-therians.mp3",
+    "source": "https://www.tiktok.com/@.audiosticos/video/7697337855273717024",
+    "videoId": "7697337855273717024",
+    "sourceTitle": "me hubiese gustado ver a esas therians #audios #paratiiiiiiiiiiiiiiii...",
+    "sourceChannel": "@.audiosticos",
+    "sourceChannelUrl": "https://www.tiktok.com/@.audiosticos",
+    "sourceDuration": 10.71,
+    "start": 0,
+    "end": 10.52,
+    "duration": 7.73,
+    "context": "Me topé un par de therians… Por el amor a Dios, casi me estrello. Audio original de @.audiosticos en TikTok: pausas largas y el «fue» duplicado eliminados, conservando la frase completa y la velocidad original. Volumen ajustado.",
+    "normalizationGainDb": 6.9,
+    "bytes": 124816,
+    "sha256": "a547eb329dfac38c3a20f879f3cebab8ba46b4e3b79df5c51dadd7de28d41060",
+    "peakDb": -6.4,
+    "bank": "ticos",
+    "bankOrder": 31,
+    "searchAliases": [
+      "Audios ticos",
+      "TikTok",
+      "audiosticos",
+      "therians",
+      "casi me estrello",
+      "par de perras"
+    ],
+    "segments": [
+      {
+        "start": 0,
+        "end": 2.26
+      },
+      {
+        "start": 3.46,
+        "end": 4.98
+      },
+      {
+        "start": 6.57,
+        "end": 10.52
+      }
+    ]
   }
 ]
