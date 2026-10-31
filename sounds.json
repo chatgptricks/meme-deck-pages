@@ -5716,5 +5716,43 @@
       "Chaves",
       "Facebook"
     ]
+  },
+  {
+    "id": "disfraz-los-picapiedra",
+    "name": "Los Picapiedra",
+    "label": "Los Picapiedra",
+    "pack": "disfraces",
+    "category": "Disfraces",
+    "bank": "disfraces",
+    "bankOrder": 15,
+    "file": "audio/disfraz-los-picapiedra.mp3",
+    "duration": 36.5,
+    "source": "https://www.youtube.com/watch?v=DJAp5DrYX_s",
+    "videoId": "DJAp5DrYX_s",
+    "sourceTitle": "Los Picapiedra | Intro en español | HBO Max",
+    "sourceChannel": "HBO Max Latinoamérica",
+    "sourceDuration": 38.553,
+    "start": 0,
+    "end": 36.5,
+    "artist": "Hanna-Barbera · doblaje latino",
+    "context": "Canción de apertura de la serie animada clásica Los Picapiedra, de Hanna-Barbera, cantada en español latino. Tema completo con su final musical natural.",
+    "editNotes": "Fuente oficial de HBO Max Latinoamérica. Se conserva la canción completa de 0:00 a 0:36.500; se omite únicamente el silencio posterior de la placa final. Volumen normalizado.",
+    "searchAliases": [
+      "Disfraces",
+      "Los Picapiedra",
+      "Picapiedra",
+      "Los Picapiedras",
+      "The Flintstones",
+      "Flintstones",
+      "Hanna-Barbera",
+      "Hanna Barbera",
+      "HannaBarbera",
+      "español latino",
+      "intro"
+    ],
+    "bytes": 1169797,
+    "sha256": "8396163e09de555f234686fe0c6ee767425176935b6726f392391e5e545b42f9",
+    "peakDb": -1.79,
+    "loudnessLufs": -15.87
   }
 ]
