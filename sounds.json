@@ -5368,13 +5368,13 @@
     "bankOrder": 9,
     "file": "audio/disfraz-aplausos.mp3",
     "duration": 10,
-    "bytes": 241389,
-    "sha256": "b3e6c9fd1a2d24fdf7629c5c089d4a1f2ef4b397be868310108dabfce5c465f7",
-    "peakDb": -1.5,
+    "bytes": 321912,
+    "sha256": "f8468e1298d599dc5eced125d95912c0358c40bceddd19b10d0beeb0b0351510",
+    "peakDb": -1.45,
     "source": "https://sounddino.com/mp3/33/great-hall-long-applause-700-people.mp3",
     "sourceTitle": "Great Hall, long applause (700 people)",
     "sourceChannel": "SoundDino",
-    "context": "Diez segundos de aplausos continuos y fuertes de un público de 700 personas. Entrada y salida suaves; volumen reforzado sin saturación.",
+    "context": "Diez segundos de aplausos fuertes de un público de 700 personas. Mantiene el volumen al inicio y termina gradualmente en silencio.",
     "searchAliases": [
       "Disfraces",
       "aplausos",
@@ -5384,8 +5384,8 @@
       "fuerte",
       "claps"
     ],
-    "loudnessLufs": -12.13,
-    "editNotes": "Tramo continuo de 0:00 a 0:10, con fade in de 0.02 s y fade out de 0.20 s; volumen reforzado."
+    "loudnessLufs": -13.09,
+    "editNotes": "Se conserva la entrada suave de 0.02 s. Volumen fuerte hasta 6.2 s, seguido de una salida gradual de 3.8 s hasta el final de los 10 segundos."
   },
   {
     "id": "disfraz-esteban-vips",
@@ -5469,5 +5469,107 @@
     ],
     "bytes": 2881697,
     "sha256": "73ddc64c9bb635c16b7929d0e55e86c52e9775d485deab6cb9e9a0a206ff0135"
+  },
+  {
+    "id": "disfraz-chacal-trompeta",
+    "name": "Chacal - Trompeta",
+    "label": "Trompeta del Chacal",
+    "pack": "disfraces",
+    "category": "Disfraces",
+    "bank": "disfraces",
+    "bankOrder": 12,
+    "file": "audio/disfraz-chacal-trompeta.mp3",
+    "duration": 5.909479,
+    "peakDb": -3.23,
+    "loudnessLufs": -15.02,
+    "source": "https://www.youtube.com/watch?v=HFJv8Z9yjsI",
+    "sourceTitle": "EFECTO AUDIO SONIDO   EL CHACAL DE LA TROMPETA",
+    "sourceChannel": "JERRY KARAOKES",
+    "videoId": "HFJv8Z9yjsI",
+    "context": "La trompeta del Chacal de Sábado Gigante, como señal para sacar a alguien de la presentación.",
+    "searchAliases": [
+      "Disfraces",
+      "Chacal",
+      "El Chacal de la Trompeta",
+      "trompeta",
+      "Sábado Gigante",
+      "Don Francisco",
+      "fuera"
+    ],
+    "editNotes": "Clip original completo, con fundidos breves en los bordes y volumen normalizado.",
+    "bytes": 191356,
+    "sha256": "b316ac9ba4f57037f5f2dc1cb60a5385b2a63827d5ce31b732d4b463f8e42ebd"
+  },
+  {
+    "id": "disfraz-chacal-y-fuera",
+    "name": "¡Y fuera, y fuera!",
+    "label": "¡Y fuera, y fuera!",
+    "pack": "disfraces",
+    "category": "Disfraces",
+    "bank": "disfraces",
+    "bankOrder": 13,
+    "file": "audio/disfraz-chacal-y-fuera.mp3",
+    "duration": 4.794937,
+    "peakDb": -6.65,
+    "loudnessLufs": -15.09,
+    "source": "https://www.youtube.com/watch?v=Pjv3RXmygSI",
+    "sourceTitle": "YYYY.. FUERA...YYYY...FUERA - (Don Francisco)",
+    "sourceChannel": "LeandrOsorno2",
+    "videoId": "Pjv3RXmygSI",
+    "context": "Las dos llamadas de ¡Y fuera, y fuera! de Sábado Gigante, con Don Francisco y el Chacal.",
+    "searchAliases": [
+      "Disfraces",
+      "Chacal",
+      "Y fuera",
+      "fuera fuera",
+      "Don Francisco",
+      "Sábado Gigante",
+      "eliminado"
+    ],
+    "editNotes": "Clip original completo, con fundidos breves en los bordes y volumen normalizado.",
+    "bytes": 155255,
+    "sha256": "5fc55239ebc6643d98c2deddb4dfb43f456c1fe91d052eb4f2ccd2b262143324"
+  },
+  {
+    "id": "disfraz-a-los-leones",
+    "name": "¡A los leones!",
+    "label": "¡A los leones!",
+    "pack": "disfraces",
+    "category": "Disfraces",
+    "bank": "disfraces",
+    "bankOrder": 14,
+    "file": "audio/disfraz-a-los-leones.mp3",
+    "duration": 4.238229,
+    "peakDb": -3.01,
+    "loudnessLufs": -14.88,
+    "source": "https://www.youtube.com/watch?v=g4aAwOxdhUk",
+    "sourceTitle": "Jose Trejo (A los Leones!!!) - Sabado Gigante",
+    "sourceChannel": "danjam6",
+    "videoId": "g4aAwOxdhUk",
+    "artist": "Don Francisco · rugido de SoundDino",
+    "context": "Don Francisco dice ¡A los leones!, seguido inmediatamente por un rugido de león. Voz original de Sábado Gigante.",
+    "editNotes": "Frase original completa del tramo 1:40.640–1:43.200; el rugido real entra a los 2.50 s de la mezcla. Fundidos breves en los bordes.",
+    "searchAliases": [
+      "Disfraces",
+      "A los leones",
+      "Don Francisco",
+      "Chacal",
+      "Sábado Gigante",
+      "león",
+      "leones",
+      "rugido"
+    ],
+    "attributions": [
+      {
+        "title": "Don Francisco — ¡A los leones! · Sábado Gigante, extracto de la grabación original",
+        "source": "https://www.youtube.com/watch?v=g4aAwOxdhUk"
+      },
+      {
+        "title": "Lion roar short sound — SoundDino · rugido de león",
+        "source": "https://sounddino.com/mp3/30/lion39s-roar-short-sound.mp3"
+      }
+    ],
+    "bytes": 137568,
+    "sha256": "424b1904c5024e9dd4c477656d05de5027b403e1fd39979d9b66b33c8791ab18"
   }
 ]
