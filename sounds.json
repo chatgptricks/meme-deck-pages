@@ -5806,5 +5806,52 @@
       "sirena",
       "arrastre"
     ]
+  },
+  {
+    "id": "disfraz-gabriel-espantapajaros",
+    "name": "Gabriel - Espantapájaros",
+    "label": "Gabriel - Espantapájaros",
+    "pack": "disfraces",
+    "category": "Disfraces",
+    "bank": "disfraces",
+    "bankOrder": 17,
+    "file": "audio/disfraz-gabriel-espantapajaros.mp3",
+    "duration": 80,
+    "bytes": 1601548,
+    "sha256": "3d5e2aebd1d13cf71be168becd78dd7682754624eb41d7b33ee0844393cb5e70",
+    "peakDb": -3.6,
+    "source": "https://incompetech.com/music/royalty-free/index.html?isrc=USUAN1100464",
+    "sourceTitle": "Unnatural Situation",
+    "sourceChannel": "Kevin MacLeod",
+    "context": "Entrada de Gabriel como espantapájaros: música misteriosa con cuervos durante los primeros 40 segundos, transición de dos segundos y el riff instrumental original de Barracuda de Heart durante los siguientes 40 segundos.",
+    "attributions": [
+      {
+        "title": "Unnatural Situation — Kevin MacLeod (incompetech.com)",
+        "source": "https://incompetech.com/music/royalty-free/index.html?isrc=USUAN1100464",
+        "license": "CC BY 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      {
+        "title": "Raven_Caw — KiddoFish86",
+        "source": "https://freesound.org/people/KiddoFish86/sounds/274439/",
+        "license": "Creative Commons 0",
+        "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
+      },
+      {
+        "title": "Barracuda — Heart, audio oficial",
+        "source": "https://www.youtube.com/watch?v=VdOkQ6THDVw"
+      }
+    ],
+    "searchAliases": [
+      "Disfraces",
+      "Gabriel",
+      "Espantapájaros",
+      "Espantapajaros",
+      "cuervos",
+      "cuervo",
+      "raven",
+      "Barracuda",
+      "Heart"
+    ]
   }
 ]
