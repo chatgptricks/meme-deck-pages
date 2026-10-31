@@ -5283,23 +5283,43 @@
     "bank": "disfraces",
     "bankOrder": 6,
     "file": "audio/disfraz-tatiana-clawdeen.mp3",
-    "duration": 167.892,
-    "bytes": 5058093,
-    "sha256": "e5a7b486a1963222035b8d939763f92ce0f8fe47fdf82723b06d652ca93cacf9",
-    "peakDb": 0.0,
+    "duration": 88.391896,
+    "bytes": 2830225,
+    "sha256": "51774ca28d3f65bfd88ac02c694b9314557aa1729ad6febcab9fa49fe9c95c04",
+    "peakDb": -4.87,
     "source": "https://www.youtube.com/watch?v=1jYnvvLdvcI",
-    "sourceTitle": "MONSTER HIGH // Fright Song · sub esp",
+    "sourceTitle": "Monster High — Fright Song · mezcla final para Tatiana",
     "sourceChannel": "GONTIEL",
-    "context": "Monster High — Fright Song, del video seleccionado para la entrada de Tatiana como Clawdeen. Audio completo.",
+    "context": "Entrada de Tatiana como Clawdeen. La canción empieza con su arranque original y el aullido de Clawdeen superpuesto con reverberación suave. Incluye el coro completo, todos los personajes, el deletreo M-O-N-S-T-E-R-S completo y el final original.",
     "searchAliases": [
       "Disfraces",
       "Tatiana",
       "Clawdeen",
       "Monster High",
       "Fright Song",
-      "loba"
+      "loba",
+      "aullido",
+      "Clawdeen Wolf",
+      "Draculaura",
+      "Deuce",
+      "MONSTERS",
+      "deletreo",
+      "reverberación"
     ],
-    "videoId": "1jYnvvLdvcI"
+    "videoId": "1jYnvvLdvcI",
+    "loudnessLufs": -15.98,
+    "artist": "Monster High",
+    "editNotes": "Versión final de 1:28.392. Se omite la primera estrofa. Coro y nombres se conservan continuos desde la fuente 0:40.560–1:17.000; deletreo y final continuos de 2:05.000 hasta el cierre. Aullido original de Clawdeen aislado y superpuesto desde 0:00.850, con reverberación estéreo sutil.",
+    "attributions": [
+      {
+        "title": "Monster High — Fright Song · video seleccionado por el usuario, música editada",
+        "source": "https://www.youtube.com/watch?v=1jYnvvLdvcI"
+      },
+      {
+        "title": "Monster High — Every Moment Clawdeen Is a Werewolf! · aullido original de Clawdeen, aislado de 0:59.990–1:03.185 y mezclado con reverberación",
+        "source": "https://www.youtube.com/watch?v=kJuiwzhqeqc"
+      }
+    ]
   },
   {
     "id": "disfraz-steven",
