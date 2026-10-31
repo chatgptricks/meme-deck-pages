@@ -5603,22 +5603,22 @@
     "sourceChannel": "ManuDirectok",
     "sourceChannelUrl": "https://www.youtube.com/channel/UCZmJ7oAYZqyKkQvJOWBSzSQ",
     "sourceDuration": 177,
-    "start": 53.28,
-    "end": 54.04,
-    "duration": 0.76,
-    "context": "Comunistas. Una sola palabra completa, extraída de Aquí lo que hay; no incluye de ni óiganme bien.",
-    "bytes": 26179,
-    "sha256": "a2635e4865d75eea34d13d5cc5aaa552b91ed21792f4d952fa554fe6c589a7c9",
-    "peakDb": -1.99,
-    "loudnessLufs": -8.89,
+    "start": 53.26,
+    "end": 54.2,
+    "duration": 1.06,
+    "context": "Comunistas. La palabra completa extraída de Aquí lo que hay.",
+    "bytes": 36184,
+    "sha256": "a9272d9813857b87f09298ce9d2bfea596df00b930c8538a748393687cdf719c",
+    "peakDb": -2.2,
+    "loudnessLufs": -10.79,
     "searchAliases": [
       "Audios ticos",
       "Comunistas",
       "Aquí lo que hay",
       "Laura Fernández"
     ],
-    "normalizationGainDb": 3.567213,
-    "editNotes": "Palabra completa extraída de Aquí lo que hay, con la consonante final conservada. Volumen reforzado y fundidos breves."
+    "editNotes": "Recorte ampliado para conservar el final completo de la palabra: fuente 0:53.260–0:54.200, más 0.120 s de silencio al final. Fundido de salida de 0.010 s.",
+    "trailingSilenceSeconds": 0.12
   },
   {
     "id": "tico-lero-lero-ternero",
@@ -5685,5 +5685,36 @@
     ],
     "normalizationGainDb": 0.657778,
     "editNotes": "Última repetición clara de Calma, cerca del final del clip Terremoto: calma, calma. Palabra completa, volumen reforzado y fundidos breves."
+  },
+  {
+    "id": "tico-lero-lero-solo",
+    "name": "Lero-lero",
+    "label": "Lero-lero",
+    "pack": "ticos",
+    "category": "Audios ticos",
+    "bank": "ticos",
+    "bankOrder": 48,
+    "file": "audio/tico-lero-lero-solo.mp3",
+    "source": "https://www.facebook.com/reel/28659681930335606",
+    "videoId": "28659681930335606",
+    "sourceTitle": "CHAVES RESPONDE CON UN “LERO, LERO” EN CARTAGO",
+    "sourceChannel": "La Esquina 506 l Alex Murillo",
+    "sourceDuration": 43.243,
+    "start": 4.4,
+    "end": 6.4,
+    "duration": 2.0,
+    "bytes": 66114,
+    "sha256": "4f3a823b95989ceb004423675c0a512de7039f98feb0b42d360764b42ffa140f",
+    "peakDb": -1.76,
+    "loudnessLufs": -12.28,
+    "context": "Lero-lero. Solo las dos llamadas iniciales de la grabación.",
+    "editNotes": "Extraído del tramo ya limpiado, conservando el volumen y las dos palabras completas. Fundidos breves en los bordes.",
+    "searchAliases": [
+      "Audios ticos",
+      "Lero lero",
+      "Lero-lero",
+      "Chaves",
+      "Facebook"
+    ]
   }
 ]
