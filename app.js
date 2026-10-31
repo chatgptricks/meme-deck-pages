@@ -549,7 +549,6 @@ $('#mix').onclick = () => { overlap = !overlap; if (!overlap) stopAll(); saveSet
 updateMix();
 function selectBank(value) {
   if (!BANKS.some(item => item.id === value)) return;
-  stopAll();
   boardQuery = ''; $('#sound-search').value = '';
   bank = value; page = 0;
   saveSetting('meme-deck-bank', bank);

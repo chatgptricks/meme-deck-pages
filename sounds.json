@@ -5604,21 +5604,21 @@
     "sourceChannelUrl": "https://www.youtube.com/channel/UCZmJ7oAYZqyKkQvJOWBSzSQ",
     "sourceDuration": 177,
     "start": 53.26,
-    "end": 54.2,
-    "duration": 1.06,
+    "end": 54.34,
+    "duration": 1.33,
     "context": "Comunistas. La palabra completa extraída de Aquí lo que hay.",
-    "bytes": 36184,
-    "sha256": "a9272d9813857b87f09298ce9d2bfea596df00b930c8538a748393687cdf719c",
+    "bytes": 44641,
+    "sha256": "e1795433d32ef35bb113645fbc9f1e16d9ec9aef1d0eb332427e787bb8404f5a",
     "peakDb": -2.2,
-    "loudnessLufs": -10.79,
+    "loudnessLufs": -11.89,
     "searchAliases": [
       "Audios ticos",
       "Comunistas",
       "Aquí lo que hay",
       "Laura Fernández"
     ],
-    "editNotes": "Recorte ampliado para conservar el final completo de la palabra: fuente 0:53.260–0:54.200, más 0.120 s de silencio al final. Fundido de salida de 0.010 s.",
-    "trailingSilenceSeconds": 0.12
+    "editNotes": "Recorte con la última sílaba completa: fuente 0:53.260–0:54.340, seguido de 0.250 s de silencio de salida. La palabra conserva su pronunciación y cierre originales.",
+    "trailingSilenceSeconds": 0.25
   },
   {
     "id": "tico-lero-lero-ternero",
