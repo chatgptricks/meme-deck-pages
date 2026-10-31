@@ -5386,5 +5386,88 @@
     ],
     "loudnessLufs": -12.13,
     "editNotes": "Tramo continuo de 0:00 a 0:10, con fade in de 0.02 s y fade out de 0.20 s; volumen reforzado."
+  },
+  {
+    "id": "disfraz-esteban-vips",
+    "name": "Esteban - VIPs",
+    "label": "Esteban - VIPs",
+    "pack": "disfraces",
+    "category": "Disfraces",
+    "bank": "disfraces",
+    "bankOrder": 10,
+    "file": "audio/disfraz-esteban-vips.mp3",
+    "duration": 90,
+    "peakDb": -2.3,
+    "loudnessLufs": -16.43,
+    "source": "https://www.youtube.com/watch?v=asQNnQmOVCE",
+    "sourceTitle": "Way Back then — Jung Jae-il · Squid Game (Original Soundtrack from the Netflix Series)",
+    "sourceChannel": "Jung Jae-il - Topic",
+    "videoId": "asQNnQmOVCE",
+    "artist": "Jung Jae-il",
+    "context": "Tema oficial Way Back Then de Squid Game para la entrada de Esteban como VIP. Grabación original del álbum de Netflix.",
+    "editNotes": "Versión aprobada de 1:30 de la grabación oficial. Entrada suave de 0.08 s y salida gradual de 3 s; volumen normalizado. Se conserva el MP3 aprobado sin volver a codificar.",
+    "searchAliases": [
+      "Disfraces",
+      "Esteban",
+      "VIPs",
+      "Squid Game",
+      "El juego del calamar",
+      "Way Back Then",
+      "Jung Jae-il",
+      "Netflix"
+    ],
+    "attributions": [
+      {
+        "title": "Way Back then — Jung Jae-il · ℗ 2021 Netflix; distribuido por Genie Music Corporation",
+        "source": "https://www.youtube.com/watch?v=asQNnQmOVCE"
+      }
+    ],
+    "bytes": 2881658,
+    "sha256": "cd5cd0a2ed5a064c619fe98856e65a44673af0d2ea8c143ef9184e611b1ffd43"
+  },
+  {
+    "id": "disfraz-beetlejuice",
+    "name": "Beetlejuice",
+    "label": "Beetlejuice",
+    "pack": "disfraces",
+    "category": "Disfraces",
+    "bank": "disfraces",
+    "bankOrder": 11,
+    "file": "audio/disfraz-beetlejuice.mp3",
+    "duration": 90,
+    "peakDb": -1.8,
+    "loudnessLufs": -15.93,
+    "source": "https://www.youtube.com/watch?v=oKD_PfCQx9A",
+    "sourceTitle": "Banana Boat (Day-O) — Harry Belafonte · mezcla con Lydia y la risa de Beetlejuice",
+    "artist": "Harry Belafonte · Winona Ryder y Michael Keaton",
+    "context": "Day-O empieza de inmediato, con las tres invocaciones de Lydia separadas por pausas, reverberación y ecos. Después de la tercera entra la risa original de Beetlejuice; tras la primera estrofa, la canción avanza hasta Mr. Tallyman y Six Foot y continúa de forma fluida.",
+    "editNotes": "Última versión aprobada de 1:30. Voces y risa separadas del fondo del tráiler antes de mezclarlas; la base musical se reconstruyó con Day-O. Invocaciones a 4.500, 15.000 y 27.140 s; risa a 28.180 s. Se conserva el MP3 aprobado sin volver a codificar.",
+    "searchAliases": [
+      "Disfraces",
+      "Beetlejuice",
+      "Day-O",
+      "Day O",
+      "Banana Boat",
+      "Lydia",
+      "Tallyman",
+      "Mr Tally Man",
+      "Six Foot",
+      "6 foot 7 foot",
+      "Harry Belafonte",
+      "risa",
+      "entrada"
+    ],
+    "attributions": [
+      {
+        "title": "Harry Belafonte — Banana Boat (Day-O), Official Audio · música editada",
+        "source": "https://www.youtube.com/watch?v=oKD_PfCQx9A"
+      },
+      {
+        "title": "Beetlejuice Beetlejuice | Official Trailer 2 — Warner Bros. · invocación de Lydia (Winona Ryder) y risa de Beetlejuice (Michael Keaton); voces separadas y editadas",
+        "source": "https://www.youtube.com/watch?v=As-vKW4ZboU"
+      }
+    ],
+    "bytes": 2881697,
+    "sha256": "73ddc64c9bb635c16b7929d0e55e86c52e9775d485deab6cb9e9a0a206ff0135"
   }
 ]
