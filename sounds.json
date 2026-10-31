@@ -5816,14 +5816,14 @@
     "bank": "disfraces",
     "bankOrder": 17,
     "file": "audio/disfraz-gabriel-espantapajaros.mp3",
-    "duration": 80,
-    "bytes": 1601548,
-    "sha256": "3d5e2aebd1d13cf71be168becd78dd7682754624eb41d7b33ee0844393cb5e70",
-    "peakDb": -3.6,
+    "duration": 60,
+    "bytes": 1201352,
+    "sha256": "006e7abc26ee8e7d2359464949377115a4c4252bf59b508cdc89cadec200261b",
+    "peakDb": -3.7,
     "source": "https://incompetech.com/music/royalty-free/index.html?isrc=USUAN1100464",
     "sourceTitle": "Unnatural Situation",
     "sourceChannel": "Kevin MacLeod",
-    "context": "Entrada de Gabriel como espantapájaros: música misteriosa con cuervos durante los primeros 40 segundos, transición de dos segundos y el riff instrumental original de Barracuda de Heart durante los siguientes 40 segundos.",
+    "context": "Entrada de Gabriel como espantapájaros: 20 segundos de música misteriosa con más cuervos, ecos y reverberación; transición de dos segundos al riff instrumental original de Barracuda de Heart durante unos 40 segundos.",
     "attributions": [
       {
         "title": "Unnatural Situation — Kevin MacLeod (incompetech.com)",
@@ -5852,6 +5852,9 @@
       "raven",
       "Barracuda",
       "Heart"
-    ]
+    ],
+    "introDuration": 20,
+    "transitionDuration": 2,
+    "guitarDuration": 40
   }
 ]
