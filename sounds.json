@@ -5356,14 +5356,14 @@
     "bank": "disfraces",
     "bankOrder": 9,
     "file": "audio/disfraz-elias-bruja.mp3",
-    "duration": 181.499,
-    "bytes": 5256885,
-    "sha256": "7adee2ce3a7acb31a94efcd1e8a3f3a0800c5676948c9420dba68ab74e9fafad",
-    "peakDb": 0.0,
+    "duration": 82.25,
+    "bytes": 2634392,
+    "sha256": "cc8e83ab027ded9eb9c5a80ccaf0ae5c6ba675fcf72b7b993a54e82e83d25dcc",
+    "peakDb": -1.8,
     "source": "https://www.youtube.com/watch?v=-l4HBRCIUsg",
     "sourceTitle": "Las Brujas — Don Ramón y la Bruja del 71",
     "sourceChannel": "Lex DJ Music",
-    "context": "Las Brujas, interpretada por Don Ramón y la Bruja del 71, para la entrada de Elias. Canción completa.",
+    "context": "Versión compacta de Las Brujas para Elías: inicio y primera estrofa, seguidos del último coro, las estrofas finales y un cierre gradual. Conserva el ritmo y el tono originales.",
     "searchAliases": [
       "Disfraces",
       "Elias",
@@ -5376,7 +5376,19 @@
       "Chespirito"
     ],
     "videoId": "-l4HBRCIUsg",
-    "artist": "Don Ramón y la Bruja del 71"
+    "artist": "Don Ramón y la Bruja del 71",
+    "segments": [
+      {
+        "start": 0,
+        "end": 26.95
+      },
+      {
+        "start": 108.5,
+        "end": 163.9
+      }
+    ],
+    "crossfadeSeconds": 0.1,
+    "outroFadeSeconds": 2.6
   },
   {
     "id": "disfraz-aplausos",
