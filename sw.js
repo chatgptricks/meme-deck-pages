@@ -1,5 +1,6 @@
 /* Increment VERSION whenever the app shell or bundled sound catalog changes. */
-const VERSION = 'meme-deck-v93-md20';
+const VERSION = 'meme-deck-v94-verified-catalog';
+const CATALOG_SHA256 = '9e1bf65b167e5e3e5d52299caa5ff9570bc1e3f9386e1110e8e56673fb398e8b';
 const BASE = new URL('./', self.registration.scope);
 // CacheStorage is shared by every project on a GitHub Pages origin.
 const CACHE_PREFIX = `meme-deck-scope:${encodeURIComponent(BASE.pathname)}:`;
@@ -23,19 +24,22 @@ function validCatalog(value) {
 }
 
 async function fetchAsset(path, sound) {
-  const url = absolute(path);
-  const response = await fetch(url, { cache: 'reload', credentials: 'same-origin', redirect: 'error' });
-  if (!response.ok || response.type === 'opaque' || response.redirected || (response.url && response.url !== url)) throw new Error('Asset unavailable: ' + path);
+  const url = new URL(absolute(path));
+  // A release-specific URL prevents a CDN or browser from mixing older files into a new installation.
+  url.searchParams.set('release', VERSION);
+  const response = await fetch(url.href, { cache: 'reload', credentials: 'same-origin', redirect: 'error' });
+  if (!response.ok || response.type === 'opaque' || response.redirected || (response.url && response.url !== url.href)) throw new Error('Asset unavailable: ' + path);
   const type = (response.headers.get('content-type') || '').toLowerCase();
   if (path === 'index.html') {
     const html = await response.clone().text();
     if (!type.includes('text/html') || !/src=["'](?:\.\/)?app\.js["']/.test(html) || !/rel=["']manifest["']/.test(html)) throw new Error('App sign-in required');
   } else {
     if (type.includes('text/html')) throw new Error('Unexpected sign-in response');
-    if (sound) {
+    if (sound || path === 'sounds.json') {
       const bytes = await response.clone().arrayBuffer();
       const hash = [...new Uint8Array(await crypto.subtle.digest('SHA-256', bytes))].map(byte => byte.toString(16).padStart(2, '0')).join('');
-      if (hash !== sound.sha256) throw new Error('Sound verification failed: ' + sound.id);
+      const expected = sound ? sound.sha256 : CATALOG_SHA256;
+      if (hash !== expected) throw new Error('Asset verification failed: ' + path);
     }
   }
   return response;
