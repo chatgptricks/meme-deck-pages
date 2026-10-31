@@ -5539,37 +5539,33 @@
     "bank": "disfraces",
     "bankOrder": 14,
     "file": "audio/disfraz-a-los-leones.mp3",
-    "duration": 4.238229,
-    "peakDb": -3.01,
-    "loudnessLufs": -14.88,
+    "duration": 2.96,
+    "peakDb": -5.76,
+    "loudnessLufs": -15.0,
     "source": "https://www.youtube.com/watch?v=g4aAwOxdhUk",
     "sourceTitle": "Jose Trejo (A los Leones!!!) - Sabado Gigante",
     "sourceChannel": "danjam6",
     "videoId": "g4aAwOxdhUk",
-    "artist": "Don Francisco · rugido de SoundDino",
-    "context": "Don Francisco dice ¡A los leones!, seguido inmediatamente por un rugido de león. Voz original de Sábado Gigante.",
-    "editNotes": "Frase original completa del tramo 1:40.640–1:43.200; el rugido real entra a los 2.50 s de la mezcla. Fundidos breves en los bordes.",
+    "artist": "Don Francisco",
+    "context": "El grito original completo de Don Francisco diciendo ¡A los leones!, con la voz aislada de la grabación de Sábado Gigante.",
+    "editNotes": "Voz separada del tramo original 1:40.740–1:43.700. Se conservan el comienzo y la cola del grito completo; fundidos breves en los bordes.",
     "searchAliases": [
       "Disfraces",
       "A los leones",
       "Don Francisco",
       "Chacal",
       "Sábado Gigante",
-      "león",
       "leones",
-      "rugido"
+      "grito",
+      "voz aislada"
     ],
     "attributions": [
       {
-        "title": "Don Francisco — ¡A los leones! · Sábado Gigante, extracto de la grabación original",
+        "title": "Don Francisco — ¡A los leones! · Sábado Gigante, voz aislada de la grabación original",
         "source": "https://www.youtube.com/watch?v=g4aAwOxdhUk"
-      },
-      {
-        "title": "Lion roar short sound — SoundDino · rugido de león",
-        "source": "https://sounddino.com/mp3/30/lion39s-roar-short-sound.mp3"
       }
     ],
-    "bytes": 137568,
-    "sha256": "424b1904c5024e9dd4c477656d05de5027b403e1fd39979d9b66b33c8791ab18"
+    "bytes": 96872,
+    "sha256": "08fee8db2e1a72166c097a7a15e272d5e1d25b88bd365181abaa2fab98147c8c"
   }
 ]
