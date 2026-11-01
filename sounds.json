@@ -5885,5 +5885,42 @@
       "western",
       "vaquero"
     ]
+  },
+  {
+    "id": "disfraz-freddy-krueger-tema",
+    "name": "Freddy Krueger - Tema original",
+    "label": "Freddy Krueger",
+    "pack": "disfraces",
+    "category": "Disfraces",
+    "bank": "disfraces",
+    "bankOrder": 19,
+    "file": "audio/disfraz-freddy-krueger-tema.mp3",
+    "duration": 211.279,
+    "bytes": 4227334,
+    "sha256": "0c3cc985be5fdc16e90ffcf0dc851de48006dfd27db5d0849515a6f9d4aafffe",
+    "peakDb": -3.5,
+    "source": "https://www.youtube.com/watch?v=VmTBtynblBg",
+    "sourceTitle": "A Nightmare on Elm Street (OST) - Main Title",
+    "sourceChannel": "Slick's Film Soundtracks",
+    "sourceChannelUrl": "https://www.youtube.com/channel/UCyxOQgwURrbIB114TGaS8hA",
+    "videoId": "VmTBtynblBg",
+    "artist": "Charles Bernstein",
+    "context": "Tema principal original completo de Pesadilla en Elm Street, compuesto por Charles Bernstein para la primera película de Freddy Krueger.",
+    "attributions": [
+      {
+        "title": "Main Title — Charles Bernstein; edición oficial WaterTower Music",
+        "source": "https://www.youtube.com/watch?v=HZSnwJOQp0A"
+      }
+    ],
+    "searchAliases": [
+      "Disfraces",
+      "Freddy",
+      "Freddie",
+      "Krueger",
+      "Pesadilla",
+      "Elm Street",
+      "Charles Bernstein",
+      "horror"
+    ]
   }
 ]
