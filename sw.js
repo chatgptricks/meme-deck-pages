@@ -1,6 +1,6 @@
 /* Increment VERSION whenever the app shell or bundled sound catalog changes. */
-const VERSION = 'meme-deck-v98-camino-terror';
-const CATALOG_SHA256 = '7df9816f2f8660837744726233e1cfa6230cae335ece32d3077fadb85977c561';
+const VERSION = 'meme-deck-v99-gerald-dracula';
+const CATALOG_SHA256 = '8b180e9eaacc77ec579993c813213b91535797b4a4c8e6c932057cc53b17795b';
 const BASE = new URL('./', self.registration.scope);
 // CacheStorage is shared by every project on a GitHub Pages origin.
 const CACHE_PREFIX = `meme-deck-scope:${encodeURIComponent(BASE.pathname)}:`;

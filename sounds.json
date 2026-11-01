@@ -5951,5 +5951,35 @@
       "terror",
       "rock"
     ]
+  },
+  {
+    "id": "disfraz-gerald-dracula",
+    "name": "Gerald - Drácula",
+    "label": "Gerald - Drácula",
+    "pack": "disfraces",
+    "category": "Disfraces",
+    "bank": "disfraces",
+    "bankOrder": 21,
+    "file": "audio/disfraz-gerald-dracula.mp3",
+    "duration": 90,
+    "bytes": 2881652,
+    "sha256": "bfd318b302ad4c6d7054cd934914346609bc899c5dfd2340f82759c1d6ff3dab",
+    "peakDb": -1.9,
+    "source": "https://www.youtube.com/watch?v=Ac3lzdQ4q7c",
+    "sourceTitle": "Dracula - The Beginning (From Bram Stoker's Dracula Soundtrack)",
+    "sourceChannel": "Wojciech Kilar - Topic",
+    "sourceChannelUrl": "https://www.youtube.com/channel/UCnI-iM9fAnzECKfIuO87iqQ",
+    "videoId": "Ac3lzdQ4q7c",
+    "artist": "Wojciech Kilar",
+    "context": "Gerald - Drácula: los primeros 90 segundos de Dracula - The Beginning de Wojciech Kilar, con entrada y salida suaves.",
+    "searchAliases": [
+      "Disfraces",
+      "Gerald",
+      "Drácula",
+      "Dracula",
+      "Wojciech Kilar",
+      "The Beginning",
+      "vampiro"
+    ]
   }
 ]
