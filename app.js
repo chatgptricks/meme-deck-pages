@@ -619,8 +619,8 @@ async function loadCatalog() {
 }
 function showOfflineStatus(data) {
   if (data.type !== 'OFFLINE_STATUS') return;
-  $('#offline').textContent = data.ready ? 'SIN CONEXIÓN ✓' : data.error ? 'EN LÍNEA' : `GUARDANDO ${data.count || 0}/${data.total || catalog.length || 233}`;
-  $('#download-status').textContent = data.ready ? `${data.count} clips guardados. Listos para usar sin conexión.` : data.error ? 'Los sonidos aún no están disponibles sin conexión. Reabre la app con internet.' : `Guardando sonidos… ${data.count || 0}/${data.total || catalog.length || 233}`;
+  $('#offline').textContent = data.ready ? 'SIN CONEXIÓN ✓' : data.error ? 'EN LÍNEA' : `GUARDANDO ${data.count || 0}/${data.total || catalog.length || 234}`;
+  $('#download-status').textContent = data.ready ? `${data.count} clips guardados. Listos para usar sin conexión.` : data.error ? 'Los sonidos aún no están disponibles sin conexión. Reabre la app con internet.' : `Guardando sonidos… ${data.count || 0}/${data.total || catalog.length || 234}`;
 }
 function requestOfflineStatus() { navigator.serviceWorker?.controller?.postMessage({ type: 'GET_OFFLINE_STATUS' }); }
 let manualRefreshInProgress = false;

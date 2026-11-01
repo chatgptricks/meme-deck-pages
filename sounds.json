@@ -5856,5 +5856,34 @@
     "introDuration": 20,
     "transitionDuration": 2,
     "guitarDuration": 40
+  },
+  {
+    "id": "disfraz-yellowstone-tema-principal",
+    "name": "Yellowstone - Tema principal",
+    "label": "Yellowstone",
+    "pack": "disfraces",
+    "category": "Disfraces",
+    "bank": "disfraces",
+    "bankOrder": 18,
+    "file": "audio/disfraz-yellowstone-tema-principal.mp3",
+    "duration": 69.627,
+    "bytes": 1394083,
+    "sha256": "da2cae64f91d2d9e1e33ff41d31926cabad0fe4bf9f8a9046028631c3b90bae9",
+    "peakDb": -1.5,
+    "source": "https://www.youtube.com/watch?v=1s7vmUBEuUo",
+    "sourceTitle": "Yellowstone Main Titles",
+    "sourceChannel": "Brian Tyler (ARE WE DREAMING)",
+    "sourceChannelUrl": "https://www.youtube.com/channel/UCObOJoJJST9vHZJE103ksNg",
+    "videoId": "1s7vmUBEuUo",
+    "artist": "Brian Tyler",
+    "context": "Tema original completo de los créditos de Yellowstone, compuesto por Brian Tyler y publicado en la banda sonora oficial de la serie.",
+    "searchAliases": [
+      "Disfraces",
+      "Yellowstone",
+      "Brian Tyler",
+      "tema principal",
+      "western",
+      "vaquero"
+    ]
   }
 ]
