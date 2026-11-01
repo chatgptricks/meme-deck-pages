@@ -5922,5 +5922,34 @@
       "Charles Bernstein",
       "horror"
     ]
+  },
+  {
+    "id": "disfraz-camino-del-terror",
+    "name": "Camino del Terror - La Blanca Ofelia",
+    "label": "Camino del Terror",
+    "pack": "disfraces",
+    "category": "Disfraces",
+    "bank": "disfraces",
+    "bankOrder": 20,
+    "file": "audio/disfraz-camino-del-terror.mp3",
+    "duration": 229.525,
+    "bytes": 4592011,
+    "sha256": "9005dd3f14361adcbb6e6b73e10dd84ec4f68b92d831280ef6861dc6aa7f6cbd",
+    "peakDb": -1.3,
+    "source": "https://www.youtube.com/watch?v=pTSbhYudFMY",
+    "sourceTitle": "La Blanca Ofelia - Camino del Terror (Video Oficial)",
+    "sourceChannel": "La Blanca Ofelia",
+    "sourceChannelUrl": "https://www.youtube.com/channel/UCSOY0GwwNy5ZjoA8yqG42kg",
+    "videoId": "pTSbhYudFMY",
+    "artist": "La Blanca Ofelia",
+    "normalizationGainDb": -4.5,
+    "context": "Camino del Terror de La Blanca Ofelia. Audio completo del video oficial, con volumen ajustado.",
+    "searchAliases": [
+      "Disfraces",
+      "Camino del Terror",
+      "La Blanca Ofelia",
+      "terror",
+      "rock"
+    ]
   }
 ]
